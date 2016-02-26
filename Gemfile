@@ -34,7 +34,17 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'sqlite3'
   gem 'byebug'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'cucumber-rails' 
+  gem 'cucumber-rails-training-wheels'
 end
 
 group :development do
