@@ -1,7 +1,41 @@
 https://travis-ci.org/nhironaka/maitri-app.svg?branch=master
-https://codeclimate.com/github/nhironaka/maitri-app
+<a href="https://codeclimate.com/github/nhironaka/maitri-app">
+<img src="https://codeclimate.com/github/nhironaka/maitri-app/badges/gpa.svg" /></a>
+
+https://www.pivotaltracker.com/n/projects/1547099
 
 == README == 
+
+Purpose
+No one should have to suffer or die alone.
+
+History
+Maitri is a Sanskrit word meaning compassionate friendship and was formed as a response to the early AIDS Epidemic. We remain a hospice and
+respite care facility. Maîtri is a 15 bed residence providing a high level of supervision and support for homeless/low income residents of San
+Francisco living with HIV/AIDS. For the calendar year 2015 Maitri served 46 residents, 20 of whom passed away, 23 of whom were discharged and 
+3 of whom remain in residence.We have been able to provide a safety and care and comfort to our residents who may not have otherwise had these
+things at the end of there lives otherwise. we have also provided these things so that our residents can recover the health and strength and
+return to the community. We offer compassion at a critical time for the most marginalized in our community.
+
+Goals
+The theme is data collect that will enable clear accurate and consistent reporting to our funders, help with fund raising and program planning
+and allow for the development of a system that facilitates efficiency and ease for our dedicated volunteers.
+
+Key Features
+bridging reporting capabilities from old and hopefully phased out database, allowing social service staff to work in one database only, with 
+some updated enhancements for data collection to ensure data collection
+
+Devices
+Tablets, Desktops
+
+Target Audience
+Volunteers approx. 60 , Staff of 53, and agencies that we as grantees report to.
+
+Why
+We are a small dedicated staff providing what we believe to be a vital service. We strive to be creative and flexible in meeting our diverse
+client bases' needs. efficiency with our resources is key and currently we are in profound need of our technology to be efficient and providing 
+us with accurate comprehensive information and capacity to communicate efficiently . Help with these gaps would make an immeasurable difference
+to Maîtri. Thank you for your consideration.
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
