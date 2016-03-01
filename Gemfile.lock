@@ -311,6 +311,7 @@ DEPENDENCIES
   jquery-rails
   metric_fu
   rails (= 4.2.1)
+  rake
   rspec-rails (= 2.14)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
