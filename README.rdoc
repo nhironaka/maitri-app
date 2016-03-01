@@ -1,4 +1,7 @@
-== README
+https://travis-ci.org/nhironaka/maitri-app.svg?branch=master
+https://codeclimate.com/github/nhironaka/maitri-app
+
+== README == 
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
