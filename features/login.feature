@@ -16,7 +16,7 @@ Scenario: login legitimate user
   When I fill in user with "user1"
   And I fill in password with "password1"
   And I press "Submit"
-  Then I should be on the homepage
+  Then I should be on the patient overview page
   
 Scenario: login user that does not exist
   When I fill in user with "invalid"
