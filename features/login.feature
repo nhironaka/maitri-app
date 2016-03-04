@@ -25,12 +25,12 @@ Scenario: login user that does not exist
   Then I should see "Invalid User"
   
 Scenario: blank username
-  When I fill in password with "invalid"
+  When I fill in password with "password1"
   And I press "Submit"
   Then I should see "Please enter username"
   
 Scenario: blank password
-  When I fill in user with "invalid"
+  When I fill in user with "user1"
   And I press "Submit"
   Then I should see "Please enter password"
   
