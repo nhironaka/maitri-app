@@ -1,8 +1,8 @@
 Feature: see data in the overview page
   
   As a user
-  So that I can see data from the database
-  I want to be able to see the data on the overview page
+  So that I can access the data from ECP
+  I want to be able to see the data imported from ECP
   
 Background: users in database
   
