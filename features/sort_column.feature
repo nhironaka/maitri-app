@@ -8,7 +8,7 @@ Background: patients are already in the database
   
   Given the following patients exist:
   | Name                    | Gender |  Start Date  |
-  | Toni T                  | M      | 12-01-1991   |
+  | Toni T                  | M       | 12-01-1991   |
   | Cal H                   | M      | 11-12-1993   |
   | Aari L                  | F      | 10-13-1900   |
   | Steven Li               | M      | 9-12-1993    |
@@ -35,4 +35,10 @@ Scenario: sort by start date
 Scenario: sort by Gender
   When I follow "Gender"
   Then I should see "M" before "F"
+  
+Scenario: sort by patient name
+  When I follow "Name"
+  Then I should not see "Steven Li" before "Beyonce Knowles"
+  And  I should not see "Toni L" before "Cal H"
+  And  I should not see "Cal H" before "Aari L"
   
