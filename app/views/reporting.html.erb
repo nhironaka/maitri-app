@@ -1,0 +1,14 @@
+<div class="overview">
+    <button input="button" class="option-button">Formulas</button>
+    <div class="table">
+        <h1>Preview</h1>
+        <button type="button" class="option-button">Refresh</button>
+        <%= render 'patient_list', { :patients => @patients } -%>
+    </div>
+    <select>
+      <option value="PDF">PDF</option>
+      <option value="excel">Excel</option>
+      <option value="xml">XML</option>
+    </select>
+    <button type="button" class="option-button">Generate</button>
+</div>
