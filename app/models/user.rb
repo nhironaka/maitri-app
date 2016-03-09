@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
   
   validate :password_match
   
+  def login
+      flash[:notice] = _("login")
+  end
+  
   def password_match
     if params[:password] != params[:password_confirmation]
       errors.add(:password, 'they don\'t match')
