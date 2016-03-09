@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+
+#welcome_login{
+    width:25%;
+    height:25%;
+    margin:auto;
+    position:relative;
+}
+
+.option-button {
+  position:fixed;
+  display:block;
+  top:2%;
+  height:20px;
+  font-size:14px;
+  cursor: pointer;
+  text-align: left;
+  float:left;
+  background-color:transparent;
+  text-shadow: none;
+  border: none;
+  border-radius: 0px;
+  padding-right: 1px;
+  padding-left: 1px;
+  z-index: 45;
+  color:#555;
+}
+
+.header{
+    top:8%;
+    display:block;
+    border:none;
+}

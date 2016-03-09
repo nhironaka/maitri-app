@@ -1,0 +1,13 @@
+-# welcome.html.haml using partial
+/https://www.railstutorial.org/book/log_in_log_out
+%h1 Welcome
+%div{:class => "login_section", :id => "welcome_login"} Log In
+  = form_tag some_path(@movie), :method => :put do
+  
+    = label :user, :username, 'Username:'
+    = text_field :user, 'username'
+  
+    = label :user, :password, 'Password:'
+    = text_field :user, 'password'
+  
+    = submit_tag 'Login'

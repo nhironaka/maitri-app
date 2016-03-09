@@ -1,0 +1,13 @@
+<div class="container">
+    <i class="fa fa-cog"></i><a href="/settings" style="top:10px; text-align:right">Settings</a>
+    <button type="button" class="option-button">Filter</button>
+    <i class="fa fa-search"></i>
+    <%=form_tag(controller: "patient", action: "/search", method: "get") do%>
+    <%= text_field_tag :search_patients, params[:search_patient] %></br>
+    <%= submit_tag "Search"%>
+    <%end%>
+    <div class="table">
+        <%= render 'patient_list', { :patients => @patients } -%>
+    </div>
+    <a href="/generage_report" class="option-button">Generate Report</a>
+</div>
