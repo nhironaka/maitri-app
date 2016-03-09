@@ -1,6 +1,5 @@
-https://travis-ci.org/nhironaka/maitri-app.svg?branch=master
-<a href="https://codeclimate.com/github/nhironaka/maitri-app">
-<img src="https://codeclimate.com/github/nhironaka/maitri-app/badges/gpa.svg" /></a>
+https://travis-ci.org/nhironaka/maitri-app
+https://codeclimate.com/github/nhironaka/maitri-app
 
 https://www.pivotaltracker.com/n/projects/1547099
 
