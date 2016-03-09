@@ -16,3 +16,13 @@ patients = [{:name=>"Toni T", :gender=>"M", :start_date=>"12-01-1991", :end_date
 patients.each do |patient|
   Patient.create!(patient)
 end
+
+users =    [{:username=>"user1", :password=>"password1", :email=>"user1@gmail.com"},
+            {:username=>"duplicate", :password=>"duplicate", :email=>"duplicate@gmail.com"}, 
+            {:username=>"susancanavan", :password=>"maitri", :email=>"SCanavan@maitrisf.org"}, 
+            {:username=>"tessgurrey", :password=>"maitri", :email=>"TGurrey@maitrisf.org"}, 
+  	 ]
+
+users.each do |user|
+  User.create!(user)
+end
