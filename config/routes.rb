@@ -54,6 +54,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  root :to => redirect('/login')
   get '/login'   => 'user#new'
 
   get "/search" => "patients#search", as: :search_patients
