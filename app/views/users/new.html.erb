@@ -5,8 +5,9 @@
         <p> Email:</br> <%= f.text_field :email%> </p>
         <p> Password:</br> <%= f.password_field :password%></p>
         <p> Password Confirmation:</br> <%= f.password_field :password_confirmation%> </p>
-        <%= f.submit :Signup %>
+        <%= f.submit :Signup, :class=>"option-button"%>
+        <button class="option-button" type="button" action="/users/edit">Cancel</button>
     <% end %>
     <%= flash[:error].html_safe unless flash[:error].blank? %>
-    <button class="option-button" type="button" action="\settings">Cancel</button>
+    
 </div>

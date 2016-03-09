@@ -1,12 +1,9 @@
 <div id="welcome_login">
     <h1>Welcome</h1>
-    <form action="log_in" method="post">
-        <h2>Username:</h2></br>
-        <input type="text" id="session_user"/></br>
-        <h2>Password:</h2></br>
-        <input type="text" id="session_pw"/></br>
-        
-        <input class="btn btn-primary" name="commit" type="submit" value="Log in" />
-    </form>
+    <%= form_tag(:action => 'login') do %>
+        <p>Username or Email:</br> <%= text_field_tag(:username_or_email) %></p> 
+        <p>Password:</br> <%= password_field_tag :login_password %></p> 
+        <%= submit_tag"Log In" class="btn btn-primary" name="commit" %>
+    <% end %>
 </div>
 
