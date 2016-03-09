@@ -4,11 +4,15 @@ class UsersController < ApplicationController
     params.require(:user).permit(:user_name, :password, :email)
   end
   
+  def new
+    @user = User.new
+  end
+  
   def create
     @user = User.create!(params[:user])
     if @user.save
       flash[:notice] = "You signed up successfully"
-      redirect_to patients_overview_path
+      render "overview"
     else
       flash[:error] = "Form is invalid"
     end
