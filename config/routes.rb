@@ -54,4 +54,10 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  root :to => redirect('/login')
+  get "/overview" => "patients#overview", as: :overview_patients
+  get 'login'   => 'users#login'
+  post '/settings/create'   => 'users#create'
+  #get "/search" => "patients#search", as: :search_patients
+  #get "/generate_report" => "report#generate", as: :report_generate
 end
