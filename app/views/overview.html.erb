@@ -7,6 +7,19 @@
     <%= submit_tag "Search"%>
     <%end%>
     <div class="table">
+        <table>
+           <thead>
+              <th><a href="overview.html?sort=name">Name</a></th>
+              <th><a href="overview.html?sort=start_date">Start Date</a></th>
+           </thead>
+            <%  @patients.each_with_index do |p| 
+              <tr>
+               <td><%= p.name %></td>
+               <td><%= p.gender %>
+               <td><%= p.start_date %> 
+               <!--add other col entries here-->
+            <% end %>
+        </table>
         <%= render 'patient_list', { :patients => @patients } -%>
     </div>
     <a href="/generage_report" class="option-button">Generate Report</a>
