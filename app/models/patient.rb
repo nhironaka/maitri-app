@@ -10,7 +10,7 @@ class Patient < ActiveRecord::Base
           patient = find_by_id(row["id"]) || new
           patient.save!
         end
-     end
+    end
     
     def self.open_spreadsheet(file)
         Excel.new(file.path, nil, :ignore)
