@@ -14,6 +14,7 @@ Background: patients are already in the database
   | Steven Li               | M      | 9-12-1993    |
   | Erika White             | F      | 7-4-1864     |
   | Beyonce Knowles         | F      | 2-1-2009     |
+  | Armando Fox             | M      | 1-1-1990     |
   
   And I am on the patient overview page
 

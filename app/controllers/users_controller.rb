@@ -16,4 +16,7 @@ class UsersController < ApplicationController
       flash[:error] = "Form is invalid"
     end
   end
+  
+  
+  
 end
