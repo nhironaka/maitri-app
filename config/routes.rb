@@ -55,9 +55,11 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   root :to => redirect('/login')
-  get "/overview" => "patients#overview", as: :patients_overview
-  resources :users, only: [:create, :new, :destroy]
-  get "/login" =>"users#login"
+  get "patients/overview" => "patients#index", as: :patients_overview
+  resources :users
+  resources :patients
+  get "login" => "users#login"
+  post "users/login" => "patients#overview"
   resources :patients
   #get "/search" => "patients#search", as: :search_patients
   #get "/generate_report" => "report#generate", as: :report_generate

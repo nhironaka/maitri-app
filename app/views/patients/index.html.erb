@@ -1,0 +1,26 @@
+<div class="container" id="index">
+    <div id="settings_link"><i class="fa fa-cog"></i><a href="/settings" style="top:10px; text-align:right">Settings</a></div>
+    
+    <div class="table">
+        <table>
+            <thead>
+                <!-- eventually be a ruby function that "yields" a clickable title header taken from the first row of imported Excel -->
+                <th><a href="index.html?sort=name">Name</a></th>
+                <th>Gender</th>
+                <th><a href="index.html?sort=start_date">Start Date</a></th>
+                <th>End Date</th>
+            </thead>
+            <tbody>
+                <% @patients.each do |patient| %>
+                <tr>
+                  <td><%= patient.name %></td>
+                  <td><%= patient.gender %></td>
+                  <td><%= patient.start_date %></td>
+                  <td><%= patient.end_date %></td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+        
+    </div>
+</div>
