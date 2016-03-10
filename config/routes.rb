@@ -60,7 +60,4 @@ Rails.application.routes.draw do
   resources :patients
   get "login" => "users#login"
   post "users/login" => "patients#overview"
-  resources :patients
-  #get "/search" => "patients#search", as: :search_patients
-  #get "/generate_report" => "report#generate", as: :report_generate
 end

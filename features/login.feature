@@ -7,30 +7,30 @@ Feature: login as a user
 Background: users in database
   
   Given the following users exist:
-  | username                | password    |
-  | user1                   | password1   |
+  | username                | password    | email           |
+  | user1                   | password1   | user1@gmail.com |
 
   And I am on the Login page
   
 Scenario: login legitimate user
-  When I fill in user with "user1"
-  And I fill in password with "password1"
-  And I press "Submit"
+  When I fill in "username_or_email" with "user1"
+  And I fill in "login_password" with "password1"
+  And I press "Log In"
   Then I should be on the patient overview page
   
 Scenario: login user that does not exist
-  When I fill in user with "invalid"
-  And I fill in password with "invalid"
-  And I press "Submit"
+  When I fill in "username_or_email" with "invalid"
+  And I fill in "login_password" with "invalid"
+  And I press "Log In"
   Then I should see "Invalid User"
   
 Scenario: blank username
-  When I fill in password with "password1"
-  And I press "Submit"
+  When I fill in "login_password" with "password1"
+  And I press "Log In"
   Then I should see "Please enter username"
   
 Scenario: blank password
-  When I fill in user with "user1"
-  And I press "Submit"
+  When I fill in "username_or_email" with "user1"
+  And I press "Log In"
   Then I should see "Please enter password"
   

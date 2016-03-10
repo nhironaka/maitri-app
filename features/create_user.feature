@@ -7,8 +7,8 @@ Feature: create a user
 Background: users in database
   
   Given the following users exist:
-  | username                | password    |
-  | duplicate               | duplicate   |
+  | username                | password    | email               |
+  | duplicate               | duplicate   | duplicate@gmail.com |
 
   And I am on the Create page
   
