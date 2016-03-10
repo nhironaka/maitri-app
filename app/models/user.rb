@@ -6,16 +6,16 @@ class User < ActiveRecord::Base
   validates :password, :confirmation => true #password_confirmation attr
   validates_length_of :password, :in => 6..20, :on => :create\
   
-  validate :password_match
+  #validate :password_match
   
   def login
       flash[:notice] = _("login")
   end
   
-  def password_match
-    if params[:password] != params[:password_confirmation]
-      errors.add(:password, 'they don\'t match')
-    end
-  end
+  #def password_match
+   # if params[:password] != params[:password_confirmation]
+    #  errors.add(:password, 'they don\'t match')
+    #end
+  #end
 
 end

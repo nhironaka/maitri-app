@@ -58,6 +58,7 @@ Rails.application.routes.draw do
   get "/overview" => "patients#overview", as: :patients_overview
   resources :users, only: [:create, :new, :destroy]
   get "/login" =>"users#login"
+  post "/login" => "users#login"
   resources :patients
   #get "/search" => "patients#search", as: :search_patients
   #get "/generate_report" => "report#generate", as: :report_generate
