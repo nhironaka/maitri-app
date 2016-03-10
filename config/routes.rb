@@ -56,8 +56,9 @@ Rails.application.routes.draw do
   #   end
   root :to => redirect('/login')
   get "patients/overview" => "patients#index", as: :patients_overview
-  resources :users
-  resources :patients
+  get "users/edit" => "users#edit"
   get "login" => "users#login"
   post "users/login" => "patients#overview"
+  resources :users
+  resources :patients
 end

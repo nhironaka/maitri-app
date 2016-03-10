@@ -22,9 +22,6 @@ class PatientsController < ApplicationController
           redirect_to :sort => sort and return
         end
         
-        #Patient.create!(:name=>"A", :gender=>"F", :start_date=>"1/2", :end_date=>"3/10") #@patients.order(ordering) if params[:sort].present? # OR if ordering
-        #Patient.create!(:name=>"B", :gender=>"M", :start_date=>"1/2", :end_date=>"3/10") #@patients.order(ordering) if params[:sort].present? # OR if ordering
-        
         @patients = Patient.all
     end
     

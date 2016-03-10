@@ -1,9 +1,22 @@
-<div class="container" id="index">
-    <div id="settings_link"><i class="fa fa-cog"></i><a href="/settings" style="top:10px; text-align:right">Settings</a></div>
-    
-    <div class="table">
+<div class="container full-width">
+    <div class="top_link"><i class="fa fa-cog"></i><a href="/users/edit" style="top:10px; text-align:right">Settings</a></div>
+    <div id="table_header">
         <table>
             <thead>
+                <col width="160">
+                <col width="80">
+                <th><a href="index.html?sort=name">Name</a></th>
+                <th>Gender</th>
+                <th><a href="index.html?sort=start_date">Start Date</a></th>
+                <th>End Date</th>
+            </thead>
+        </table>
+    </div>
+    <div class="table" id="patients_table" onscroll="sticky()">
+        <table>
+            <thead>
+                <col width="160">
+                <col width="80">
                 <!-- eventually be a ruby function that "yields" a clickable title header taken from the first row of imported Excel -->
                 <th><a href="index.html?sort=name">Name</a></th>
                 <th>Gender</th>
