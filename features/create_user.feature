@@ -7,8 +7,8 @@ Feature: create a user
 Background: users in database
   
   Given the following users exist:
-  | username                | password    | email               |
-  | duplicate               | duplicate   | duplicate@gmail.com |
+  | username              | password    | email                | password_confirmation |
+  | duplicate1            | duplicate1  | duplicate1@gmail.com | duplicate1            |
 
   And I am on the Create page
   
@@ -21,10 +21,10 @@ Scenario: create legitimate user
   Then I should be on the patient overview page
   
 Scenario: create user that already exists
-  When I fill in "user_username" with "duplicate"
-  And I fill in "user_password" with "duplicate"
-  And I fill in "user_email" with "duplicate@gmail.com"
-  And I fill in "user_password_confirmation" with "duplicate"
+  When I fill in "user_username" with "duplicate1"
+  And I fill in "user_password" with "duplicate1"
+  And I fill in "user_email" with "duplicate1@gmail.com"
+  And I fill in "user_password_confirmation" with "duplicate1"
   And I press "Signup"
   Then I should see "Username has already been taken"
   
