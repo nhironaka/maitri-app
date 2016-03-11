@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-  attr_accessor :password
   #before_save :encrypt_password
 
   validates_confirmation_of :password
@@ -17,10 +16,10 @@ class User < ActiveRecord::Base
   end 
   
   def self.validate_login(username_or_pw, password_)
-    if @email_regex.match(username_or_pw)    
-      user = User.where(email: username_or_pw).first
+    if username_or_pw.match(/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i)
+      user = User.where(email: username_or_pw, password: password_).first
     else
-      user = User.where(user: username_or_pw).first
+      user = User.where(username: username_or_pw, password: password_).first
     end
     if user && user.password == password_
       return user
