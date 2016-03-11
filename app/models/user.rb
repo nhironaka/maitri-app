@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-  attr_accessor :password
   #before_save :encrypt_password
   EMAIL_REGEX = /\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\z/i
   
@@ -22,9 +21,9 @@ class User < ActiveRecord::Base
   
   def self.validate_login(username_or_pw, password_)
     if EMAIL_REGEX.match(username_or_pw)    
-      user = User.where(email: username_or_pw).first
+      user = User.where(email: username_or_pw, password: password_).first
     else
-      user = User.where(user: username_or_pw).first
+      user = User.where(username: username_or_pw, password: password_).first
     end
     if user && user.password == password_
       return user
