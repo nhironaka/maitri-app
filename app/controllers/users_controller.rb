@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   end
   
   def valid_login?
-    authorized = User.validate_login(params[:username], params[:password])
+    authorized = User.validate_login(params[:username_or_email], params[:login_password])
     if authorized
       redirect_to patients_overview_path
     else
