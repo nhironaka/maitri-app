@@ -6,8 +6,13 @@
         <p> Password:</br> <%= f.password_field :password%></p>
         <p> Password Confirmation:</br> <%= f.password_field :password_confirmation%> </p>
         <%= f.submit :Signup, :class=>"option-button"%>
-        <button class="option-button" type="button" action="/users/edit">Cancel</button>
+        <a href="/users/edit"><button class="option-button">Cancel</button></a>
     <% end %>
-    <%= flash[:error].html_safe unless flash[:error].blank? %>
+    <% if @user.errors.any? %>
+        <% for message_error in @user.errors.full_messages %>
+          *<%= message_error %></br>
+        <% end %>
+    <% end %>
+    
     
 </div>

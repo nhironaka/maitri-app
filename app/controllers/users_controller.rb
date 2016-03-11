@@ -13,15 +13,8 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = "You signed up successfully"
       redirect_to patients_overview_path
-      #render 'new'
     else
-      if !User.where(email: params[:user][:email]).nil?
-        flash[:error] = "You have already signed up with this email"
-      else
-        flash[:error] = "Your passwords must be at least 6 characters long"
-      end
-      render 'new'
-
+      render :action=>'new'
     end
   end
   
