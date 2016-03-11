@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-ruby '2.2.2'
+#ruby '2.2.2'
+ruby '1.8.7'
 # making your Gemfile safe for Heroku
 group :development, :test do
   # make sure sqlite3 gem ONLY occurs inside development & test groups
