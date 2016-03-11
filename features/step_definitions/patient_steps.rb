@@ -15,7 +15,6 @@ Then /I definitely should not see "(.*)" before "(.*)"/ do |e1, e2|
 end
 
 
-
 Then /I should see all the patients/ do
   # Make sure that all the patients in the app are visible in the table
   patients = Patient.all
