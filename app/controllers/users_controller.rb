@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
   
   def new
+    @user = User.new
   end
   
   def create
@@ -18,7 +19,7 @@ class UsersController < ApplicationController
       else
         flash[:error] = "Password does not match"
       end
-      #render 'new'
+      render 'new'
     end
   end
   
