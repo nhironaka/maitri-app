@@ -20,26 +20,26 @@ Background: patients are already in the database
 
 Scenario: sort by patient name 
   When I follow "Name"
-  Then I should see "Aari" before "Beyonce Knowles"
-  And  I should see "Beyonce Knowles" before "Cal H"
-  And  I should see "Cal H" before "Erika White"
-  And  I should see "Erika White" before "Steven Li"
-  And  I should see "Steven Li" before "Toni T"
+  Then I definitely should see "Aari L" before "Steven Li"
+  And  I definitely should see "Beyonce Knowles" before "Cal H"
+  And  I definitely should see "Cal H" before "Erika White"
+  And  I definitely should see "Erika White" before "Steven Li"
+  And  I definitely should see "Steven Li" before "Toni T"
   
 
 Scenario: sort by start date
   When I follow "Start Date"
-  Then I should see "Erika White" before "Toni T"
-  And I should see "Steven Li" before "Cal H"
-  And I should see "Cal H" before "Beyonce Knowles"
+  Then I definitely should see "Erika White" before "Toni T"
+  And I definitely should see "Steven Li" before "Cal H"
+  And I definitely should see "Aari L" before "Cal H"
 
 Scenario: sort by Gender
   When I follow "Gender"
-  Then I should see "M" before "F"
+  Then I definitely should see "M" before "F"
   
 Scenario: sort by patient name
   When I follow "Name"
-  Then I should not see "Steven Li" before "Beyonce Knowles"
-  And  I should not see "Toni L" before "Cal H"
-  And  I should not see "Cal H" before "Aari L"
+  Then I definitely should not see "Steven Li" before "Erika White"
+  And  I definitely should not see "Toni L" before "Cal H"
+  And  I definitely should not see "Cal H" before "Aari L"
   
