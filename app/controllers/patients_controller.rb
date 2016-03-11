@@ -7,7 +7,11 @@ class PatientsController < ApplicationController
     end
     
     def index
+      if sort_column and sort_direction
         @patients = Patient.order(sort_column + " " + sort_direction)
+      else 
+        @patients = Patient.all
+      end
     end
     
     private
