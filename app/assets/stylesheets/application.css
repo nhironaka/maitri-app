@@ -61,10 +61,12 @@
     bottom:0px;
     color:rgb(245,255,245);
 }
+
 .container{
     position:relative;
-    top: 50%; left:50%;
-    transform: translate(-50%, -50%);
+    top: 250px; 
+    left:50%;
+    transform: translateX(-50%);
     border:1px;
     border-style:solid;
     border-color:rgb(0,105,73);
@@ -160,4 +162,8 @@ td, #table_header td{
 ::-webkit-scrollbar {
     width: 0px;  /* remove scrollbar space */
     background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+a:visited{
+    color:black;
 }
