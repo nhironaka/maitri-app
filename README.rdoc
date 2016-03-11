@@ -1,4 +1,6 @@
-https://travis-ci.org/nhironaka/maitri-app
+
+https://travis-ci.org/nhironaka/maitri-app: {<img src="https://travis-ci.org/nhironaka/maitri-app.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/nhironaka/maitri-app]
+
 https://codeclimate.com/github/nhironaka/maitri-app
 
 https://www.pivotaltracker.com/n/projects/1547099
