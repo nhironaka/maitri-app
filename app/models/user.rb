@@ -1,11 +1,20 @@
 class User < ActiveRecord::Base
-  attr_accessor :username, :email, :password, :password_confirmation
-  @email_regex = /\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\z/i
-    
-  validates :username, :presence => true, :uniqueness => true, :length => { :in => 3..20 }
-  validates :email, :presence => true, :uniqueness => true, :format => @email_regex
-  validates :password, :confirmation => true
-  validates_length_of :password, :in => 6..20, :on => :create
+  attr_accessor :password
+  #before_save :encrypt_password
+
+  validates_confirmation_of :password
+  validates_presence_of :password, :on => :create
+  validates_presence_of :email, :on => :create
+  validates_presence_of :username, :on => :create
+  validates_uniqueness_of :email
+  validates_uniqueness_of :username
+
+  def initialize(attributes = {})
+    super # must allow the active record to initialize!
+    attributes.each do |name, value|
+      send("#{name}=", value)
+    end
+  end 
   
   def self.validate_login(username_or_pw, password_)
     if @email_regex.match(username_or_pw)    
