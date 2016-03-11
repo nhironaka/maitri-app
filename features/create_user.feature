@@ -26,15 +26,15 @@ Scenario: create user that already exists
   And I fill in "user_email" with "duplicate@gmail.com"
   And I fill in "user_password_confirmation" with "duplicate"
   And I press "Signup"
-  Then I should see "You have already signed up with this email"
+  Then I should see "Username has already been taken"
   
 Scenario: blank username
   When I fill in "user_password" with "password1"
-  And I press "Submit"
-  Then I should see "Please enter username"
+  And I press "Signup"
+  Then I should see "Username can't be blank"
   
 Scenario: blank password
   When I fill in user with "user1"
-  And I press "Submit"
-  Then I should see "Please enter password"
+  And I press "Signup"
+  Then I should see "Password can't be blank"
   
