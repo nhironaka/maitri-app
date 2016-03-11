@@ -252,3 +252,11 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
+
+Then(/^I should (not\s+)?see "([^"]*)" before "([^"]*)"$/) do |no, arg1, arg2|
+  if no 
+    expect(page).not_to have_content(/#{arg1}.*#{arg2}.*/)
+  else
+    expect(page).to have_content(/#{arg1}.*#{arg2}.*/)
+  end
+end
