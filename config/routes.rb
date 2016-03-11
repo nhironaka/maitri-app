@@ -58,7 +58,7 @@ Rails.application.routes.draw do
   get "patients/overview" => "patients#index", as: :patients_overview
   get "users/edit" => "users#edit"
   get "login" => "users#login"
-  post "users/login" => "patients#overview"
+  post "login" => "users#valid_login?"
   resources :users
   resources :patients
 end
