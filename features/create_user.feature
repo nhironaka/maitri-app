@@ -13,19 +13,23 @@ Background: users in database
   And I am on the Create page
   
 Scenario: create legitimate user
-  When I fill in user with "user1"
-  And I fill in password with "password1"
-  And I press "Submit"
-  Then I should see "Success, user has been created!"
+  When I fill in "user_username" with "newuser"
+  And I fill in "user_password" with "newuserpassword"
+  And I fill in "user_email" with "newuser@gmail.com"
+  And I fill in "user_password_confirmation" with "newuserpassword"
+  And I press "Signup"
+  Then I should be on the patient overview page
   
 Scenario: create user that already exists
-  When I fill in user with "duplicate"
-  And I fill in password with "duplicate"
-  And I press "Submit"
-  Then I should see "Username is already taken."
+  When I fill in "user_username" with "duplicate"
+  And I fill in "user_password" with "duplicate"
+  And I fill in "user_email" with "duplicate@gmail.com"
+  And I fill in "user_password_confirmation" with "duplicate"
+  And I press "Signup"
+  Then I should see "You have already signed up with this email"
   
 Scenario: blank username
-  When I fill in password with "password1"
+  When I fill in "user_password" with "password1"
   And I press "Submit"
   Then I should see "Please enter username"
   

@@ -118,7 +118,6 @@ img {
 .table{
     height:60%;
     overflow: scroll;
-    border-bottom: 1px solid rgb(0, 105, 73);
 }
 
 table, #table_header {
@@ -149,4 +148,9 @@ td, #table_header td{
     display:none;
     z-index:100;
     border:none;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
 }
