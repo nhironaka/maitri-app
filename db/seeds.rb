@@ -32,10 +32,10 @@ patients.each do |patient|
   Patient.create!(patient)
 end
 
-users =    [{:username=>"user1", :password=>"password1", :email=>"user1@gmail.com"},
-            {:username=>"duplicate", :password=>"duplicate", :email=>"duplicate@gmail.com"}, 
-            {:username=>"susancanavan", :password=>"maitri", :email=>"SCanavan@maitrisf.org"}, 
-            {:username=>"tessgurrey", :password=>"maitri", :email=>"TGurrey@maitrisf.org"}, 
+users =    [{:username=>"userone", :password=>"password1", :email=>"userone@gmail.com", :password_confirmation=>"password1"},
+            {:username=>"duplicate", :password=>"duplicate", :email=>"duplicate@gmail.com", :password_confirmation=>"duplicate"}, 
+            {:username=>"susancanavan", :password=>"maitri", :email=>"SCanavan@maitrisf.org", :password_confirmation=>"maitri"}, 
+            {:username=>"tessgurrey", :password=>"maitri", :email=>"TGurrey@maitrisf.org", :password_confirmation=>"maitri"}, 
   	 ]
 
 users.each do |user|

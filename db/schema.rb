@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160309052341) do
     t.string "username"
     t.string "password"
     t.string "email"
+    t.string "password_confirmation"
   end
 
 end

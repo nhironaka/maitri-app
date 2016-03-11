@@ -1,7 +1,7 @@
 class UsersController < ApplicationController  
   
   def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    params.require(:user).permit(:username, :password, :email, :password_confirmation)
   end
   
   def new
@@ -29,8 +29,14 @@ class UsersController < ApplicationController
     if authorized
       redirect_to patients_overview_path
     else
-      flash[:error] = "Invalid Username or Password"
-      render 'login'
+      if params[:username_or_email].blank?
+        flash[:error] = "Please enter a username"
+      elsif params[:login_password].blank?
+        flash[:error] = "Please enter a password"
+      else
+        flash[:error] = "Invalid username or password"
+      end
+      render :action=>'login'
     end
   end
   
