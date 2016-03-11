@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
-#ruby '2.2.2'
-ruby '1.8.7'
+ruby '2.2.2'
 # making your Gemfile safe for Heroku
 group :development, :test do
   # make sure sqlite3 gem ONLY occurs inside development & test groups
@@ -34,7 +33,6 @@ gem 'jbuilder', '~> 2.0'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 
-
 gem 'rake'
 
 group :doc do
@@ -61,6 +59,6 @@ group :test do
   gem 'autotest-rails'
   gem 'factory_girl_rails' # if using FactoryGirl
   gem 'metric_fu'        # collect code metrics
-  #gem 'codeclimate-test-reporter', require: nil
+  gem 'codeclimate-test-reporter', :require => nil
 end
 
