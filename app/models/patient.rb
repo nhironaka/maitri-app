@@ -15,4 +15,8 @@ class Patient < ActiveRecord::Base
     def self.open_spreadsheet(file)
         Excel.new(file.path, nil, :ignore)
     end
+    
+    def self.all_headers
+        ["Name", "Gender", "Start Date", "End-Date"]
+    end
 end

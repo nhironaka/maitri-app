@@ -21,7 +21,8 @@ class PatientsController < ApplicationController
           session[:sort] = sort
           redirect_to :sort => sort and return
         end
-        @patients = @patients.order(ordering) if params[:sort].present? # OR if ordering
+        
+        @patients = Patient.all
     end
     
 end
