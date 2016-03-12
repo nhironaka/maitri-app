@@ -1,14 +1,46 @@
 <div class="container full-width">
-    <div class="top_link"><i class="fa fa-cog"></i><a href="/users/edit" style="top:10px; text-align:right">Settings</a></div>
-    <div class="top_link"><i class="fa fa-cog"></i><a href="/users/edit">Settings</a></div>
-    <div class="table" id="patients_table" onscroll="sticky()">
+    <div class="top_link"><i class="fa fa-cog"></i><a href="/users/edit">Setting</a></div>
+    <div id="table_header">
         <table>
+            <col width="160">
+            <col width="80">
             <thead>
             <tr>
               <th><%= sortable "Name" %></th>
               <th><%= sortable "Gender" %></th>
               <th><%= sortable "start_date" %></th>
               <th><%= sortable "end_date" %></th>
+            </tr>
+          </thead>
+        </table>
+    </div>
+    <div id="filter_button">
+      <button onclick="popupfilter()" class="option-button">Filter</button>
+    </div>
+    <div class="filters" id="popup">
+      Hide/Show Columns:</br>
+      <form>
+        <p><label><input type="checkbox" id="checkAll" onclick="select_all()"/> Select all</label></p>
+        <fieldset>
+            <legend>Patient Fields</legend>
+            <p><label><input type="checkbox" /> Name</label></p>
+            <p><label><input type="checkbox" /> Gender</label></p>
+            <p><label><input type="checkbox" /> Start Date</label></p>
+            <p><label><input type="checkbox" /> End Date</label></p>
+        </fieldset>
+      </form>
+      <button class="option-button" style="bottom=5px" onclick="hide_columns()">OK</button>
+    </div>
+    <div class="table" id="patients_table" onscroll="sticky()">
+        <table>
+          <col width="160">
+          <col width="80">
+            <thead>
+            <tr>
+              <th id="table-patient-name"><%= sortable "Name" %></th>
+              <th id="table-patient-gender"><%= sortable "Gender" %></th>
+              <th id="table-patient-start_date"><%= sortable "start_date" %></th>
+              <th id="table-patient-end_date"><%= sortable "end_date" %></th>
             </tr>
           </thead>
           <tbody>

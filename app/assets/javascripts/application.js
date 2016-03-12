@@ -26,5 +26,20 @@ function sticky(){
         console.log(top_scroll);
         elem.style.display = "none";
     }
-    
 }
+
+function popupfilter(){
+    $('#popup').toggle();
+}
+
+function select_all(){
+    $("#checkAll").change(function () {
+        console.log("here");
+        $("input:checkbox").prop('checked', $(this).prop("checked"));
+    });
+}
+
+function hide_columns(){
+    $('#popup').hide()
+}
+
