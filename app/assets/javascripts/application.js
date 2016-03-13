@@ -40,6 +40,17 @@ function select_all(){
 }
 
 function hide_columns(){
-    $('#popup').hide()
+    console.log("here");
+    $('#popup').hide();
+    $('#patient_fields input:checked').each(function() {
+        var val = $(this).attr('name');
+        console.log('td:nth-child('+val+'), th:nth-child(' + val + ')');
+        $('td:nth-child('+val+'), th:nth-child(' + val + ')').hide();
+    });
+    $('#patient_fields input:checkbox:not(:checked)').each(function() {
+        var val = $(this).attr('name');
+        console.log('td:nth-child('+val+'), th:nth-child(' + val + ')');
+        $('td:nth-child('+val+'), th:nth-child(' + val + ')').show();
+    });
 }
 

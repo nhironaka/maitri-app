@@ -1,58 +1,56 @@
 <div class="container full-width">
     <div class="top_link"><i class="fa fa-cog"></i><a href="/users/edit">Setting</a></div>
-    <div id="table_header">
-        <table>
-            <col width="160">
-            <col width="80">
-            <thead>
-            <tr>
-              <th><%= sortable "Name" %></th>
-              <th><%= sortable "Gender" %></th>
-              <th><%= sortable "start_date" %></th>
-              <th><%= sortable "end_date" %></th>
-            </tr>
-          </thead>
-        </table>
-    </div>
     <div id="filter_button">
       <button onclick="popupfilter()" class="option-button">Filter</button>
+      <button class="option-button" style="bottom=5px">Reset</button>
     </div>
     <div class="filters" id="popup">
-      Hide/Show Columns:</br>
+      <p>Hide/Show Columns:</p>
       <form>
         <p><label><input type="checkbox" id="checkAll" onclick="select_all()"/> Select all</label></p>
-        <fieldset>
+        <fieldset style="display: inline-block;" id="patient_fields">
             <legend>Patient Fields</legend>
-            <p><label><input type="checkbox" /> Name</label></p>
-            <p><label><input type="checkbox" /> Gender</label></p>
-            <p><label><input type="checkbox" /> Start Date</label></p>
-            <p><label><input type="checkbox" /> End Date</label></p>
+            <p><label><input type="checkbox" name="1"/> Name</label></p>
+            <p><label><input type="checkbox" name="2"/> Gender</label></p>
+            <p><label><input type="checkbox" name="3"/> Start Date</label></p>
+            <p><label><input type="checkbox" name="4"/> End Date</label></p>
         </fieldset>
       </form>
-      <button class="option-button" style="bottom=5px" onclick="hide_columns()">OK</button>
+      <button class="option-button" style="position:fixed; bottom:0; right:0" onclick="hide_columns()">OK</button>
     </div>
-    <div class="table" id="patients_table" onscroll="sticky()">
-        <table>
-          <col width="160">
-          <col width="80">
-            <thead>
+    <div class="table_header_container">
+      <table id="table_header">
+        <thead>
+          <tr>
+            <th><%= sortable "Name" %></th>
+            <th><%= sortable "Gender" %></th>
+            <th><%= sortable "start_date" %></th>
+            <th style="border:none"><%= sortable "end_date" %></th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="scrolling_table">
+      <table id="patients_table">
+        <thead>
+          <tr>
+            <th id="table-patient-name">Name</th>
+            <th id="table-patient-gender">Gender</th>
+            <th id="table-patient-start_date">Start Date</th>
+            <th id="table-patient-end_date" style="border:none">End Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @patients.each do |patient| %>
             <tr>
-              <th id="table-patient-name"><%= sortable "Name" %></th>
-              <th id="table-patient-gender"><%= sortable "Gender" %></th>
-              <th id="table-patient-start_date"><%= sortable "start_date" %></th>
-              <th id="table-patient-end_date"><%= sortable "end_date" %></th>
+                <td><%= patient.name %></td>
+                <td><%= patient.gender %></td>
+                <td><%= patient.start_date.strftime("%Y-%b-%d") %></td>
+                <td style="border:none"><%= patient.end_date.strftime("%Y-%b-%d") %></td>  
             </tr>
-          </thead>
-          <tbody>
-            <% @patients.each do |patient| %>
-              <tr>
-                  <td><%= patient.name %></td>
-                  <td><%= patient.gender %></td>
-                  <td><%= patient.start_date %></td>
-                  <td><%= patient.end_date %></td>  
-              </tr>
-            <% end %>
-         </tbody>
-            
-    </div>
+          <% end %>
+       </tbody>
+      </table>
+    </div> 
+    
 </div>

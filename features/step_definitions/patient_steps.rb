@@ -2,7 +2,7 @@
 
 Given /the following patients exist/ do |patients_table|
   patients_table.hashes.each do |patient|
-    Patient.create(name: patient[:name], gender: patient[:gender], start_date: patient[:start_date])
+    Patient.create(name: patient[:name], gender: patient[:gender], start_date: patient[:start_date], end_date: patient[:end_date])
   end
 end
 
