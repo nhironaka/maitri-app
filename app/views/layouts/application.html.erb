@@ -10,8 +10,17 @@
 <body>
   <div class="header">
     <a href="/patients/overview"><img src="/assets/Maitri.png" style="left:0"></a>
+    <% if user_signed_in? %>
+      <div class="bottom_link">
+        <i class="fa fa-sign-out"></i>
+        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+      </div>
+    <% end %>
     <div class="flash">
-      <%= flash[:notice].html_safe unless flash[:notice].blank? %>
+      <p><%= notice %></p>
+      <p><%= alert %></p>
+      <p><%= flash[:notice] %></p>
+      <p><%= flash[:error] %></p>
       </div>
   </div>
 <%= yield %>

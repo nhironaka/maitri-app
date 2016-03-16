@@ -1,3 +1,6 @@
+<% if !user_signed_in? %>
+  <% controller.redirect_to ("/users/sign_in") %>
+<% end %>
 <div class="container full-width">
     <div class="top_link"><i class="fa fa-cog"></i><a href="/users/edit">Setting</a></div>
     <div id="filter_button">

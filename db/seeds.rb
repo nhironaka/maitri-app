@@ -33,9 +33,9 @@ patients.each do |patient|
 end
 
 users =    [{:username=>"userone", :password=>"password1", :email=>"userone@gmail.com", :password_confirmation=>"password1"},
-            {:username=>"duplicate", :password=>"duplicate", :email=>"duplicate@gmail.com", :password_confirmation=>"duplicate"}, 
-            {:username=>"susancanavan", :password=>"maitri", :email=>"SCanavan@maitrisf.org", :password_confirmation=>"maitri"}, 
-            {:username=>"tessgurrey", :password=>"maitri", :email=>"TGurrey@maitrisf.org", :password_confirmation=>"maitri"}, 
+            {:username=>"duplicate", :password=>"duplicate123", :email=>"duplicate@gmail.com", :password_confirmation=>"duplicate123"}, 
+            {:username=>"susancanavan", :password=>"maitri123", :email=>"SCanavan@maitrisf.org", :password_confirmation=>"maitri123"}, 
+            {:username=>"tessgurrey", :password=>"maitri123", :email=>"TGurrey@maitrisf.org", :password_confirmation=>"maitri123"}, 
   	 ]
 
 users.each do |user|

@@ -106,6 +106,14 @@ img {
     font-size:18px;
 }
 
+.bottom_link{
+    position:absolute;
+    bottom:0%;
+    right:0%;
+    padding:5px;
+    font-size:18px;
+}
+
 .container.full-width{
     position: relative;
     border:none;
