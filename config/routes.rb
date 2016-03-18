@@ -58,4 +58,5 @@ Rails.application.routes.draw do
   root "patients#index"
   get "patients/overview", :to => "patients#index", as: :patients_overview
   resources :patients
+
 end

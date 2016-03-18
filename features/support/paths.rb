@@ -16,11 +16,11 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/'
     when /^the Login page$/
-      '/login'
+      'users/sign_in'
     when /the patient overview page$/
       '/patients/overview'
     when /the Create page$/
-      '/users/new'
+      '/users/sign_up'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

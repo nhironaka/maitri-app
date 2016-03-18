@@ -13,24 +13,24 @@ Background: users in database
   And I am on the Login page
   
 Scenario: login legitimate user
-  When I fill in "username_or_email" with "existuser"
-  And I fill in "login_password" with "existuser1"
-  And I press "Login"
+  When I fill in "user_login" with "existuser"
+  And I fill in "user_password" with "existuser1"
+  And I press "Log In"
   Then I should be on the patient overview page
   
 Scenario: login user that does not exist
-  When I fill in "username_or_email" with "invalid"
-  And I fill in "login_password" with "invalid"
-  And I press "Login"
-  Then I should see "Invalid username or password"
+  When I fill in "user_login" with "invalid"
+  And I fill in "user_password" with "invalid"
+  And I press "Log In"
+  Then I should see "Invalid login or password"
   
 Scenario: blank username
-  When I fill in "login_password" with "password1"
-  And I press "Login"
-  Then I should see "Please enter a username"
+  When I fill in "user_password" with "password1"
+  And I press "Log In"
+  Then I should see "Invalid login or password"
   
 Scenario: blank password
-  When I fill in "username_or_email" with "user1"
-  And I press "Login"
-  Then I should see "Please enter a password"
+  When I fill in "user_login" with "user1"
+  And I press "Log In"
+  Then I should see "Invalid login or password"
   
