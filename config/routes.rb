@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'registration/add_user', :to=>"devise/registration#new", as: :add_user
+
   devise_for :users
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   # The priority is based upon order of creation: first created -> highest priority.
@@ -58,5 +60,4 @@ Rails.application.routes.draw do
   root "patients#index"
   get "patients/overview", :to => "patients#index", as: :patients_overview
   resources :patients
-
 end

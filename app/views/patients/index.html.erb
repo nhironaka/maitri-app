@@ -1,60 +1,17 @@
-<% if !user_signed_in? %>
-  <% controller.redirect_to ("/users/sign_in") %>
-<% end %>
 <div class="container">
-    <div class="top_link"><i class="fa fa-cog"></i><a href="/users/edit">Setting</a></div>
-    <div id="filter_button">
-      <button onclick="popupfilter()" class="option-button">Filter</button>
-      <button class="option-button" style="bottom=5px" onclick="reset()">Reset</button>
-    </div>
-    <div class="filters" id="popup">
-      <span style="padding:5px"><strong>Hide/Show Columns:</strong></span>
-      <div class="field_filters">
-        <form>
-          <label><input type="checkbox" id="demographic_fields_form" onclick="select_all('#demographic_fields')" checked="true"/> Select all</label></br>
-          <fieldset style="display: inline-block;" id="demographic_fields">
-              <legend>Demographics Fields</legend>
-              <label><input type="checkbox" name="1" checked="true"/> Name</label></br>
-              <label><input type="checkbox" name="2" checked="true"/> Gender</label></br>
-              <label><input type="checkbox" name="3" checked="true"/> Start Date</label></br>
-              <label><input type="checkbox" name="4" checked="true"/> End Date</label></br>
-          </fieldset>
-        </form>
-        <form style="display: inline; float:left">
-          <label><input type="checkbox" id="medical_fields_form" onclick="select_all('#medical_fields')" checked="true"/> Select all</label></br>
-          <fieldset style="display: inline-block;" id="medical_fields">
-              <legend>Medical Fields</legend>
-              <label><input type="checkbox" name="5" checked="true"/> Diagnosis</label></br>
-              <label><input type="checkbox" name="6" checked="true"/> Vaccination</label></br>
-              <label><input type="checkbox" name="7" checked="true"/> Allergies</label></br>
-              <label><input type="checkbox" name="8" checked="true"/> Weight</label></br>
-          </fieldset></p>
-        </form>
-        <form style="display: inline; float:left">
-          <label><input type="checkbox" id="social_fields_form" onclick="select_all('#social_fields')" checked="true"/> Select all</label></br>
-          <fieldset style="display: inline-block;" id="social_fields">
-              <legend>Social Fields</legend>
-              <label><input type="checkbox" name="9" checked="true"/> Housing</label></br>
-              <label><input type="checkbox" name="10" checked="true"/> Income</label></br>
-              <label><input type="checkbox" name="11" checked="true"/> DOB</label></br>
-              <label><input type="checkbox" name="12" checked="true"/> Race</label></br>
-          </fieldset></p>
-        </form>
-      </div>
-      
-      <button class="option-button" style="position:fixed; bottom:0; right:0" onclick="hide_columns()">OK</button>
-    </div>
-    <div class="table_header_container">
-      <table id="table_header">
-        <thead>
-          <tr>
-            <th><%= sortable "Name" %></th>
-            <th><%= sortable "Gender" %></th>
-            <th><%= sortable "start_date" %></th>
-            <th style="border:none"><%= sortable "end_date" %></th>
-          </tr>
-        </thead>
-      </table>
-    </div>
-    <%= render :partial=>"/patients/patient_list.html.erb" %>
+  <div class="top_link"><i class="fa fa-cog"></i><a href="/users/edit">Setting</a></div>
+  <%= render :partial=>"/patients/filters.html.erb" %>
+  <div class="table_header_container">
+    <table id="table_header">
+      <thead>
+        <tr>
+          <th><%= sortable "Name" %></th>
+          <th><%= sortable "Gender" %></th>
+          <th><%= sortable "start_date" %></th>
+          <th style="border:none"><%= sortable "end_date" %></th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <%= render :partial=>"/patients/patient_list.html.erb" %>
 </div>

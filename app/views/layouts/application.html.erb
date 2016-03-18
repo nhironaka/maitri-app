@@ -10,11 +10,13 @@
 <body>
   <div class="header">
     <a href="/patients/overview"><img src="/assets/Maitri.png" style="left:0"></a>
-    <% if user_signed_in? %>
+     <% if user_signed_in? %>
       <div class="bottom_link">
         <i class="fa fa-sign-out"></i>
         <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
       </div>
+    <% elsif !is_signin_path %>
+      <% controller.redirect_to ("/users/sign_in") %>
     <% end %>
   </div>
 <%= yield %>

@@ -1,7 +1,7 @@
 <div class="container">
   <div class="top_link">
-    <i class="fa fa-plus"></i><a href="/users/sign_up">Add new user</a></br>
-    <%= link_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete%>
+    <i class="fa fa-plus"></i><a href="/resource/sign_up">Add New User</a></br>
+    <%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class=>"button_link"%>
   </div>
   <div class="half-width">
     <h2>Edit <%= resource_name.to_s.humanize %></h2>

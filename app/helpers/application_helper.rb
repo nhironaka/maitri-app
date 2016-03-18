@@ -1,3 +1,5 @@
+require 'net/http'
+require 'uri'
 module ApplicationHelper
   
   def sortable(column, title = nil)
@@ -5,5 +7,9 @@ module ApplicationHelper
     css_class = column == sort_column ? "current #{sort_direction}" : nil
     direction = column == sort_column && sort_direction == "asc" ? "desc" : "asc"
     link_to title, patients_overview_path({:sort => column, :direction => direction}), {:class => css_class}
+  end
+  
+  def is_signin_path
+    request.original_url =~ /users\/sign_in$/
   end
 end
