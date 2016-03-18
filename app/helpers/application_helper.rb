@@ -9,7 +9,7 @@ module ApplicationHelper
     link_to title, patients_overview_path({:sort => column, :direction => direction}), {:class => css_class}
   end
   
-  def is_signin_path
-    request.original_url =~ /users\/.*$/
+  def is_user_path
+    !(request.original_url =~ /\/users/).nil?
   end
 end

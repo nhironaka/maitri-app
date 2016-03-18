@@ -15,8 +15,8 @@
         <i class="fa fa-sign-out"></i>
         <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
       </div>
-    <% elsif !is_signin_path %>
-      <% controller.redirect_to ("/users/sign_in") %>
+    <% elsif !is_user_path %>
+      <% blah() %>
     <% end %>
   </div>
 <%= yield %>
