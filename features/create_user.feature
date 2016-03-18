@@ -18,7 +18,7 @@ Scenario: create legitimate user
   And I fill in "user_email" with "newuser@gmail.com"
   And I fill in "user_password_confirmation" with "newuserpassword"
   And I press "Sign Up"
-  Then I should be on the patient overview page
+  Then I should be on the home page
   
 Scenario: create user that already exists
   When I fill in "user_username" with "duplicate1"

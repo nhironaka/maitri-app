@@ -2,8 +2,6 @@
   <div class=" half-width">
     <h2>Create a new user</h2>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
-    
       <div class="field">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true %>
@@ -30,9 +28,11 @@
       <div class="actions">
         <%= f.submit "Sign Up", :class=>"option-button"%>
       </div>
-      <a href="/users/edit"><button class="option-button">Cancel</button></a>
+      <%= devise_error_messages! %>
     <% end %>
+    <div style="position:relative">
+      <a href="/users/edit"><button class="option-button">Cancel</button></a>
+    </div>
   </div>
-  
 </div>
 

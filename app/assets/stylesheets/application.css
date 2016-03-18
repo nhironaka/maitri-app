@@ -57,8 +57,10 @@ fieldset {
     left:0;
     height:25%;
     width:100%;
-    border:none;
     background-color: rgb(0,105,73);
+    -webkit-box-shadow: 0px 0px 10px  #888888;
+    -moz-box-shadow: 0px 0px 10px  #888888;
+     box-shadow: 0px 0px 10px #888888;
 }
 
 .header span{
@@ -112,13 +114,15 @@ table{
     width:1200px;
     margin-left: auto;
     margin-right: auto;
+    left:50%;
+    transform:translateX(-50%);
 }
 
 .table_header_container{
     top:55px;
     height:25px;
     z-index: 2;
-    background: rgb(0, 52, 173);
+    background: rgb(234, 251, 255);
     border:2px rgb(0, 52, 173) solid;
     border-bottom:none;
     border-top-left-radius: 5px;
@@ -126,7 +130,7 @@ table{
 }
 
 .table_header_container a{
-    color: rgb(234, 251, 255);
+   color: rgb(0, 52, 173);
 }
 
 #table_header{

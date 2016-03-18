@@ -16,7 +16,7 @@ Scenario: login legitimate user
   When I fill in "user_login" with "existuser"
   And I fill in "user_password" with "existuser1"
   And I press "Log In"
-  Then I should be on the patient overview page
+  Then I should be on the home page
   
 Scenario: login user that does not exist
   When I fill in "user_login" with "invalid"
@@ -33,4 +33,7 @@ Scenario: blank password
   When I fill in "user_login" with "user1"
   And I press "Log In"
   Then I should see "Invalid login or password"
-  
+
+Scenario: I try to access the homepage without logging in
+  When I click on "img[id='logo']"
+  Then I should be on the Login page

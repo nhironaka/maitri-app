@@ -16,7 +16,7 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/'
     when /^the Login page$/
-      'users/sign_in'
+      '/users/sign_in'
     when /the patient overview page$/
       '/patients/overview'
     when /the Create page$/

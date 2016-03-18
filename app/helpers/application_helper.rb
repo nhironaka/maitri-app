@@ -10,6 +10,6 @@ module ApplicationHelper
   end
   
   def is_signin_path
-    request.original_url =~ /users\/sign_in$/
+    request.original_url =~ /users\/.*$/
   end
 end
