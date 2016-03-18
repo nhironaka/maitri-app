@@ -16,7 +16,7 @@
         <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
       </div>
     <% elsif !is_user_path %>
-      <% blah() %>
+      <% controller.redirect_to ("/users/sign_in") %>
     <% end %>
   </div>
 <%= yield %>

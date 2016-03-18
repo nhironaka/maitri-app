@@ -124,10 +124,15 @@ table{
     top:55px;
     height:25px;
     z-index: 2;
-    background: rgb(234, 251, 255);
+    background-color: rgb(125,178,161);
+    background-image: -webkit-linear-gradient(top, rgb(125,178,161), rgb(213,229,225));
+    background-image: -moz-linear-gradient(top, rgb(125,178,161), rgb(213,229,225));
+    background-image: -o-linear-gradient(top, rgb(125,178,161), rgb(213,229,225));
+    background-image: -ms-linear-gradient(top, rgb(125,178,161), rgb(213,229,225));
+    background-image: linear-gradient(top, rgb(125,178,161), rgb(213,229,225));
     border-bottom:none;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
 }
 
 .table_header_container a{
@@ -150,6 +155,7 @@ table{
     height:450px;
     display:block;
     top:79px;
+    box-shadow: 0 1px 1px #ccc;
 }
 
 td, #table_header th{
@@ -161,8 +167,13 @@ td {
 }
 
 tr:nth-child(even) {
-    background: rgb(234, 251, 255);
+    background: rgb(244, 245, 247);
 }
+
+tr:hover {
+  background: rgb(125,178,161);
+  transition: all 0.1s ease-in-out;     
+} 
 
 /** Scrollbar **/
 .scrolling_table::-webkit-scrollbar {
@@ -170,7 +181,7 @@ tr:nth-child(even) {
 }
  
 .scrolling_table::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgb(0, 142, 178);
+    -webkit-box-shadow: inset 0 0 6px rgb(0, 105, 73);
     -webkit-border-radius: 10px;
     border-radius: 10px;
 }
@@ -178,13 +189,13 @@ tr:nth-child(even) {
 .scrolling_table::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    background: rgb(234, 251, 255);
-    -webkit-box-shadow: inset 0 0 1px rgb(0, 142, 178);
+    background: rgb(249, 253, 254);
+    -webkit-box-shadow: inset 0 0 1px rgb(0, 105, 73);
     -webkit-border-radius: 10px;
 }
 
 .scrolling_table::-webkit-scrollbar-thumb:window-inactive {
-	background: rgba(255,0,0,0.4); 
+	background: white;
 }
 
 /** Filters **/
@@ -233,8 +244,8 @@ tr:nth-child(even) {
   font-size:14px;
   cursor: pointer;
   text-align: center;
-  background-color:rgb(0,105,73);
-  border-color:rgb(0,105,73);
+  background-color:rgb(125,178,161);
+  border-color:rgb(92,159,138);
   margin:2px;
   color: rgb(245,255,245);
   border-width:2px;
