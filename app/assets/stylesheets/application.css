@@ -52,7 +52,7 @@ fieldset {
 
 /** App header **/
 .header{
-    position:relative;
+    position:fixed;
     top:0;
     left:0;
     height:25%;
@@ -111,25 +111,23 @@ table{
 }
 
 .table_header_container, .scrolling_table {
-    position:absolute;
+    position:fixed;
     width:1200px;
-    margin-left: auto;
-    margin-right: auto;
     left:50%;
     transform:translateX(-50%);
     border: solid #ccc 1px;
 }
 
 .table_header_container{
-    top:55px;
+    top:265px;
     height:25px;
     z-index: 2;
     background-color: rgb(125,178,161);
-    background-image: -webkit-linear-gradient(top, rgb(125,178,161), rgb(213,229,225));
-    background-image: -moz-linear-gradient(top, rgb(125,178,161), rgb(213,229,225));
-    background-image: -o-linear-gradient(top, rgb(125,178,161), rgb(213,229,225));
-    background-image: -ms-linear-gradient(top, rgb(125,178,161), rgb(213,229,225));
-    background-image: linear-gradient(top, rgb(125,178,161), rgb(213,229,225));
+    background-image: -webkit-linear-gradient(top,rgb(125,178,161), rgb(92,159,138));
+    background-image: -moz-linear-gradient(top,rgb(125,178,161), rgb(92,159,138));
+    background-image: -o-linear-gradient(top,rgb(125,178,161), rgb(92,159,138));
+    background-image: -ms-linear-gradient(top,rgb(125,178,161), rgb(92,159,138));
+    background-image: linear-gradient(top,rgb(125,178,161), rgb(92,159,138));
     border-bottom:none;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
@@ -154,7 +152,7 @@ table{
     z-index:5; 
     height:450px;
     display:block;
-    top:79px;
+    top:290px;
     box-shadow: 0 1px 1px #ccc;
 }
 
@@ -170,7 +168,7 @@ tr:nth-child(even) {
     background: rgb(244, 245, 247);
 }
 
-tr:hover {
+#patients_table tr:hover {
   background: rgb(125,178,161);
   transition: all 0.1s ease-in-out;     
 } 
@@ -244,7 +242,7 @@ tr:hover {
   font-size:14px;
   cursor: pointer;
   text-align: center;
-  background-color:rgb(125,178,161);
+  background-color:rgb(92,159,138);
   border-color:rgb(92,159,138);
   margin:2px;
   color: rgb(245,255,245);
