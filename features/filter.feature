@@ -18,16 +18,19 @@ Background: patients are already in the database
     |  Skinny Cow       |  F      | 03-03-2001  | 12-09-2001 | 
     |  Michael Fox      |  M      | 02-12-1993  | 10-11-1996 |
     |  Erika White      |  B      | 01-04-2000  | 07-11-2002 |
-  
+  And the following users exist:
+    | username                | password    | email                | password_confirmation |
+    | existuser               | existuser1  | existuser1@gmail.com | existuser1            |
+  And I am logged in
   And I am on the patient overview page
+  And I press "Filter"
 
 Scenario: filter by checkboxes
-  When I press "popupfilter()"
-  And I uncheck "Select All"
+  When I uncheck "demographic_fields_form"
   And I check "Name"
   And I check "Gender"
-  And I uncheck "Start Date"
-  And I uncheck "End Date"
+  #And I uncheck "Start Date"
+  #And I uncheck "End Date"
   And I press "OK"
   Then I should see "Name"
   And I should see "Gender"
@@ -35,12 +38,11 @@ Scenario: filter by checkboxes
   And I should not see "End Date"
   
 Scenario: filter everything
-  When I press "popupfilter()"
-  And I uncheck "Select All"
-  And I uncheck "Name"
-  And I uncheck "Gender"
-  And I uncheck "Start Date"
-  And I uncheck "End Date"
+  When I uncheck "demographic_fields_form"
+  #When I uncheck "Name"
+  #When I uncheck "Gender"
+  #And I uncheck "Start Date"
+  #And I uncheck "End Date"
   And I press "OK"
   Then I should not see "Name"
   And I should not see "Gender"
@@ -48,8 +50,7 @@ Scenario: filter everything
   And I should not see "End Date"
 
 Scenario: select all checkboxes you
-  When I press "popupfilter()"
-  And I check "Select All"
+  When I check "demographic_fields_form"
   And I press "OK"
   Then I should see "Name"
   And I should see "Gender"

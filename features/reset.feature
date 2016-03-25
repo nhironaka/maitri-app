@@ -18,7 +18,10 @@ Background: patients are already in the database
     |  Skinny Cow       |  F      | 03-03-2001  | 12-09-2001 | 
     |  Michael Fox      |  M      | 02-12-1993  | 10-11-1996 |
     |  Erika White      |  B      | 01-04-2000  | 07-11-2002 |
-  
+  And the following users exist:
+    | username                | password    | email                | password_confirmation |
+    | existuser               | existuser1  | existuser1@gmail.com | existuser1            |
+  And I am logged in
   And I am on the patient overview page
   
 Scenario: press reset on unfiltered page
@@ -29,7 +32,7 @@ Scenario: press reset on unfiltered page
   And I should see "End Date"
 
 Scenario: press reset after filtered page
-  When I press "popupfilter()"
+  When I press "Filter"
   And I uncheck "Select All"
   And I check "Name"
   And I check "Gender"

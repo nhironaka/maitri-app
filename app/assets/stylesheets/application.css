@@ -30,23 +30,37 @@ body{
     font-family: 'Open Sans', 'Trebuchet MS', Helvetica, Garuda, sans-serif;
     background-color: rgb(255, 255, 254);
     z-index: 1;
+    font-weight: lighter;
 }
 
-img {
-    max-width: 100%;
+table img {
     max-height: 100%;
+    max-width: 100%;
 }
 
 label{
     font-size:14px;
 }
 
-a{
+a, input {
     color:black;
+    text-decoration: none;
 }
 
 fieldset {
     width:135px;
+}
+
+td button {
+    top:0;
+    background:none!important;
+    border:none; 
+    padding:0!important;
+    font: inherit;
+    text-align:center;
+    cursor:pointer;
+    height:80px;
+    margin-top: 15px;
 }
 
 
@@ -70,7 +84,7 @@ fieldset {
 }
 
 /** App Content **/
-.container{
+.content{
     font-size: 14px;
     height:75%;
     width:100%;
@@ -101,28 +115,21 @@ fieldset {
 }
 
 /** Table Formatting **/
-table{
-    top:0px;
-    width:100%;
-    table-layout: fixed;
-    font-size: 18px;
-    border-collapse: collapse;
-    border-spacing:0;
-}
-
 .table_header_container, .scrolling_table {
-    position:fixed;
-    width:1200px;
+    position:relative;
     left:50%;
     transform:translateX(-50%);
-    border: solid #ccc 1px;
+    border-color: rgb(0, 105, 73);
+    border-width:1px;
+    border-style:solid;
+    width:1100px;
 }
 
 .table_header_container{
-    top:265px;
+    top:5px;
     height:25px;
     z-index: 2;
-    background-color: rgb(125,178,161);
+    background-color: rgb(0, 105, 74);
     background-image: -webkit-linear-gradient(top,rgb(125,178,161), rgb(92,159,138));
     background-image: -moz-linear-gradient(top,rgb(125,178,161), rgb(92,159,138));
     background-image: -o-linear-gradient(top,rgb(125,178,161), rgb(92,159,138));
@@ -135,40 +142,52 @@ table{
 
 .table_header_container a{
    color: black;
-   text-decoration:none
-}
-
-#table_header{
-    width:1195px;
-    text-align: center;
-}
-
-#patients_table{
-    background-color:white;
+   text-decoration:none;
 }
 
 .scrolling_table{
-    overflow: auto;
+    overflow-y: scroll;
     z-index:5; 
-    height:450px;
+    height:550px;
     display:block;
-    top:290px;
     box-shadow: 0 1px 1px #ccc;
+    background-color:transparent;
+    top:5px;
 }
 
-td, #table_header th{
-    border-right:solid #ccc 1px;
+#table_header, #patients_table{
+    top:0px;
+    table-layout: fixed;
+    font-size: 18px;
+    border-collapse: collapse;
+    border-spacing:0;
+    width:100%;
 }
 
-td {
+#table_header{
+    text-align: center;
+    width:1095px;
+    left:0px;
+}
+
+#table_header th,
+#patients_table td{
+    border-right:solid rgb(0, 105, 73) 1px;
+}
+
+#table_header th{
+    padding-bottom:4px;
+}
+
+#patients_table td{
     padding-left:5px;
 }
 
-tr:nth-child(even) {
+#patients_table tr:nth-child(even) {
     background: rgb(244, 245, 247);
 }
 
-#patients_table tr:hover {
+#patients_table tbody tr:hover {
   background: rgb(125,178,161);
   transition: all 0.1s ease-in-out;     
 } 
@@ -231,6 +250,7 @@ tr:nth-child(even) {
     font: inherit;
     border-bottom:1px solid #444; 
     cursor: pointer;
+    text-decoration: none;
 }
 
 .option-button {
@@ -242,7 +262,7 @@ tr:nth-child(even) {
   font-size:14px;
   cursor: pointer;
   text-align: center;
-  background-color:rgb(92,159,138);
+  background-color:rgb(0, 105, 73);
   border-color:rgb(92,159,138);
   margin:2px;
   color: rgb(245,255,245);
@@ -250,14 +270,6 @@ tr:nth-child(even) {
   border-radius: 3px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   padding-bottom: 5px;
-}
-
-#filter_button{
-    position: relative;
-    top:25px;
-    width:1200px;
-    margin: 0 auto;
-    padding-bottom:5px;
 }
 
 /** Layout of links **/
@@ -277,4 +289,64 @@ tr:nth-child(even) {
     right:0%;
     padding:5px;
     font-size:18px;
+}
+
+/** Tabs **/
+#tabs_container {
+	position:fixed;
+	border:none;
+    width: 100%;
+	top:0;
+	margin:0;
+	padding:0;
+	height:25%;
+    font-weight: lighter;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing:0;
+}
+#tabs_container thead{
+    background-color: rgb(255, 255, 254);
+}
+#tabs_container tbody{
+    border:none;
+    /**background-color: #ffda76;background-color: 
+    background-image: -webkit-linear-gradient(top,rgb(255, 218, 118), rgb(255, 255, 254));
+    background-image: -moz-linear-gradient(top,rgb(255, 218, 118), rgb(255, 255, 254));
+    background-image: -o-linear-gradient(top,rgb(255, 218, 118), rgb(255, 255, 254));
+    background-image: -ms-linear-gradient(top,rgb(255, 218, 118), rgb(255, 255, 254));
+    background-image: linear-gradient(top,rgb(255, 218, 118), rgb(255, 255, 254));**/
+    background-color: rgb(0, 105, 74);
+    background-image: -webkit-linear-gradient(top,rgb(0, 105, 74), rgb(255, 255, 254));
+    background-image: -moz-linear-gradient(top,rgb(0, 105, 74), rgb(255, 255, 254));
+    background-image: -o-linear-gradient(top,rgb(0, 105, 74), rgb(255, 255, 254));
+    background-image: -ms-linear-gradient(top,rgb(0, 105, 74), rgb(255, 255, 254));
+    background-image: linear-gradient(top,rgb(0, 105, 74), rgb(255, 255, 254));
+}
+
+#tabs_container td{
+    vertical-align: top;
+    text-align: center;
+    cursor:pointer;
+    padding:0;
+    top:0;
+}
+#tabs_container td.inactive{
+    cursor: default;
+}
+#tabs_container th{
+    font-weight: lighter;
+    margin:0;
+    padding: 5px 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-right: dotted 1px rgb(0, 105, 47);
+}
+#tabs_container th.active_tab{
+    background-color: rgb(0, 105, 74);
+    border:none;
+}
+
+.sign_in th{
+    border:none;
 }

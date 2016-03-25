@@ -11,7 +11,7 @@ Background: users in database
   | existuser               | existuser1  | existuser1@gmail.com | existuser1            |
   
   And I am on the Login page
-  And I fill in "username_or_email" with "existuser"
+  And I fill in "user_login" with "existuser"
   And I fill in "login_password" with "existuser1"
   And I press "Login"
   

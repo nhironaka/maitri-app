@@ -124,11 +124,11 @@ Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp|
   end
 end
 
-Then /^(?:|I )should not see "([^"]*)"$/ do |text|
+Then /^(?:|I )should not see "([^"]*)"/ do |text|
   if page.respond_to? :should
-    page.should have_no_content(text)
+    page.all(:visible=>true).should_not have_content(text)
   else
-    assert page.has_no_content?(text)
+    assert page.all(:visible=>true).has_no_content?(text)
   end
 end
 
@@ -257,7 +257,7 @@ Then /^show me the page$/ do
   save_and_open_page
 end
 
-Then(/^I should (not\s+)?see "([^"]*)" before "([^"]*)"$/) do |no, arg1, arg2|
+Then (/^(?:|I )should (not\s+)?see "([^"]*)" before "([^"]*)"$/) do |no, arg1, arg2|
   if no 
     expect(page).not_to have_content(/#{arg1}.*#{arg2}.*/)
   else
