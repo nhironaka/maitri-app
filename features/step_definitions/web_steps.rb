@@ -124,12 +124,13 @@ Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp|
   end
 end
 
-Then /^(?:|I )should not see "([^"]*)"/ do |text|
-  if page.respond_to? :should
-    page.all(:visible=>true).should_not have_content(text)
-  else
-    assert page.all(:visible=>true).has_no_content?(text)
-  end
+Then /^(?:|I )should not see "([^"]*)"$/ do |text|
+  #if page.respond_to? :should
+  find(:css, "#some_element").should_not be_visible
+  #expect(page.all(:visible=>true)).not_to have_content(text)
+  #else
+  #  assert page.all(:visible=>true).has_no_content?(text)
+  #end
 end
 
 Then /^(?:|I )should not see \/([^\/]*)\/$/ do |regexp|

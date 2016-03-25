@@ -60,7 +60,7 @@ td button {
     text-align:center;
     cursor:pointer;
     height:80px;
-    margin-top: 15px;
+    margin-top: 25px;
 }
 
 
@@ -126,7 +126,7 @@ td button {
 }
 
 .table_header_container{
-    top:5px;
+    top:10px;
     height:25px;
     z-index: 2;
     background-color: rgb(0, 105, 74);
@@ -152,7 +152,7 @@ td button {
     display:block;
     box-shadow: 0 1px 1px #ccc;
     background-color:transparent;
-    top:5px;
+    top:10px;
 }
 
 #table_header, #patients_table{
@@ -325,7 +325,6 @@ td button {
 }
 
 #tabs_container td{
-    vertical-align: top;
     text-align: center;
     cursor:pointer;
     padding:0;
@@ -337,7 +336,7 @@ td button {
 #tabs_container th{
     font-weight: lighter;
     margin:0;
-    padding: 5px 0;
+    padding: 10px 0;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-right: dotted 1px rgb(0, 105, 47);

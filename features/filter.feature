@@ -57,6 +57,17 @@ Scenario: select all checkboxes you
   And I should see "Start Date"
   And I should see "End Date"
   
-  
-  
+Scenario: press reset after filtered page
+  When I press "Filter"
+  And I uncheck "demographic_fields_form"
+  And I check "Name"
+  And I check "Gender"
+  And I uncheck "Start Date"
+  And I uncheck "End Date"
+  And I press "OK"
+  And I press "Reset"
+  Then I should see "Name"
+  And I should see "Gender"
+  And I should see "Start Date"
+  And I should see "End Date"
   

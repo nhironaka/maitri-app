@@ -10,12 +10,9 @@ Background: users in database
   | username                | password    | email                | password_confirmation |
   | existuser               | existuser1  | existuser1@gmail.com | existuser1            |
   
-  And I am on the Login page
-  And I fill in "user_login" with "existuser"
-  And I fill in "login_password" with "existuser1"
-  And I press "Login"
+  And I am logged in
   
 Scenario: logout user
-  When I press "Logout"
+  When I follow "Log Out"
   Then I should be on the Login page
   
