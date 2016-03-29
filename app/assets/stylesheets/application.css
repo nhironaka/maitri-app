@@ -403,6 +403,8 @@ td a{
     right:0px;
     display:inline-block; 
     float:right;
+    width:250px;
+    height:100%;
 }
 
 #logo{

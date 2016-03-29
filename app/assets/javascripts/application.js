@@ -43,12 +43,12 @@ function hide_columns(){
     $('fieldset input:checked').each(function() {
         var val = $(this).attr('name');
         console.log('td:nth-child('+val+'), th:nth-child(' + val + ')');
-        $('#patients_table td:nth-child('+val+'), #patients_table th:nth-child(' + val + ')').show();
+        $('#patients_table td:nth-child('+val+'), #table_header th:nth-child(' + val + ')').show();
     });
     $('fieldset input:checkbox:not(:checked)').each(function() {
         var val = $(this).attr('name');
         console.log('td:nth-child('+val+'), th:nth-child(' + val + ')');
-        $('#patients_table td:nth-child('+val+'), #patients_table th:nth-child(' + val + ')').hide();
+        $('#patients_table td:nth-child('+val+'), #table_header th:nth-child(' + val + ')').hide();
     });
 }
 
@@ -56,6 +56,6 @@ function reset(){
     var val;
     for (val = 1; val <= 12; val++){
         console.log('td:nth-child('+val+'), th:nth-child(' + val + ')');
-        $('#patients_table td:nth-child('+val+'), #patients_table th:nth-child(' + val + ')').show();
+        $('#patients_table td:nth-child('+val+'), #table_header th:nth-child(' + val + ')').show();
     }
 }
