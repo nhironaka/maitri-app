@@ -327,6 +327,7 @@ PLATFORMS
 DEPENDENCIES
   autotest-rails
   byebug
+  capybara
   codeclimate-test-reporter
   coffee-rails (~> 4.1.0)
   cucumber-rails
