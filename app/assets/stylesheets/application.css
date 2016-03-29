@@ -56,8 +56,7 @@ fieldset {
 }
 
 td button,
-td a,
-td form{
+td a{
     top:0;
     background:none!important;
     border:none; 
@@ -150,8 +149,8 @@ td form{
 /** Table Formatting **/
 .table_header_container, .scrolling_table {
     position:relative;
-    left:50%;
-    transform:translateX(-50%);
+    margin-left: auto;
+    margin-right:auto;
     border-color: rgb(0, 105, 73);
     border-width:1px;
     border-style:solid;
@@ -370,7 +369,7 @@ td form{
     vertical-align:top;
     text-align: center;
     cursor:pointer;
-    padding-top:25px;
+    padding-top:40px;
     top:0;
 }
 .tabs_content td.inactive{
@@ -406,5 +405,11 @@ td form{
 }
 
 #logo{
-    padding-top:15px;
+    padding-top:10px;
+}
+
+.footer, .footer a{
+    color:#DDDDDD;
+    font-size: 10px;
+    right:0;
 }
