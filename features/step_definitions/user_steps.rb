@@ -1,24 +1,16 @@
-
 Given(/^the following users exist:$/) do |table|
   table.hashes.each do |user|
-    User.create(:username => user[:username], :password => user[:password], :email => user[:email])
+    User.create(:username => user["username"], :password => user["password"], :email => user["email"], :password_confirmation =>user["password_confirmation"])
   end
 end
 
-@temp_user
-
-When(/^I fill in user with "([^"]*)"$/) do |arg1|
-  @temp_user = User.create(:username => arg1)
-end
-
-When(/^I fill in password with "([^"]*)"$/) do |arg1|
-  @temp_user.update_attribute(:password => arg1)
-end
-
-Given(/^the following patients exist:$/) do |table|
-  table.hashes.each do |patient|
-    Patient.create(:name => patient["Name"], :gender => patient["Gender"], :start_date => patient["Start Date"])
-  end
+Given /I am logged in/ do
+  user = "existuser"
+  password = "existuser1"
+  visit '/users/sign_in'
+  fill_in "user_login", :with => user
+  fill_in "user_password", :with => password
+  click_button "Log In"
 end
 
 Then(/^I should (not\s+)?see "([^"]*)" before "([^"]*)"$/) do |no, arg1, arg2|
@@ -27,4 +19,7 @@ Then(/^I should (not\s+)?see "([^"]*)" before "([^"]*)"$/) do |no, arg1, arg2|
   else
     expect(page).to have_content(/#{arg1}.*#{arg2}.*/)
   end
+    User.create(:username => user[:username], :password => user[:password], :email => user[:email], :password_confirmation => user[:password_confirmation])
 end
+
+

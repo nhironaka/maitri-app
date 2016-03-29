@@ -26,5 +26,36 @@ function sticky(){
         console.log(top_scroll);
         elem.style.display = "none";
     }
-    
+}
+
+function popupfilter(){
+    $('#popup').toggle();
+}
+
+function select_all(field_type){
+    $(field_type + '_form').change(function () {
+        $(field_type + " input:checkbox").prop('checked', $(this).prop("checked"));
+    });
+}
+
+function hide_columns(){
+    $('#popup').hide();
+    $('fieldset input:checked').each(function() {
+        var val = $(this).attr('name');
+        console.log('td:nth-child('+val+'), th:nth-child(' + val + ')');
+        $('td:nth-child('+val+'), th:nth-child(' + val + ')').show();
+    });
+    $('fieldset input:checkbox:not(:checked)').each(function() {
+        var val = $(this).attr('name');
+        console.log('td:nth-child('+val+'), th:nth-child(' + val + ')');
+        $('td:nth-child('+val+'), th:nth-child(' + val + ')').hide();
+    });
+}
+
+function reset(){
+    var val;
+    for (val = 1; val <= 12; val++){
+        console.log('td:nth-child('+val+'), th:nth-child(' + val + ')');
+        $('td:nth-child('+val+'), th:nth-child(' + val + ')').show();
+    }
 }

@@ -17,6 +17,6 @@ class Patient < ActiveRecord::Base
     end
     
     def self.all_headers
-        ["Name", "Gender", "Start Date", "End-Date"]
+        ["Name", "Gender", "Start Date", "End Date"]
     end
 end

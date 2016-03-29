@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -54,11 +55,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  root :to => redirect('/login')
-  get "patients/overview" => "patients#index", as: :patients_overview
-  get "users/edit" => "users#edit"
-  get "login" => "users#login"
-  post "login" => "users#valid_login?"
-  resources :users
+  root "patients#index"
+  get "patients/overview", :to => "patients#index", as: :patients_overview
   resources :patients
 end

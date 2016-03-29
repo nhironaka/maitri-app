@@ -1,9 +1,12 @@
 source 'https://rubygems.org'
 ruby '2.2.2'
+
 # making your Gemfile safe for Heroku
 group :development, :test do
   # make sure sqlite3 gem ONLY occurs inside development & test groups
   gem 'sqlite3' # use SQLite only in development and testing
+  gem 'byebug'
+  gem 'jasmine-rails' # if you plan to use JavaScript/CoffeeScript
 end 
 group :production do
   # make sure the following gems are in your production group:
@@ -28,11 +31,17 @@ gem 'jquery-rails'
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'rake'
+gem 'devise'
+
+group :doc do
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'sdoc', '~> 0.4.0'
+end
+  
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+#gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -40,11 +49,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# debugger is useful in development mode too
-group :development, :test do
-  gem 'byebug'
-  gem 'jasmine-rails' # if you plan to use JavaScript/CoffeeScript
-end
 # setup Cucumber, RSpec, autotest support
 group :test do
   gem 'rspec-rails', '2.14'
@@ -55,5 +59,6 @@ group :test do
   gem 'autotest-rails'
   gem 'factory_girl_rails' # if using FactoryGirl
   gem 'metric_fu'        # collect code metrics
-  gem 'rake'
+  gem 'codeclimate-test-reporter', :require => nil
 end
+

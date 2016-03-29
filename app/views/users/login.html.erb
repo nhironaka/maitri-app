@@ -1,9 +1,10 @@
 <div class="container">
     <h1 style="text-align:center">Welcome</h1>
-    <%= form_tag(:action => 'login') do %>
+    <%= form_for(:user, :url => {:controller => 'users', :action => 'valid_login?'}) do |f| %>
         <p>Username or Email:</br> <%= text_field_tag(:username_or_email) %></p> 
         <p>Password:</br> <%= password_field_tag :login_password %></p> 
-        <%= submit_tag "Log In", class: "option-button"%>
+        <%= f.submit :Login, :class=>"option-button"%>
     <% end %>
+    <%= flash[:error].html_safe unless flash[:error].blank? %>
 </div>
 

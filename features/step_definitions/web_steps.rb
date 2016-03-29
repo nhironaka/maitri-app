@@ -132,6 +132,10 @@ When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
   attach_file(field, File.expand_path(path))
 end
 
+When /^(?:|I )click on "([^"]*)"$/ do |img|
+  find(img).click
+end
+
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
   if page.respond_to? :should
     page.should have_content(text)
@@ -281,4 +285,12 @@ end
 
 Then /^show me the page$/ do
   save_and_open_page
+end
+
+Then(/^I should (not\s+)?see "([^"]*)" before "([^"]*)"$/) do |no, arg1, arg2|
+  if no 
+    expect(page).not_to have_content(/#{arg1}.*#{arg2}.*/)
+  else
+    expect(page).to have_content(/#{arg1}.*#{arg2}.*/)
+  end
 end
