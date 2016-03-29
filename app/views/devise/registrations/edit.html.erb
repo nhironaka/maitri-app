@@ -1,6 +1,9 @@
-      <td><i class="fa fa-user-plus"></i><br><a href="/users/sign_up"> Add New User</a></td>
-      <td><i class="fa fa-trash-o"></i>
-        <%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class=>"button_link"%>
+      <td><a href="/users/sign_up"><i class="fa fa-user-plus fa-3x"></i><br>Add New User</a></td>
+      <td>
+        <%= button_to registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete do %>
+          <i class="fa fa-trash-o fa-3x"></i><br>
+          Delete my account
+          <%end%>
       </td>
       <td></td>
       <td></td>

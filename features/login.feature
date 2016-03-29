@@ -35,5 +35,5 @@ Scenario: blank password
   Then I should see "Invalid login or password"
 
 Scenario: I try to access the homepage without logging in
-  When I click on "img[id='logo']"
+  When I go to the home page
   Then I should be on the Login page

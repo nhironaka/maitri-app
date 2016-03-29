@@ -28,14 +28,18 @@ body{
     height:100%;
     font-size: 20px;
     font-family: 'Open Sans', 'Trebuchet MS', Helvetica, Garuda, sans-serif;
-    background-color: rgb(255, 255, 254);
     z-index: 1;
     font-weight: lighter;
+    background:transparent;
 }
 
 table img {
     max-height: 100%;
     max-width: 100%;
+}
+
+table{
+    overflow: auto;
 }
 
 label{
@@ -51,7 +55,8 @@ fieldset {
     width:135px;
 }
 
-td button {
+td button,
+td a{
     top:0;
     background:none!important;
     border:none; 
@@ -60,7 +65,9 @@ td button {
     text-align:center;
     cursor:pointer;
     height:80px;
-    margin-top: 25px;
+    vertical-align:top;
+    color:white;
+    text-decoration: none;
 }
 
 
@@ -84,6 +91,15 @@ td button {
 }
 
 /** App Content **/
+.background{
+    background-color: rgb(0, 105, 74);
+    background-image: -webkit-linear-gradient(top,rgb(0, 105, 74), rgb(255, 255, 254));
+    background-image: -moz-linear-gradient(top,rgb(0, 105, 74), rgb(255, 255, 254));
+    background-image: -o-linear-gradient(top,rgb(0, 105, 74), rgb(255, 255, 254));
+    background-image: -ms-linear-gradient(top,rgb(0, 105, 74), rgb(255, 255, 254));
+    width:100%;
+    height:100%;
+}
 .content{
     font-size: 14px;
     height:75%;
@@ -93,17 +109,33 @@ td button {
     padding:0;
     margin:none;
     top:25%;
+    background-color: transparent;
 }
 
-.half-width{
+.half-width, .half-width-shifted{
     position: absolute;
     top:50%; left:50%;
     transform: translate(-50%,-50%);
+    width:450px;
+    text-align: left;
+}
+
+.half-width-shifted img{
+    float:left;
+    position: relative;
+    top:5px;
+}
+
+.half-width-shifted{
+    width:550px;
+}
+
+.half-width{
     padding:40px 80px 40px 80px;
-    width:auto;
     border:1px solid rgb(0,105,73);
     border-radius:5px;
-    text-align: left;
+    background-color:rgb(255,255,254);
+    color:rgb(0,105,47);
 }
 
 .flash{
@@ -117,24 +149,26 @@ td button {
 /** Table Formatting **/
 .table_header_container, .scrolling_table {
     position:relative;
-    left:50%;
-    transform:translateX(-50%);
+    margin-left: auto;
+    margin-right:auto;
     border-color: rgb(0, 105, 73);
     border-width:1px;
     border-style:solid;
     width:1100px;
+    overflow: auto;
 }
 
 .table_header_container{
     top:10px;
     height:25px;
     z-index: 2;
-    background-color: rgb(0, 105, 74);
+    /**background-color: rgb(0, 105, 74);
     background-image: -webkit-linear-gradient(top,rgb(125,178,161), rgb(92,159,138));
     background-image: -moz-linear-gradient(top,rgb(125,178,161), rgb(92,159,138));
     background-image: -o-linear-gradient(top,rgb(125,178,161), rgb(92,159,138));
     background-image: -ms-linear-gradient(top,rgb(125,178,161), rgb(92,159,138));
-    background-image: linear-gradient(top,rgb(125,178,161), rgb(92,159,138));
+    background-image: linear-gradient(top,rgb(125,178,161), rgb(92,159,138));**/
+    background-color:rgb(255,255,254);
     border-bottom:none;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
@@ -151,7 +185,7 @@ td button {
     height:550px;
     display:block;
     box-shadow: 0 1px 1px #ccc;
-    background-color:transparent;
+    background-color:white;
     top:10px;
 }
 
@@ -293,60 +327,90 @@ td button {
 }
 
 /** Tabs **/
-#tabs_container {
-	position:fixed;
+.tabs_header{
+    width:100%;
+    display:block;
+    background-color: white;
+    z-index: 15;
+    
+}
+.tabs_container, .tabs_content {
+    position: relative;
 	border:none;
-    width: 100%;
 	top:0;
 	margin:0;
 	padding:0;
-	height:25%;
     font-weight: lighter;
     table-layout: fixed;
     border-collapse: collapse;
     border-spacing:0;
+    width:1100px;
+    left:50%;
+    transform:translateX(-50%);
+    overflow-x:auto;
+    display:inline-table;
 }
-#tabs_container thead{
+
+.tabs_container{
+    height:23%;
+}
+.tabs_container thead{
     background-color: rgb(255, 255, 254);
 }
-#tabs_container tbody{
+.tabs_content tbody{
     border:none;
-    /**background-color: #ffda76;background-color: 
+    /**background-color: .ffda76;background-color: 
     background-image: -webkit-linear-gradient(top,rgb(255, 218, 118), rgb(255, 255, 254));
     background-image: -moz-linear-gradient(top,rgb(255, 218, 118), rgb(255, 255, 254));
     background-image: -o-linear-gradient(top,rgb(255, 218, 118), rgb(255, 255, 254));
-    background-image: -ms-linear-gradient(top,rgb(255, 218, 118), rgb(255, 255, 254));
-    background-image: linear-gradient(top,rgb(255, 218, 118), rgb(255, 255, 254));**/
-    background-color: rgb(0, 105, 74);
-    background-image: -webkit-linear-gradient(top,rgb(0, 105, 74), rgb(255, 255, 254));
-    background-image: -moz-linear-gradient(top,rgb(0, 105, 74), rgb(255, 255, 254));
-    background-image: -o-linear-gradient(top,rgb(0, 105, 74), rgb(255, 255, 254));
-    background-image: -ms-linear-gradient(top,rgb(0, 105, 74), rgb(255, 255, 254));
-    background-image: linear-gradient(top,rgb(0, 105, 74), rgb(255, 255, 254));
+    background-image: -ms-linear-gradient(top,rgb(255, 218, 118), rgb(255, 255, 254));**/
+    background-color:transparent;
 }
-
-#tabs_container td{
+.tabs_content td{
+    vertical-align:top;
     text-align: center;
     cursor:pointer;
-    padding:0;
+    padding-top:40px;
     top:0;
 }
-#tabs_container td.inactive{
+.tabs_content td.inactive{
     cursor: default;
 }
-#tabs_container th{
+.tabs_container th{
     font-weight: lighter;
     margin:0;
     padding: 10px 0;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
     border-right: dotted 1px rgb(0, 105, 47);
+    background-color: transparent;
+    color:black;
 }
-#tabs_container th.active_tab{
-    background-color: rgb(0, 105, 74);
+.tabs_container th.active_tab{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 10px;
+    background-color: rgb(14, 113, 84);
+    background-image: -webkit-linear-gradient(top,rgb(0, 105, 74), rgb(14, 113, 84));
+    background-image: -moz-linear-gradient(top,rgb(0, 105, 74), rgb(14, 113, 84));
+    background-image: -o-linear-gradient(top,rgb(0, 105, 74), rgb(14, 113, 84));
+    background-image: -ms-linear-gradient(top,rgb(0, 105, 74), rgb(14, 113, 84));
     border:none;
+}
+.tabs_container th.active_tab a{
+    color:white;
 }
 
-.sign_in th{
-    border:none;
+.sign_{
+    position:relative;
+    right:0px;
+    display:inline-block; 
+    float:right;
+}
+
+#logo{
+    padding-top:10px;
+}
+
+.footer, .footer a{
+    color:#DDDDDD;
+    font-size: 10px;
+    right:0;
 }

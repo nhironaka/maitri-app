@@ -10,23 +10,32 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if user_signed_in? %>
-    <table id="tabs_container">
-      <thead>
-        <tr>
-          <th id="home_tab"><a href="/" class="tab"><i class="fa fa-home"></i> Home</a></th>
-          <th id="report_tab"><a href="/patients/reports"><i class="fa fa-file-text-o"></i> Reports</a></th>
-          <th id="edit_tab"><a href="/users/edit"><i class="fa fa-cog"></i> Settings</a></th>
-          <th><%= link_to destroy_user_session_path, :method => :delete do %><i class="fa fa-sign-out"></i> Log Out<%end%></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="logo"><a href="/"><img id="logo" src="/assets/Maitri.png" style="height:50%"></a></td>
-  <% elsif !is_user_path %>
-    <% controller.redirect_to ("/users/sign_in") %>
-  <% end %>
-  <%= yield %>
+  <div class="background">
+    <% if user_signed_in? %>
+      <div class="tabs_header">
+        <table class="tabs_container">
+          <thead>
+            <tr>
+              <th id="home_tab"><a href="/" class="tab"><i class="fa fa-home"></i> Home</a></th>
+              <th id="report_tab"><a href="/patients/reports"><i class="fa fa-file-text-o"></i> Reports</a></th>
+              <th id="edit_tab"><a href="/users/edit"><i class="fa fa-cog"></i> Settings</a></th>
+              <th style="border:none"><%= link_to destroy_user_session_path, :method => :delete do %><i class="fa fa-sign-out"></i> Log Out<%end%></th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <table class="tabs_content">
+        <tbody>
+          <tr>
+            <td id="logo"><a href="/"><img id="logo" src="/assets/Maitri.png"></a></td>
+    <% elsif !is_user_path %>
+      <% controller.redirect_to ("/users/sign_in") %>
+    <% end %>
+    <%= yield %>
+  </div>
+  <div class="footer">
+    <a href="https://icons8.com">Icon pack by Icons8</a>
+  </footer>
 </body>
 <script>
   $(document).ready(function(){

@@ -13,6 +13,10 @@ class PatientsController < ApplicationController
       end
     end
     
+    def import
+      workbook = RubyXL::Parser.parse("file/patients.xlsx");
+    end
+      
     private
   
     def sort_column

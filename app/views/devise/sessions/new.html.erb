@@ -1,24 +1,7 @@
-<table id="tabs_container">
-  <thead>
-    <tr>
-      <th id="signin_tab" class="active_tab">Sign in</th>
-      <th style="border:none"></th><th style="border:none"></th><th style="border:none"></th><th style="border:none"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="logo"><a href="/"><img id="logo" src="/assets/Maitri.png" style="height:50%"></a></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
-
-<div class="content">
-  <div class="half-width">
-    <h1 style="text-align:center">Welcome</h1>
+<div class="half-width-shifted">
+  <img src="/assets/Maitri_large.png">
+  <div class="sign_">
+    <h1>Welcome</h1>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <p><%= f.label :login %><br />
@@ -34,9 +17,10 @@
         <%= f.submit "Log In", :class=>"option-button" %>
       </div>
       <div class="flash">
-      <p>*<%= notice %></p>
-      <p>*<%= alert %></p>
+      <p><%= notice %></p>
+      <p><%= alert %></p>
     </div>
     <% end %>
   </div>
+  
 </div>
