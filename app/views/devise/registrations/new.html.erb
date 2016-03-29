@@ -1,36 +1,38 @@
-<div class="half-width-shifted">
-  <h2>Create a new user</h2>
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
-    </div>
+<div class="half-width-shifted larger">
+  <img style="top:40px" src="/assets/Maitri_large.png">
+  <div class="sign_">
+    <h2>Create a new user</h2>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label :username %><br />
+        <%= f.text_field :username %>
+      </div>
+      <div class="field">
+        <%= f.label :password do %>
+        Password 
+        <% if @minimum_password_length %>
+          (<%= @minimum_password_length %> characters minimum)
+        <% end %><%end%><br>
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
     
-    <div class="field">
-      <p><%= f.label :username %><br />
-      <%= f.text_field :username %></p>
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+    
+      <div class="actions">
+        <%= f.submit "Sign Up", :class=>"option-button"%>
+      </div>
+      <%= devise_error_messages! %>
+    <% end %>
+    <div style="position:relative">
+      <a href="/users/edit"><button class="option-button">Cancel</button></a>
     </div>
-  
-    <div class="field">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
-    </div>
-  
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
-    </div>
-  
-    <div class="actions">
-      <%= f.submit "Sign Up", :class=>"option-button"%>
-    </div>
-    <%= devise_error_messages! %>
-  <% end %>
-  <div style="position:relative">
-    <a href="/users/edit"><button class="option-button">Cancel</button></a>
   </div>
+  
 </div>
-

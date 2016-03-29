@@ -38,6 +38,10 @@ table img {
     max-width: 100%;
 }
 
+table{
+    overflow: auto;
+}
+
 label{
     font-size:14px;
 }
@@ -123,6 +127,10 @@ td form{
     top:5px;
 }
 
+.half-width-shifted{
+    width:550px;
+}
+
 .half-width{
     padding:40px 80px 40px 80px;
     border:1px solid rgb(0,105,73);
@@ -148,6 +156,7 @@ td form{
     border-width:1px;
     border-style:solid;
     width:1100px;
+    overflow: auto;
 }
 
 .table_header_container{
@@ -323,6 +332,7 @@ td form{
     display:block;
     background-color: white;
     z-index: 15;
+    
 }
 .tabs_container, .tabs_content {
     position: relative;
@@ -337,6 +347,8 @@ td form{
     width:1100px;
     left:50%;
     transform:translateX(-50%);
+    overflow-x:auto;
+    display:inline-table;
 }
 
 .tabs_container{
@@ -386,7 +398,7 @@ td form{
     color:white;
 }
 
-#sign_in{
+.sign_{
     position:relative;
     right:0px;
     display:inline-block; 
