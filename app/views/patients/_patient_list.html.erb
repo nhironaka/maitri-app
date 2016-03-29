@@ -1,22 +1,14 @@
 <div class="scrolling_table">
-      <table id="patients_table">
-        <!---<thead>
-          <tr>
-            <th id="table-patient-name">Name</th>
-            <th id="table-patient-gender">Gender</th>
-            <th id="table-patient-start_date">Start Date</th>
-            <th id="table-patient-end_date" style="border:none">End Date</th>
-          </tr>
-        </thead>--->
-        <tbody>
-          <% @patients.each do |patient| %>
-            <tr>
-                <td><%= patient.name %></td>
-                <td><%= patient.gender %></td>
-                <td><%= patient.start_date.strftime("%Y-%b-%d") %></td>
-                <td style="border:none"><%= patient.end_date.strftime("%Y-%b-%d") %></td>  
-            </tr>
-        <% end %>
-       </tbody>
-      </table>
-    </div> 
+  <table id="patients_table">
+    <tbody>
+      <% @patients.each do |patient| %>
+        <tr>
+            <td><%= patient.name %></td>
+            <td><%= patient.gender %></td>
+            <td><%= patient.start_date.strftime("%Y-%b-%d") %></td>
+            <td style="border:none"><%= patient.end_date.strftime("%Y-%b-%d") %></td>  
+        </tr>
+    <% end %>
+   </tbody>
+  </table>
+</div> 

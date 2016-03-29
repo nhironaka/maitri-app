@@ -2,24 +2,44 @@
 <html>
 <head>
   <title>Maitri</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="header">
-    <a href="/patients/overview"><img id="logo" src="/assets/Maitri.png" style="left:0"></a>
-     <% if user_signed_in? %>
-      <div class="bottom_link">
-        <i class="fa fa-sign-out"></i>
-        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-      </div>
-    <% elsif !is_user_path %>
-      <% controller.redirect_to ("/users/sign_in") %>
-    <% end %>
-  </div>
-<%= yield %>
-
+  <% if user_signed_in? %>
+    <table id="tabs_container">
+      <thead>
+        <tr>
+          <th id="home_tab"><a href="/" class="tab"><i class="fa fa-home"></i> Home</a></th>
+          <th id="report_tab"><a href="/patients/reports"><i class="fa fa-file-text-o"></i> Reports</a></th>
+          <th id="edit_tab"><a href="/users/edit"><i class="fa fa-cog"></i> Settings</a></th>
+          <th><%= link_to destroy_user_session_path, :method => :delete do %><i class="fa fa-sign-out"></i> Log Out<%end%></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="logo"><a href="/"><img id="logo" src="/assets/Maitri.png" style="height:50%"></a></td>
+  <% elsif !is_user_path %>
+    <% controller.redirect_to ("/users/sign_in") %>
+  <% end %>
+  <%= yield %>
 </body>
+<script>
+  $(document).ready(function(){
+    var path = window.location.pathname;
+    console.log(path);
+    if (path=="/users/edit"){
+      $("#edit_tab").addClass("active_tab");
+      document.getElementById("report_tab").style.border = "none";
+    } else if (path == '/' || path.match(/patients\/overview/)){
+      $("#home_tab").addClass("active_tab");
+    } else {
+      console.log("here");
+    }
+  });
+</script>
 </html>
