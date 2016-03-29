@@ -135,7 +135,7 @@ td a{
     border:1px solid rgb(0,105,73);
     border-radius:5px;
     background-color:rgb(255,255,254);
-    color:rgb(0,105,47);
+    color:black
 }
 
 .flash{
@@ -403,6 +403,8 @@ td a{
     right:0px;
     display:inline-block; 
     float:right;
+    width:250px;
+    height:100%;
 }
 
 #logo{
