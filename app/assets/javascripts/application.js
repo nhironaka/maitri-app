@@ -15,17 +15,8 @@
 //= require turbolinks
 //= require_tree .
 
-function sticky(){
-    var patients = document.getElementById("patients_table");
-    var top_scroll = patients.scrollTop;
-    var elem = document.getElementById("table_header");
-    if (top_scroll != 0){
-        console.log(top_scroll);
-        elem.style.display = "block";
-    } else {
-        console.log(top_scroll);
-        elem.style.display = "none";
-    }
+function synch_scroll(){
+    $('#table_header_').scrollLeft($("#patients_table_").scrollLeft());
 }
 
 function popupfilter(){
