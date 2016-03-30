@@ -230,6 +230,7 @@ td a{
 .table_header_container::-webkit-scrollbar,
 .scrolling_table::-webkit-scrollbar {
     width: 5px;
+    height: 5px;
 }
  
 .scrolling_table::-webkit-scrollbar-track{
