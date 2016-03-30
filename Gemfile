@@ -36,6 +36,9 @@ gem 'rubyXL'
 gem 'rake'
 # Authenticate users
 gem 'devise'
+# Solve Heroku Asset Problems
+gem 'rails_serve_static_assets'
+gem 'rails_stdout_logging'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
