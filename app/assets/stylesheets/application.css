@@ -38,10 +38,6 @@ table img {
     max-width: 100%;
 }
 
-table{
-    overflow: auto;
-}
-
 label{
     font-size:14px;
 }
@@ -147,31 +143,36 @@ td a{
 }
 
 /** Table Formatting **/
-.table_header_container, .scrolling_table {
+.table_container{
+    top:10px;
     position:relative;
+    height:575px;
+    overflow-x: scroll;
     margin-left: auto;
     margin-right:auto;
-    border-color: rgb(0, 105, 73);
-    border-width:1px;
-    border-style:solid;
-    width:1100px;
-    overflow: auto;
+    width:1150px;
+    border: 1px solid rgb(0, 105, 73);   
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    z-index: 7;   
+}
+
+.table_header_container, .scrolling_table {
+    position:relative;
+    top:0;
+    border:none;
+    overflow-y: scroll;
 }
 
 .table_header_container{
-    top:10px;
     height:25px;
     z-index: 2;
-    /**background-color: rgb(0, 105, 74);
-    background-image: -webkit-linear-gradient(top,rgb(125,178,161), rgb(92,159,138));
-    background-image: -moz-linear-gradient(top,rgb(125,178,161), rgb(92,159,138));
-    background-image: -o-linear-gradient(top,rgb(125,178,161), rgb(92,159,138));
-    background-image: -ms-linear-gradient(top,rgb(125,178,161), rgb(92,159,138));
-    background-image: linear-gradient(top,rgb(125,178,161), rgb(92,159,138));**/
     background-color:rgb(255,255,254);
-    border-bottom:none;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
+    top:0;
+    left:0;
+    border-bottom: 1px solid rgb(0, 105, 73); 
+    border-left: 1px solid white; 
+    overflow-x: hidden;
 }
 
 .table_header_container a{
@@ -180,13 +181,11 @@ td a{
 }
 
 .scrolling_table{
-    overflow-y: scroll;
     z-index:5; 
     height:550px;
     display:block;
     box-shadow: 0 1px 1px #ccc;
     background-color:white;
-    top:10px;
 }
 
 #table_header, #patients_table{
@@ -195,26 +194,27 @@ td a{
     font-size: 18px;
     border-collapse: collapse;
     border-spacing:0;
-    width:100%;
 }
 
 #table_header{
+    position: relative;
     text-align: center;
-    width:1095px;
-    left:0px;
+    left:-1px;
 }
 
 #table_header th,
 #patients_table td{
-    border-right:solid rgb(0, 105, 73) 1px;
+    border-left:solid rgb(0, 105, 73) 1px;
 }
 
 #table_header th{
     padding-bottom:4px;
+    min-width:152px;
 }
 
 #patients_table td{
     padding-left:5px;
+    min-width:148px;
 }
 
 #patients_table tr:nth-child(even) {
@@ -227,11 +227,13 @@ td a{
 } 
 
 /** Scrollbar **/
+.table_header_container::-webkit-scrollbar,
 .scrolling_table::-webkit-scrollbar {
     width: 5px;
+    height: 5px;
 }
  
-.scrolling_table::-webkit-scrollbar-track {
+.scrolling_table::-webkit-scrollbar-track{
     -webkit-box-shadow: inset 0 0 6px rgb(0, 105, 73);
     -webkit-border-radius: 10px;
     border-radius: 10px;
