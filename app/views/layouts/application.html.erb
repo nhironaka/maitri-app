@@ -42,14 +42,11 @@
 <script>
   $(document).ready(function(){
     var path = window.location.pathname;
-    console.log(path);
     if (path=="/users/edit"){
       $("#edit_tab").addClass("active_tab");
       document.getElementById("report_tab").style.border = "none";
     } else if (path == '/' || path.match(/patients\/overview/)){
       $("#home_tab").addClass("active_tab");
-    } else {
-      console.log("here");
     }
   });
 </script>
