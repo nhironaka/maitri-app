@@ -10,6 +10,6 @@ module ApplicationHelper
   end
   
   def is_user_path
-    !(request.original_url =~ /\/users/).nil?
+    !(request.original_url =~ /\/users\/sign_up/).nil?
   end
 end
