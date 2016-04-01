@@ -148,6 +148,7 @@ td a{
     position:relative;
     height:575px;
     overflow-x: scroll;
+    overflow-y: hidden;
     margin-left: auto;
     margin-right:auto;
     width:1150px;
@@ -334,7 +335,6 @@ td a{
     display:block;
     background-color: white;
     z-index: 15;
-    
 }
 .tabs_container, .tabs_content {
     position: relative;
@@ -361,18 +361,13 @@ td a{
 }
 .tabs_content tbody{
     border:none;
-    /**background-color: .ffda76;background-color: 
-    background-image: -webkit-linear-gradient(top,rgb(255, 218, 118), rgb(255, 255, 254));
-    background-image: -moz-linear-gradient(top,rgb(255, 218, 118), rgb(255, 255, 254));
-    background-image: -o-linear-gradient(top,rgb(255, 218, 118), rgb(255, 255, 254));
-    background-image: -ms-linear-gradient(top,rgb(255, 218, 118), rgb(255, 255, 254));**/
     background-color:transparent;
 }
 .tabs_content td{
     vertical-align:top;
     text-align: center;
     cursor:pointer;
-    padding-top:40px;
+    padding-top:30px;
     top:0;
 }
 .tabs_content td.inactive{
@@ -387,7 +382,6 @@ td a{
     color:black;
 }
 .tabs_container th.active_tab{
-    border-top-left-radius: 5px;
     border-top-right-radius: 10px;
     background-color: rgb(14, 113, 84);
     background-image: -webkit-linear-gradient(top,rgb(0, 105, 74), rgb(14, 113, 84));
@@ -410,7 +404,7 @@ td a{
 }
 
 #logo{
-    padding-top:10px;
+    padding-top:5px;
 }
 
 .footer, .footer a{

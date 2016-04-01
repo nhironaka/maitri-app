@@ -12,10 +12,6 @@ class PatientsController < ApplicationController
         @patients = Patient.all
       end
     end
-    
-    def import
-      workbook = RubyXL::Parser.parse("file/patients.xlsx");
-    end
       
     private
   
