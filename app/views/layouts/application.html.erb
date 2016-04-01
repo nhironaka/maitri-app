@@ -30,7 +30,7 @@
         <tbody>
           <tr>
             <td id="logo"><a href="/"><img id="logo" src="/assets/Maitri.png"></a></td>
-    <% elsif !is_user_path %>
+    <% elsif is_user_path %>
       <% controller.redirect_to ("/users/sign_in") %>
     <% end %>
     <%= yield %>
