@@ -43,3 +43,7 @@ Scenario: blank password
 Scenario: I try to access the homepage without logging in
   When I go to the home page
   Then I should be on the Login page
+  
+Scenario: I try to sign up
+  When I go to the sign up page
+  Then I should be on the Login page
