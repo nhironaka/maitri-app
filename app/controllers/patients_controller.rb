@@ -11,7 +11,6 @@ class PatientsController < ApplicationController
       else
         @patients = Patient.all
       end
-      
       if not start_date.nil? and not start_date.empty?
         @patients = @patients.where('start_date > ?', start_date)
       end

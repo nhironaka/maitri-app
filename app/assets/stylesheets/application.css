@@ -425,3 +425,9 @@ td a{
 .hidden{
     display:none;
 }
+
+.bottom-right{
+    position:fixed; 
+    bottom:0; 
+    right:0;
+}

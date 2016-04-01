@@ -10,10 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//=require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+//$.cookie.JSON = true;
 
 function synch_scroll(){
     $('#table_header_').scrollLeft($("#patients_table_").scrollLeft());
@@ -29,38 +31,27 @@ function select_all(field_type){
     });
 }
 
-function hide_columns(){
-    $('#popup').hide();
-    $('fieldset input:checked').each(function() {
-        var val = $(this).attr('name');
-        $('#patients_table td:nth-child('+val+'), #table_header th:nth-child(' + val + ')').removeClass("hidden");
-    });
-    $('fieldset input:checkbox:not(:checked)').each(function() {
-        var val = $(this).attr('name');
-        console.log(val);
-        $('#patients_table td:nth-child('+val+')').addClass("hidden");
-        $('#table_header th:nth-child(' + val + ')').addClass("hidden")
-    });
-}
-
 function reset(){
-    var val;
-    for (val = 1; val <= 12; val++){
+    for (var val = 1; val <= 12; val++){
         $('#patients_table td:nth-child('+val+'), #table_header th:nth-child(' + val + ')').removeClass("hidden");
     }
 }
 
-function date_filterer() {
-    $("#date_filter").submit();
-    $(document).ready(function() {
-  return $("#date_filter").on("ajax:success", function(e, data, status, xhr) {
-    $("#patients_renderer").append(xhr.responseText);
-  }).on("ajax:error", function(e, xhr, status, error) {
-    return $("#date_filter").append("<p>ERROR</p>");
-  });
-});
+function get_checkboxes(){
+    $('fieldset input:checked').each(function () {
+        localStorage.setItem($(this).attr['name'], true);
+    });
 }
 
-function submit_filters() {
-    hide_columns();
+function hide_columns(){
+    $('#popup').hide();
+    for (var i=0; i <= 12; i++){
+        val = localStorage.getItem(i);
+        if (val == null || val == true){
+            $('#patients_table td:nth-child('+i+'), #table_header th:nth-child(' + i + ')').removeClass("hidden");
+        } else {
+            $('#patients_table td:nth-child('+i+'), #table_header th:nth-child(' + i + ')').addClass("hidden");
+        }
+        
+    }
 }
