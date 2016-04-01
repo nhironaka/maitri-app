@@ -382,7 +382,8 @@ td a{
     color:black;
 }
 .tabs_container th.active_tab{
-    border-top-right-radius: 10px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
     background-color: rgb(14, 113, 84);
     background-image: -webkit-linear-gradient(top,rgb(0, 105, 74), rgb(14, 113, 84));
     background-image: -moz-linear-gradient(top,rgb(0, 105, 74), rgb(14, 113, 84));
