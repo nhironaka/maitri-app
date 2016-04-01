@@ -50,3 +50,18 @@ function reset(){
         $('#patients_table td:nth-child('+val+'), #table_header th:nth-child(' + val + ')').show();
     }
 }
+
+function date_filterer() {
+    $("#date_filter").submit();
+    $(document).ready(function() {
+  return $("#date_filter").on("ajax:success", function(e, data, status, xhr) {
+    $("#patients_renderer").append(xhr.responseText);
+  }).on("ajax:error", function(e, xhr, status, error) {
+    return $("#date_filter").append("<p>ERROR</p>");
+  });
+});
+}
+
+function submit_filters() {
+    hide_columns();
+}

@@ -39,6 +39,17 @@
       </form>
     </div>
     
-    <button class="option-button" style="position:fixed; bottom:0; right:0" onclick="hide_columns()">OK</button>
+    <div class="input_filters">
+    <h4>Filter</h4>
+    <%= form_tag patients_path, :method => "get", :id => "date_filter" do %>
+      <p>
+        Start date <br>
+        <%= date_field_tag :start_date, params[:start_date] %><br>
+        End date <br>
+        <%= date_field_tag :end_date, params[:end_date] %><br>
+        <div class="option-button" style="position:fixed; bottom:0; right:0" onclick="submit_filters()"> <%= submit_tag "OK"%></div>
+      </p>
+    <% end %>
+    </div>
   </div>
   
