@@ -148,6 +148,7 @@ td a{
     position:relative;
     height:575px;
     overflow-x: scroll;
+    overflow-y: hidden;
     margin-left: auto;
     margin-right:auto;
     width:1150px;
@@ -334,7 +335,6 @@ td a{
     display:block;
     background-color: white;
     z-index: 15;
-    
 }
 .tabs_container, .tabs_content {
     position: relative;
@@ -372,7 +372,7 @@ td a{
     vertical-align:top;
     text-align: center;
     cursor:pointer;
-    padding-top:40px;
+    padding-top:30px;
     top:0;
 }
 .tabs_content td.inactive{
@@ -410,7 +410,7 @@ td a{
 }
 
 #logo{
-    padding-top:10px;
+    padding-top:5px;
 }
 
 .footer, .footer a{
