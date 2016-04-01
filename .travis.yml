@@ -7,6 +7,10 @@ rvm:
  #- "1.9.3"
  - "2.2.2"
  #- rbx
+ 
+script: 
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
 
 # uncomment this line if your project needs to run something other than `rake`:
 # script: bundle exec rspec spec
