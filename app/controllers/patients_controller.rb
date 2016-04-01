@@ -19,10 +19,6 @@ class PatientsController < ApplicationController
         @patients = @patients.where('end_date < ?', end_date)
       end
     end
-    
-    def import
-      workbook = RubyXL::Parser.parse("file/patients.xlsx");
-    end
       
     private
   

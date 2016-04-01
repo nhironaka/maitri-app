@@ -4,7 +4,9 @@
   <title>Maitri</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="assets/favicon.png">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" type="image/png" href="jasmine/lib/jasmine-2.0.0/jasmine_favicon.png">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tag %>
@@ -24,11 +26,7 @@
           </thead>
         </table>
       </div>
-      <table class="tabs_content">
-        <tbody>
-          <tr>
-            <td id="logo"><a href="/"><img id="logo" src="/assets/Maitri.png"></a></td>
-    <% elsif !is_user_path %>
+    <% elsif !is_sign_in_path %>
       <% controller.redirect_to ("/users/sign_in") %>
     <% end %>
     <%= yield %>
@@ -40,14 +38,11 @@
 <script>
   $(document).ready(function(){
     var path = window.location.pathname;
-    console.log(path);
     if (path=="/users/edit"){
       $("#edit_tab").addClass("active_tab");
       document.getElementById("report_tab").style.border = "none";
     } else if (path == '/' || path.match(/patients\/overview/)){
       $("#home_tab").addClass("active_tab");
-    } else {
-      console.log("here");
     }
   });
 </script>

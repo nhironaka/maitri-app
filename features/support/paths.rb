@@ -19,7 +19,7 @@ module NavigationHelpers
       '/users/sign_in'
     when /the patient overview page$/
       '/patients/overview'
-    when /the Create page$/
+    when /the sign up page$/
       '/users/sign_up'
 
     # Add more mappings here.

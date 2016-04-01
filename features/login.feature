@@ -18,6 +18,12 @@ Scenario: login legitimate user
   And I press "Log In"
   Then I should be on the home page
   
+Scenario: login with email
+  When I fill in "user_login" with "existuser1@gmail.com"
+  And I fill in "user_password" with "existuser1"
+  And I press "Log In"
+  Then I should be on the home page
+  
 Scenario: login user that does not exist
   When I fill in "user_login" with "invalid"
   And I fill in "user_password" with "invalid"
@@ -36,4 +42,8 @@ Scenario: blank password
 
 Scenario: I try to access the homepage without logging in
   When I go to the home page
+  Then I should be on the Login page
+  
+Scenario: I try to sign up
+  When I go to the sign up page
   Then I should be on the Login page

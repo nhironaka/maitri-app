@@ -29,25 +29,20 @@ Scenario: filter by checkboxes
   When I uncheck "demographic_fields_form"
   And I check "Name"
   And I check "Gender"
-  #And I uncheck "Start Date"
-  #And I uncheck "End Date"
   And I press "OK"
   Then I should see "Name"
   And I should see "Gender"
-  And I should not see "Start Date"
-  And I should not see "End Date"
+  And the following should be hidden: "start_date"
+  And the following should be hidden: "end_date"
   
 Scenario: filter everything
   When I uncheck "demographic_fields_form"
-  #When I uncheck "Name"
-  #When I uncheck "Gender"
-  #And I uncheck "Start Date"
-  #And I uncheck "End Date"
   And I press "OK"
-  Then I should not see "Name"
-  And I should not see "Gender"
-  And I should not see "Start Date"
-  And I should not see "End Date"
+  Then I should be on the patients overview page
+  Then the following should be hidden: "name"
+  And the following should be hidden: "gender"
+  And the following should be hidden: "start_date"
+  And the following should be hidden: "end_date"
 
 Scenario: select all checkboxes you
   When I check "demographic_fields_form"
@@ -59,13 +54,13 @@ Scenario: select all checkboxes you
   
 Scenario: press reset after filtered page
   When I press "Filter"
-  And I uncheck "demographic_fields_form"
   And I check "Name"
   And I check "Gender"
   And I uncheck "Start Date"
   And I uncheck "End Date"
   And I press "OK"
-  And I press "Reset"
+  Then the following should be hidden: "start_date"
+  When I press "Reset"
   Then I should see "Name"
   And I should see "Gender"
   And I should see "Start Date"

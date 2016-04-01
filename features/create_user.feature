@@ -6,11 +6,11 @@ Feature: create a user
   
 Background: users in database
   
-  Given the following users exist:
-  | username              | password    | email                | password_confirmation |
-  | duplicate1            | duplicate1  | duplicate1@gmail.com | duplicate1            |
-
-  And I am on the Create page
+  And the following users exist:
+    | username                | password    | email                | password_confirmation |
+    | existuser               | existuser1  | existuser1@gmail.com | existuser1            |
+  And I am logged in
+  And I am on the sign up page
   
 Scenario: create legitimate user
   When I fill in "user_username" with "newuser"
@@ -21,10 +21,10 @@ Scenario: create legitimate user
   Then I should be on the home page
   
 Scenario: create user that already exists
-  When I fill in "user_username" with "duplicate1"
-  And I fill in "user_password" with "duplicate1"
-  And I fill in "user_email" with "duplicate1@gmail.com"
-  And I fill in "user_password_confirmation" with "duplicate1"
+  When I fill in "user_username" with "existuser"
+  And I fill in "user_password" with "existuser1"
+  And I fill in "user_email" with "existuser1@gmail.com"
+  And I fill in "user_password_confirmation" with "existuser1"
   And I press "Sign Up"
   Then I should see "Username has already been taken"
   
