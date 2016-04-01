@@ -361,11 +361,6 @@ td a{
 }
 .tabs_content tbody{
     border:none;
-    /**background-color: .ffda76;background-color: 
-    background-image: -webkit-linear-gradient(top,rgb(255, 218, 118), rgb(255, 255, 254));
-    background-image: -moz-linear-gradient(top,rgb(255, 218, 118), rgb(255, 255, 254));
-    background-image: -o-linear-gradient(top,rgb(255, 218, 118), rgb(255, 255, 254));
-    background-image: -ms-linear-gradient(top,rgb(255, 218, 118), rgb(255, 255, 254));**/
     background-color:transparent;
 }
 .tabs_content td{
@@ -387,7 +382,6 @@ td a{
     color:black;
 }
 .tabs_container th.active_tab{
-    border-top-left-radius: 5px;
     border-top-right-radius: 10px;
     background-color: rgb(14, 113, 84);
     background-image: -webkit-linear-gradient(top,rgb(0, 105, 74), rgb(14, 113, 84));
