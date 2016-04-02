@@ -32,7 +32,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # Import xlsx into Active Record
 #gem 'rubyXL'
-
+gem 'test-unit'
 gem 'rake'
 # Authenticate users
 gem 'devise'
