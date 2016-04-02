@@ -114,7 +114,6 @@ function date_filterer() {
             $('#patients_table td:nth-child('+val+'), #table_header th:nth-child(' + val + ')').hide();
         }
     });
-    return false;
 }
 
 function submit_filters() {
