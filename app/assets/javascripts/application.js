@@ -45,6 +45,21 @@ function deselect(field_type){
             all = false;
             return;
         }
+
+function hide_columns(){
+    $('#popup').hide();
+    $('fieldset input:checked').each(function() {
+        var val = $(this).attr('name');
+        console.log('td:nth-child('+val+'), th:nth-child(' + val + ')');
+        $('#patients_table td:nth-child('+val+'), #table_header th:nth-child(' + val + ')').show();
+    });
+    $('fieldset input:checkbox:not(:checked)').each(function() {
+        var val = $(this).attr('name');
+        if (window.localStorage) {
+            window.localStorage.setItem(val, val);
+        }
+        // console.log('td:nth-child('+val+'), th:nth-child(' + val + ')');
+        // $('#patients_table td:nth-child('+val+'), #table_header th:nth-child(' + val + ')').hide();
     });
     $('#' + field_type + "_fields_form").prop('checked', all);
     sessionStorage.setItem(field_type, all);
@@ -61,6 +76,7 @@ function reset(){
     ('#social_fields_form').prop('checked', true);
 }
 
+<<<<<<< HEAD
 function get_checkboxes(){
     $('input[type=checkbox]').each(function (){
         var key = $(this).attr('name');
@@ -89,4 +105,20 @@ function hide_columns(){
         }
     }
     deselect('demographic'); deselect('social'); deselect('medical');
+=======
+function date_filterer() {
+    $("#date_filter").submit();
+    $('fieldset input:checked').each(function() {
+        var val = $(this).attr('name');
+        if(window.localStorage.getItem(val)) {
+            $('#patients_table td:nth-child('+val+'), #table_header th:nth-child(' + val + ')').hide();
+        }
+    });
+    return false;
+}
+
+function submit_filters() {
+    hide_columns();
+    date_filterer();
+>>>>>>> trying to add localstorage, works but doesn't work
 }
