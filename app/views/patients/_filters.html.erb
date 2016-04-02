@@ -48,7 +48,9 @@
       <label>End date</label><br>
         <%= date_field_tag :end_date, params[:end_date] %><br>
       <%= submit_tag "OK", :onclick=>"get_checkboxes()", :class=>"option-button", remote:true %>
+      </p>
     <% end %>
     </div>
+  <button class="option-button" style="position:fixed; bottom:0; right:0" onclick="submit_filters()"> OK </button>
   </div>
   
