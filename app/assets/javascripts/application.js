@@ -62,8 +62,10 @@ function hide_columns(){
         val = sessionStorage.getItem(i);
         console.log(val);
         if (val == "true"){
+            
             $('#patients_table td:nth-child('+i+'), #table_header th:nth-child(' + i + ')').removeClass("hidden");
         } else {
+            $('type[input=checked] name="' + i + '"').style.checked="false";
             $('#patients_table td:nth-child('+i+'), #table_header th:nth-child(' + i + ')').addClass("hidden");
         }
         
