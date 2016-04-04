@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="assets/favicon.png">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="shortcut icon" type="image/png" href="jasmine/lib/jasmine-2.0.0/jasmine_favicon.png">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tag %>
@@ -42,7 +41,7 @@
     if (path=="/users/edit"){
       $("#edit_tab").addClass("active_tab");
       document.getElementById("report_tab").style.border = "none";
-    } else if (path == '/' || path.match(/patients\/overview/)){
+    } else if (path == '/' || path.match(/patients\//)){
       $("#home_tab").addClass("active_tab");
     }
     hide_columns();

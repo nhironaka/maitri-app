@@ -46,20 +46,13 @@ function get_checkboxes(){
         }
     });
     
-    //persist();
-}
-
-function persist(){
-    for (var val = 1; val <= 12; val++){
-        sessionStorage.getItem(val);
-    }
 }
 
 function hide_columns(){
     $('#popup').hide();
     for (var i=0; i <= 12; i++){
         val = sessionStorage.getItem(i);
-        if (val == "true"){
+        if (val == null || val == "true"){
             $('#patients_table td:nth-child('+i+'), #table_header th:nth-child(' + i + ')').removeClass("hidden");
         } else {
             $('input:checkbox[name=' + i + ']').prop("checked", false);

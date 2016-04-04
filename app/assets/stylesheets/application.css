@@ -266,27 +266,21 @@ td a{
     border-radius: 5px;
     z-index: 100;
     background-color:white;
-    display: none
+    display: none;
 }
 
-.field_filters{
+.field_filters, .input_filters{
+    width:600px;
+    height:125px;
     margin-left: auto;
     margin-right: auto;
-    position: absolute;
+    position: relative;
 }
 
 .field_filters form{
     display: inline; 
     padding-left:5px;
     float:left;
-}
-
-.input_filters {
-    margin-top: 150px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    
 }
 
 /** Button appearance **/
