@@ -9,7 +9,7 @@
   <link rel="shortcut icon" type="image/png" href="jasmine/lib/jasmine-2.0.0/jasmine_favicon.png">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <%= csrf_meta_tag %>
 </head>
 <body>
   <div class="background">
@@ -37,6 +37,7 @@
 </body>
 <script>
   $(document).ready(function(){
+    localStorage;
     var path = window.location.pathname;
     if (path=="/users/edit"){
       $("#edit_tab").addClass("active_tab");
@@ -44,6 +45,7 @@
     } else if (path == '/' || path.match(/patients\/overview/)){
       $("#home_tab").addClass("active_tab");
     }
+    hide_columns();
   });
 </script>
 </html>

@@ -10,10 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//=require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+//$.cookie.JSON = true;
 
 function synch_scroll(){
     $('#table_header_').scrollLeft($("#patients_table_").scrollLeft());
@@ -29,23 +31,40 @@ function select_all(field_type){
     });
 }
 
-function hide_columns(){
-    $('#popup').hide();
-    $('fieldset input:checked').each(function() {
-        var val = $(this).attr('name');
+function reset(){
+    for (var val = 1; val <= 12; val++){
         $('#patients_table td:nth-child('+val+'), #table_header th:nth-child(' + val + ')').removeClass("hidden");
-    });
-    $('fieldset input:checkbox:not(:checked)').each(function() {
-        var val = $(this).attr('name');
-        console.log(val);
-        $('#patients_table td:nth-child('+val+')').addClass("hidden");
-        $('#table_header th:nth-child(' + val + ')').addClass("hidden")
-    });
+        sessionStorage.setItem(val, true);
+    }
 }
 
-function reset(){
-    var val;
-    for (val = 1; val <= 12; val++){
-        $('#patients_table td:nth-child('+val+'), #table_header th:nth-child(' + val + ')').removeClass("hidden");
+function get_checkboxes(){
+    $('input[type=checkbox]').each(function (){
+        var key = $(this).attr('name');
+        if (typeof key != "undefined"){
+            sessionStorage.setItem($(this).attr('name'), this.checked);
+        }
+    });
+    
+    //persist();
+}
+
+function persist(){
+    for (var val = 1; val <= 12; val++){
+        sessionStorage.getItem(val);
+    }
+}
+
+function hide_columns(){
+    $('#popup').hide();
+    for (var i=0; i <= 12; i++){
+        val = sessionStorage.getItem(i);
+        if (val == "true"){
+            $('#patients_table td:nth-child('+i+'), #table_header th:nth-child(' + i + ')').removeClass("hidden");
+        } else {
+            $('input:checkbox[name=' + i + ']').prop("checked", false);
+            $('#patients_table td:nth-child('+i+'), #table_header th:nth-child(' + i + ')').addClass("hidden");
+        }
+        
     }
 }

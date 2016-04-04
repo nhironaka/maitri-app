@@ -3,42 +3,53 @@
     <div class="field_filters">
       <form>
         <label>
-          <input type="checkbox" id="demographic_fields_form" onclick="select_all('#demographic_fields')" checked="true"/> Select all
+          <input type="checkbox" id="demographic_fields_form" onclick="select_all('#demographic_fields')" checked/> Select all
         </label><br/>
         <fieldset style="display: inline-block;" id="demographic_fields">
           <legend>Demographics Fields</legend>
-          <label><input type="checkbox" name="1" checked="true"/> Name</label></br>
-          <label><input type="checkbox" name="2" checked="true"/> Gender</label></br>
-          <label><input type="checkbox" name="3" checked="true"/> Start Date</label></br>
-          <label><input type="checkbox" name="4" checked="true"/> End Date</label></br>
+          <label><input type="checkbox" name="1" checked/> Name</label></br>
+          <label><input type="checkbox" name="2" checked/> Gender</label></br>
+          <label><input type="checkbox" name="3" checked/> Start Date</label></br>
+          <label><input type="checkbox" name="4" checked/> End Date</label></br>
         </fieldset>
       </form>
       <form>
         <label>
-          <input type="checkbox" id="medical_fields_form" onclick="select_all('#medical_fields')" checked="true"/> Select all
+          <input type="checkbox" id="medical_fields_form" onclick="select_all('#medical_fields')" checked/> Select all
         </label></br>
         <fieldset style="display: inline-block;" id="medical_fields">
           <legend>Medical Fields</legend>
-          <label><input type="checkbox" name="5" checked="true"/> Diagnosis</label></br>
-          <label><input type="checkbox" name="6" checked="true"/> Vaccination</label></br>
-          <label><input type="checkbox" name="7" checked="true"/> Allergies</label></br>
-          <label><input type="checkbox" name="8" checked="true"/> Weight</label></br>
+          <label><input type="checkbox" name="5" checked/> Diagnosis</label></br>
+          <label><input type="checkbox" name="6" checked/> Vaccination</label></br>
+          <label><input type="checkbox" name="7" checked/> Allergies</label></br>
+          <label><input type="checkbox" name="8" checked/> Weight</label></br>
         </fieldset>
       </form>
       <form style="display: inline; float:left">
         <label>
-          <input type="checkbox" id="social_fields_form" onclick="select_all('#social_fields')" checked="true"/> Select all
+          <input type="checkbox" id="social_fields_form" onclick="select_all('#social_fields')" checked/> Select all
           </label></br>
         <fieldset style="display: inline-block;" id="social_fields">
             <legend>Social Fields</legend>
-            <label><input type="checkbox" name="9" checked="true"/> Housing</label></br>
-            <label><input type="checkbox" name="10" checked="true"/> Income</label></br>
-            <label><input type="checkbox" name="11" checked="true"/> DOB</label></br>
-            <label><input type="checkbox" name="12" checked="true"/> Race</label></br>
+            <label><input type="checkbox" name="9" checked/> Housing</label></br>
+            <label><input type="checkbox" name="10" checked/> Income</label></br>
+            <label><input type="checkbox" name="11" checked/> DOB</label></br>
+            <label><input type="checkbox" name="12" checked/> Race</label></br>
         </fieldset>
       </form>
     </div>
     
-    <button class="option-button" style="position:fixed; bottom:0; right:0" onclick="hide_columns()">OK</button>
+    <div class="input_filters">
+    <h4>Filter</h4>
+    <%= form_tag patients_path, :method => "get", :id => "date_filter" do %>
+      <p>
+        Start date <br>
+        <%= date_field_tag :start_date, params[:start_date] %><br>
+        End date <br>
+        <%= date_field_tag :end_date, params[:end_date] %><br>
+        <%= submit_tag "OK", :onclick=>"get_checkboxes()", :class=>"option-button bottom-right", remote:true %>
+      </p>
+    <% end %>
+    </div>
   </div>
   
