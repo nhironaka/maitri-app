@@ -42,17 +42,16 @@ function get_checkboxes(){
     $('input[type=checkbox]').each(function (){
         var key = $(this).attr('name');
         if (typeof key != "undefined"){
-            console.log(key + " " + this.checked);
             sessionStorage.setItem($(this).attr('name'), this.checked);
         }
     });
     
-    persist();
+    //persist();
 }
 
 function persist(){
     for (var val = 1; val <= 12; val++){
-        console.log(sessionStorage.getItem(val));
+        sessionStorage.getItem(val);
     }
 }
 
@@ -60,12 +59,10 @@ function hide_columns(){
     $('#popup').hide();
     for (var i=0; i <= 12; i++){
         val = sessionStorage.getItem(i);
-        console.log(val);
         if (val == "true"){
-            
             $('#patients_table td:nth-child('+i+'), #table_header th:nth-child(' + i + ')').removeClass("hidden");
         } else {
-            $('type[input=checked] name="' + i + '"').style.checked="false";
+            $('input:checkbox[name=' + i + ']').prop("checked", false);
             $('#patients_table td:nth-child('+i+'), #table_header th:nth-child(' + i + ')').addClass("hidden");
         }
         
