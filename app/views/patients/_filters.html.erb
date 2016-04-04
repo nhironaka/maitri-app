@@ -5,7 +5,7 @@
         <label>
           <input type="checkbox" id="demographic_fields_form" onclick="select_all('#demographic_fields')" checked="true"/> Select all
         </label><br/>
-        <fieldset style="display: inline-block;" id="demographic_fields">
+        <fieldset id="demographic_fields">
           <legend>Demographics Fields</legend>
           <label><input type="checkbox" name="1" checked="true"/> Name</label></br>
           <label><input type="checkbox" name="2" checked="true"/> Gender</label></br>
@@ -17,7 +17,7 @@
         <label>
           <input type="checkbox" id="medical_fields_form" onclick="select_all('#medical_fields')" checked="true"/> Select all
         </label></br>
-        <fieldset style="display: inline-block;" id="medical_fields">
+        <fieldset id="medical_fields">
           <legend>Medical Fields</legend>
           <label><input type="checkbox" name="5" checked="true"/> Diagnosis</label></br>
           <label><input type="checkbox" name="6" checked="true"/> Vaccination</label></br>
@@ -25,11 +25,11 @@
           <label><input type="checkbox" name="8" checked="true"/> Weight</label></br>
         </fieldset>
       </form>
-      <form style="display: inline; float:left">
+      <form>
         <label>
           <input type="checkbox" id="social_fields_form" onclick="select_all('#social_fields')" checked="true"/> Select all
           </label></br>
-        <fieldset style="display: inline-block;" id="social_fields">
+        <fieldset id="social_fields">
             <legend>Social Fields</legend>
             <label><input type="checkbox" name="9" checked="true"/> Housing</label></br>
             <label><input type="checkbox" name="10" checked="true"/> Income</label></br>
@@ -40,15 +40,12 @@
     </div>
     <h4>Filter</h4>
     <div class="input_filters">
-      
       <%= form_tag patients_path, :method => "get", :id => "date_filter" do %>
-        <p>
           Start date <br>
           <%= date_field_tag :start_date, params[:start_date] %><br>
-          End date <br>
+          <br> End date <br>
           <%= date_field_tag :end_date, params[:end_date] %><br>
           <%= submit_tag "OK", :onclick=>"get_checkboxes()", :class=>"option-button bottom-right", remote:true %>
-        </p>
       <% end %>
     </div>
   </div>
