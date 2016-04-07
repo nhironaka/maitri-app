@@ -6,31 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="assets/favicon.png">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="shortcut icon" type="image/png" href="jasmine/lib/jasmine-2.0.0/jasmine_favicon.png">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-  <div class="background">
-    <% if user_signed_in? %>
-      <div class="tabs_header">
-        <table class="tabs_container">
-          <thead>
-            <tr>
-              <th id="home_tab"><a href="/" class="tab"><i class="fa fa-home"></i> Home</a></th>
-              <th id="report_tab"><a href="/patients/reports"><i class="fa fa-file-text-o"></i> Reports</a></th>
-              <th id="edit_tab"><a href="/users/edit"><i class="fa fa-cog"></i> Settings</a></th>
-              <th style="border:none"><%= link_to destroy_user_session_path, :method => :delete do %><i class="fa fa-sign-out"></i> Log Out<%end%></th>
-            </tr>
-          </thead>
-        </table>
-      </div>
-    <% elsif !is_sign_in_path %>
-      <% controller.redirect_to ("/users/sign_in") %>
-    <% end %>
-    <%= yield %>
-  </div>
+  <% if user_signed_in? %>
+    <div class="side_bar-nav">
+      <a href="/"><img src="/assets/Maitri.png" id="logo"></a>
+      <ul class="nav">
+        <li id="home_tab"><a href="/"><i class="fa fa-home"></i> Home</a></li>
+        <li id="report_tab"><a href="/patients/reports"><i class="fa fa-file-text-o"></i> Reports</a></li>
+        <li id="edit_tab"><a href="/users/edit"><i class="fa fa-cog"></i> Settings</a></li>
+        <li style="border:none"><%= link_to destroy_user_session_path, :method => :delete do %><i class="fa fa-sign-out"></i> Log Out<%end%></li>
+      </ul>
+    </div>
+  <% elsif !is_sign_in_path %>
+    <% controller.redirect_to ("/users/sign_in") %>
+  <% end %>
+  <%= yield %>
   <div class="footer">
     <a href="https://icons8.com">Icon pack by Icons8</a>
   </footer>
@@ -40,10 +34,9 @@
     localStorage;
     var path = window.location.pathname;
     if (path=="/users/edit"){
-      $("#edit_tab").addClass("active_tab");
-      document.getElementById("report_tab").style.border = "none";
+      $("#edit_tab").addClass("active_page");
     } else if (path == '/' || path.match(/patients\/overview/)){
-      $("#home_tab").addClass("active_tab");
+      $("#home_tab").addClass("active_page");
     }
     hide_columns();
   });

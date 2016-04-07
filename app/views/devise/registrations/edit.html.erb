@@ -1,23 +1,21 @@
-<table class="tabs_content">
-  <tbody>
-    <tr>
-      <td id="logo"><a href="/"><img id="logo" src="/assets/Maitri.png"></a></td>
-      <td><%= link_to new_registration_path(resource_name) do%>
-        <i class="fa fa-user-plus fa-3x"></i><br>Add New User</a>
-        <%end%>
-      </td>
-      <td>
+<div class="content">
+  <div class="header">
+    <h1>Settings</h1>
+     <div class="panels">
+      <div class="panel shade_1 index" id="filter_button" onclick="popupfilter()"><div class="panel_content">
+        <%= link_to new_registration_path(resource_name) do%>
+        <img class="icon icons8-Add-User-Group" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAEwUlEQVRoQ+2ajZFMURCFuyNgI0AEVgSIABEgAjYCRIAIEAEiQAR2I7AisBtBq2+qe6r3zdzfGaNKuVXKMO+926f73O7T/UblH1n6j+CQvQAxs8ci8lBErovIsf+Nj76KyHtV/ZAdZmb3ROSBX8vnWJ9E5NPy+h5n7wTEzJ6JyMtkeGnPUxG5719+FJFs/LZ73ovIW1Xlvq41BcTM8PxrEXniu3zD8yJyLiKnqnrh12AwQG/7dXx/U0QuReQNEVNVoibpep5zza/nu0c8r4VmFghGEA0MulfznBsIZaBcGPhUVTF4Y5kZ1+EgqHrDHXNn70B8o+/+4Dsj4TezcMCFqh7VjHMHQC3AFIHHM4YjYmZ4ksP9SlWhzdAyM+hyt8c4MyMy70Tkm6pWz9UMkB/O86FoBFozgzIc+KZxHpVf3KuqVVuHgKQHX6oqB354mRmHHWc06eVJwP4EEML7pcebDf53GfcfSIsnXpEPFpERKg+dkZFQl5ySzkjzAI84bgYIVZbCdtRTcZeARoxLdaeZ6meARB24H/KiRcn8vZlRe164lnreSApRs5AyodW23jIDJKpz00sFCYJcQfmiofhcXWbWleFmgFCgqCEnqgqooWVmAeSzqlIciyvJoZ+qSv0priEgid9nqoq4G1691drlCRQEwAdVDaW9O7WSEV1VuUAtHIDorDojHfQzV9hVKT8UEU+/9BQoUg4q9ODfXcupgpehVNXLZgZYQHcllRkgIfowfujAJ+VLH3NcckKicLemGwbiUQl53TywOVRmFoniVgUEiQT1QDS6HTULhM0wCt5iVLMV7c1AqQfpOhvhqCkgHpUojF1pODVkDBWKhTAVzO5oYM8uQOKsEA0OZHHikZop9izSyh0Ulf8wQHzTkBDVbi+dja3GuZCk2tPvcDai+OEcHMU+nMcihacj4kCi0WIEVJx0lGSGAyAdV4tdShgAgsobgPYFpCrJtwHxFEvvHi0z00jOHU5Z0dQTBBHCYQw8WIBgqnJFp+0LSItaV4RfykwY9pni2iqsHj20HRRkXRkR7QqE7MPEsQUk1AD0izqBMV0Zb1GLYk/+e62gp4EsqFEdoKWUCmU4yNPq2SkXYKAZY6nzYSBbDmhTmbrYhP8xA64qgp4eJLUDq/27gZgZ3MQTeeJXLW4LSoTq7aklzWYq9/6r2lSTre5JhtWkx8jtCD4yxsvWAS1wuyeCTSBOsWjSTopA/OUNWSLS409/FcCLm6a2WjooUaE5kO6h1oZ43bIhhjM4jjaUdx94f/UeY3al/qI5Mx4AEnQ93YhI2hAKkd+3vscYBVSp7isa9a7lMHv93AWPu1/g9G4c1x0MyCILdLWXI2DMbF0UWy+HJqh1tqZWavaHur5eMAc77CNvknqN/yvpN8I5Y+TEPa3mqllHigXxwED4UcCjkgN6zoiZ0QKsx0rdEmXC6xu3uBcRjkzzh5VvyoAhGikRNynQBwXi1TjPxahTb0ec5L+2iJnz7jJ+ZPMt6iHmYnyFXiI61YmlR5PeJxTH/hqrHcFgUP65Bp+RQcyEc6uL9EdxR18PnZ7stdXdBYjTDEXN+Cf68dYj6euh436HD61de7932hAh/uTfrDBthHJEikxXpN9vqGzgUJWgwaAAAAAASUVORK5CYII=" width="50" height="50">
+        Add New User
+        <%end%></div>
+      </div>
+      <div class="panel shade_2 index last" value="reset" onclick="reset()"><div class="panel_content">
         <%= button_to registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete do %>
-          <i class="fa fa-trash-o fa-3x"></i>
-          Delete my account
-          <%end%>
-      </td>
-      <td></td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
-  <div class="content">
+        <img class="icon icons8-Remove-User" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAEN0lEQVRoQ92a/XEUMQzFpQqACkgqACoAKoBUQKiApAJCBZAKIBWQVEBSAUkFhAqACh7zu7EOZ7Mf9q7vwsR/3czaXj/rSXrSntvCIWnHzB6b2YvOVufufrFw++LlXjyzM1HSGzPb7wGQz7w2sz13v5z7ntJ11UAkPTSzz2b2Or3kj5lx0PPspczhOZb6bWZfzOzM3fM5pWcsmlcFJIH4ZmZPzQwA++5+OvQmSQDAcjGY+9bdAdd01AI5MrP3ZnYFpUoOJAnQ+A9rH5jZqbvvNUVhZsVAklP/SAd4Vsv7tB4KAuZla5rVADkws4+J6+EfVRcrKSyKv8zaY+iFNUDg96vEcbhfPRLNvhMA3P1R9QYjC2qAEHGeL6WFJHEedy9+dwng4s0k4R8kv2r/yA/yPwC5Nxa5N0DC2ZEcg0lwjM+SyCck1Ct3J780GzU+EqHzg7vzu3pIihB+4u7otGajBkjc5oW7d5Vu0YEkLQ7hLfIICezrkhwg6ZeZIShn07MFkHD2JdQKes62aksgs3VS5ux3CmQxvyXh4NQyd6q14hBUfdCrSm8lEJQAqANqkqr1U9GkOGqxURZ1qrVSSJNNWGOl3aaQdp9LoqZ4UqO5MtXbPBHG+eYA+WRm7xK9ihKjpFjTPBEuAYK0WNUUZrY7Ve6mOh/lTP5YpJzH2FNtkeQrkVOgGeG4t5nQ6bg0D7k5sLlAuF1A0O4ZzCtZ3qDjQrNiY/2tWUA6VikBMmqN1JigjEbDEZ5DGQOccA8DyD387h13CiQBILeUKmFyDznsFqBNA1kHhm6zQRIilCwPTRkn6eYvg4IpbEdfLBp9+CMJ9UZNNAtIukkiF4cgcg2aPEuE63mZVAHAmZkdjO2RqAzlCONQkHFDHVQDSbfETXJTk5Eoa5uuckiyBOUA49DdOVzxyIoz1qzLgWIgPXwuapumEIyzUh1iubBkNYhAm4FZ57JJIJIwJYfIq0L4DB2qmtGZdRar30z3rSzdCyTdIjKEaAI3GeQCHOxois99POn0jkf9qoRnt/brLpIEADRURJOfycm+1Fog33sTjYfMKodri/R8wOGzGbff5OPMJhoPNwq1zIFwwviAA/+bFj6SYv9mwjErDy5XFslk9sY00VDPN8szJa5xq6Bb79txmtmNhalTbANIFD2LQ+IYmDmVZcHlhAS6cklRWzRvCHSi1uIuTE+E/deVqeXo1C31PD9294ONh98tALl2992tJ8QZN168JJMoiz9RS0J4UgoMS5Tik1VO7HyibiEaSRc7KI5J0Vh51snpHRlP4j2eXJRNSBIqpH+9jK952dTcTmFFNMM6g8VZStqIV77zx/f5ZYXV1CFLnyfLIIP4JwSD36QCupGrbkuSIHQ1KSGiru/9D8zWqdXJLdwySjv/483YXQzWQXcKJBOsAIIy0Q7CCgyq0GgHEekG6fcXvqpkUPhmsiEAAAAASUVORK5CYII=" width="50" height="50">
+        Delete my account
+        <%end%></div>
+      </div>
+    </div>
+  </div>
   <div class="half-width">
     <h2>Edit <%= resource_name.to_s.humanize %></h2>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
