@@ -66,6 +66,10 @@ td a{
     text-decoration: none;
 }
 
+h4{
+    padding-left: 5px;
+    margin-bottom:5px;
+}
 
 /** App header **/
 .header{
@@ -254,19 +258,16 @@ td a{
 
 /** Filters **/
 .filters {
-    position:absolute;
+    margin:0;
+    position:fixed;
     overflow:auto;
-    width:60%;
-    height:450px;
-    left:50%;
-    top:50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 8px 8px 5px #888888;
-    border:1px solid rgb(0, 105, 73);
-    border-radius: 5px;
-    z-index: 100;
+    width:230px;
+    height:100%;
+    left:-230px; top:0;
+    z-index: 20;
     background-color:white;
-    display: none;
+    display:block;
+    -webkit-box-shadow: inset -5px 0px 6px 0px #888888;
 }
 
 .field_filters, .input_filters{
@@ -276,13 +277,12 @@ td a{
 }
 
 .field_filters form, .input_filters{
-    display: inline; 
-    padding-left:5px;
-    float:left;
+    display: block; 
+    padding-left:10px;
 }
 
 .field_filters fieldset{
-    display: inline-block;
+    display: block;
 }
 /** Button appearance **/
 .button_link {
@@ -351,8 +351,8 @@ td a{
     border-collapse: collapse;
     border-spacing:0;
     width:1100px;
-    left:50%;
-    transform:translateX(-50%);
+    /**left:50%;
+    transform:translateX(-50%);**/
     overflow-x:auto;
     display:inline-table;
 }
@@ -423,7 +423,7 @@ td a{
 }
 
 .bottom-right{
-    position:fixed; 
+    position:relative; 
     bottom:0; 
     right:0;
 }

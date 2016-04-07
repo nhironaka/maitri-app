@@ -22,7 +22,21 @@ function synch_scroll(){
 }
 
 function popupfilter(){
-    $('#popup').toggle();
+    if ($('#popup').hasClass('shifted')){
+        $('#popup').removeClass('shifted');
+        $('#popup').animate({
+            left: "-230px"
+        }, 500);
+        $('body').animate({
+            left: "0px"
+        })
+    } else {
+        $('#popup').addClass('shifted');
+        $('#popup, body').animate({
+            left: "+=230px"
+        }, 500);
+    }
+    
 }
 
 function select_all(field_type){
@@ -49,7 +63,6 @@ function get_checkboxes(){
 }
 
 function hide_columns(){
-    $('#popup').hide();
     for (var i=0; i <= 12; i++){
         val = sessionStorage.getItem(i);
         if (val == null || val == "true"){
