@@ -50,8 +50,7 @@ fieldset {
     width:135px;
 }
 
-.panel_content button,
-td a{
+button, td a{
     top:0;
     background:none!important;
     border:none; 
@@ -59,8 +58,9 @@ td a{
     font: inherit;
     text-align:center;
     cursor:pointer;
+    height:80px;
     vertical-align:top;
-    color:#fff;
+    color:white;
     text-decoration: none;
 }
 
@@ -69,7 +69,8 @@ td a{
     position:relative;
     top:0;
     left:0px;
-    height:25%;
+    margin-top: 0;
+    padding:18px 0px;
 }
 
 .header span{
@@ -78,18 +79,12 @@ td a{
     bottom:0;
 }
 
-.header h1{
-    width:90%;
-    position:relative;
-    margin-left:auto;
-    margin-right: auto;
-    margin-bottom:10px;
-}
 /** App Content **/
 
 .content{
     left:0px;
     height:100%;
+    min-width: 807px;
     padding-left:250px;
     font-size: 14px;
     position:absolute;
@@ -97,6 +92,12 @@ td a{
     right:0;
     z-index: 1;
     overflow: scroll;
+}
+
+.content h1{
+    width:90%;
+    position:relative;
+    margin: 15px auto;
 }
 
 .half-width, .half-width-shifted{
@@ -182,7 +183,7 @@ td a{
     height:550px;
     display:block;
     box-shadow: 0 1px 1px #ccc;
-    background-color:white;
+    background-color:#fff;
     overflow-x: auto;
 }
 
@@ -253,25 +254,63 @@ td a{
 
 /** Filters **/
 .filters {
-    position:absolute;
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
     overflow:auto;
-    width:60%;
-    height:450px;
-    left:50%;
-    top:50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 8px 8px 5px #888888;
-    border:1px solid rgb(0, 105, 73);
-    border-radius: 5px;
-    z-index: 100;
-    background-color:white;
-    display: none;
+    max-width:90%;
+    
+    background:rgb(248, 248, 248); /* default background for browsers without gradient support */
+    /* css3 
+    background:-webkit-gradient(linear, 0 0, 0 100%, from(rgb(248, 248, 248)), to(#eee));
+    background:-moz-linear-gradient(rgb(248, 248, 248), #eee);
+    background:-o-linear-gradient(rgb(248, 248, 248), #eee);
+    background:linear-gradient(rgb(248, 248, 248), #eee);*/
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    border:none;
 }
 
-.field_filters{
-    margin-left: auto;
-    margin-right: auto;
-    position: absolute;
+/* creates triangle */
+.filters:after {
+  content:"";
+  position:absolute;
+  border-style:solid;
+  border-color:#f3961c transparent;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+  top:-15px; /* value = - border-top-width - border-bottom-width */
+  right:50px; /* controls horizontal position */
+  bottom:auto;
+  left:auto;
+  border-width:0 15px 15px; /* vary these values to change the angle of the vertex */
+  border-color:#f3961c transparent;
+}
+.sliding {
+    height:0px;
+    -webkit-transition:height, 0.5s linear;
+    -moz-transition: height, 0.5s linear;
+    -ms-transition: height, 0.5s linear;
+    -o-transition: height, 0.5s linear;
+    transition: height, 0.5s linear;
+}
+.sliding.open {
+    height:300px;
+    -webkit-transition:height, 0.5s linear;
+    -moz-transition: height, 0.5s linear;
+    -ms-transition: height, 0.5s linear;
+    -o-transition: height, 0.5s linear;
+    transition: height, 0.5s linear;
+    border: 1px solid #e7e7e7;
+}
+
+.field_filters, .input_filters{
+    margin-left: 15px;
+    position: relative;
+    width:100%;
+    height:auto;
 }
 
 .field_filters form{
@@ -279,12 +318,20 @@ td a{
     padding-left:5px;
     float:left;
 }
-
+.filters h4{
+    margin-bottom: 3px;
+}
 .input_filters {
-    margin-top: 150px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
+    float:right;
+    clear:right;
+}
+.input_filters form{
+    margin-left: 15px;
+}
+.bottom-right{
+    position:relative; 
+    bottom:0; 
+    right:0;
 }
 
 /** Button appearance **/
@@ -357,7 +404,7 @@ li a{
     display: block;
     list-style-type: disc;
 }
-
+/** Panels **/
 .panels{
     position:relative;
     top:0;
@@ -370,55 +417,78 @@ li a{
     overflow: auto;
     padding-top: 10px;
 }
-.panel {
+.panel_container{
+    position:relative;
+    float:left;
+    width:33.33%;
+    min-width:269px;
+    height:75px;
+    margin-bottom: 15px;
+}
+.panel_container.index{
+    min-width:200px;
+}
+.panel{
+    
     box-sizing:border-box;
     box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-    bottom:0;
-    height:75px;
-    float:left;
-    vertical-align: middle; 
+    
     border-bottom: 1px solid transparent;
     border-radius: 3px;
+    
+}
+.panel, .panel_container button{
+    position: relative;
+    bottom:0;
+    min-width: 233px;
     text-align: left;
-    margin-right:25px;
     padding:0px 10px;
-    margin-top:20px;
+    height:100%;
+    margin-right:25px;
+    cursor:pointer;
 }
-.panel a, .panel{
-    color: #fff;
+.panel_container button{
+    min-width: 233px;
+    width:33.33%;
 }
-.panel_content{
-    text-align: right;
-    font-size: 25px;
-    line-height: 75px;
-}
-
-.panel.index{
-    width:31.7%;
-}
-.panel.shade_1{
+.shade_1{
     background-color: #006949;
     border-color: #006949;
 }
-.panel.shade_2{
+.shade_2{
     background-color: #80B5A5;
     border-color: #80B5A5;
 }
-.panel.shade_3{
+.shade_3{
     background-color: #005569;
     border-color: #005569;
 }
 .panel.last{
     margin-right: 0;
 }
-
-.panel img, .panel i{
-    margin-top:15px;
-    float:left;   
+.panels.two_panels{
+    min-width:538px;
 }
-
-.panel_content button{
-    font-size: 20px;
+.panel_content{
+    position:relative;
+    text-align: right;
+    font-size: 25px;
+    word-wrap: break-word;
+    line-height: 25px;
+    top:50%;transform: translateY(-50%);
+    display:block;
+}
+.panel_content a, .panel{
+    color: #fff;
+}
+.panel img, .panel_content i{
+    float:left;
+    position: relative;
+    top:50%;transform: translateY(-50%);
+}
+.panel form{
+    top:-50%;
+    transform: translateY(75%);
 }
 .active_page{
     background-color: #eee;
@@ -465,12 +535,6 @@ li a{
 
 .hidden{
     display:none;
-}
-
-.bottom-right{
-    position:fixed; 
-    bottom:0; 
-    right:0;
 }
 
 #patients_renderer{

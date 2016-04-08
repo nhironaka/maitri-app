@@ -23,7 +23,7 @@ Background: patients are already in the database
     | existuser               | existuser1  | existuser1@gmail.com | existuser1            |
   And I am logged in
   And I am on the patient overview page
-  And I press "Filter"
+  And I press "filter_button"
 
 Scenario: filter by checkboxes
   When I uncheck "demographic_fields_form"

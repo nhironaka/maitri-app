@@ -15,14 +15,13 @@
 //= require turbolinks
 //= require_tree .
 
-//$.cookie.JSON = true;
-
 function synch_scroll(){
     $('#table_header_').scrollLeft($("#patients_table_").scrollLeft());
 }
 
 function popupfilter(){
-    $('#popup').toggle();
+    $("#popup").toggleClass("open");
+    console.log($("#popup").height());
 }
 
 function select_all(field_type){
@@ -45,8 +44,6 @@ function get_checkboxes(){
             sessionStorage.setItem($(this).attr('name'), this.checked);
         }
     });
-    
-    //persist();
 }
 
 function persist(){
@@ -56,15 +53,25 @@ function persist(){
 }
 
 function hide_columns(){
-    $('#popup').hide();
+    $('#popup').removeClass("open");
     for (var i=0; i <= 12; i++){
         val = sessionStorage.getItem(i);
-        if (val == "true"){
+        if (val == "true" || val == null || $('input:checkbox[name=' + i + ']').checked){
+            $('input:checkbox[name=' + i + ']').prop("checked", true);
             $('#patients_table td:nth-child('+i+'), #table_header th:nth-child(' + i + ')').removeClass("hidden");
-        } else {
+        } else{
             $('input:checkbox[name=' + i + ']').prop("checked", false);
             $('#patients_table td:nth-child('+i+'), #table_header th:nth-child(' + i + ')').addClass("hidden");
         }
-        
     }
 }
+
+/**function panel_resize(){
+    console.log($("#index_panels").width());
+    if ($("#index_panels").width() < 810){
+      $("#panel_import").removeClass('last');
+    } else {
+        
+      $("#panel_import").addClass('last');
+    }
+}**/

@@ -1,6 +1,6 @@
-  <div class="filters" id="popup">
-    <h4>Hide/Show Columns:</h4>
+  <div class="filters sliding" id="popup">
     <div class="field_filters">
+      <h4>Hide/Show Columns:</h4>
       <form>
         <label>
           <input type="checkbox" id="demographic_fields_form" onclick="select_all('#demographic_fields')" checked/> Select all
@@ -25,7 +25,7 @@
           <label><input type="checkbox" name="8" checked="true"/> Weight</label></br>
         </fieldset>
       </form>
-      <form style="display: inline; float:left">
+      <form style="display: inline;">
         <label>
           <input type="checkbox" id="social_fields_form" onclick="select_all('#social_fields')" checked="true"/> Select all
           </label></br>
@@ -40,15 +40,14 @@
     </div>
     
     <div class="input_filters">
-    <h4>Filter</h4>
+    <h4 style="margin-left:15px">Filter</h4>
     <%= form_tag patients_path, :method => "get", :id => "date_filter" do %>
-      <p>
-        Start date <br>
-        <%= date_field_tag :start_date, params[:start_date] %><br>
-        End date <br>
+      <span style="float:left; margin-right:5px"><label>Start date</label><br>
+      <%= date_field_tag :start_date, params[:start_date] %><br>
+      </span>
+      <label>End date</label><br>
         <%= date_field_tag :end_date, params[:end_date] %><br>
-        <%= submit_tag "OK", :onclick=>"get_checkboxes()", :class=>"option-button bottom-right", remote:true %>
-      </p>
+      <%= submit_tag "OK", :onclick=>"get_checkboxes()", :class=>"option-button", remote:true %>
     <% end %>
     </div>
   </div>
