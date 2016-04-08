@@ -38,7 +38,6 @@ Scenario: filter by checkboxes
 Scenario: filter everything
   When I uncheck "demographic_fields_form"
   And I press "OK"
-  Then I should be on the patients overview page
   Then the following should be hidden: "name"
   And the following should be hidden: "gender"
   And the following should be hidden: "start_date"
