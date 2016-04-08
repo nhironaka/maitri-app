@@ -266,12 +266,15 @@ td a{
     border-radius: 5px;
     z-index: 100;
     background-color:white;
-    display: none
+    display: none;
 }
 
-.field_filters{
+.field_filters, .input_filters{
+    width:600px;
+    height:125px;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
 }
 
 .field_filters form{
@@ -382,7 +385,8 @@ td a{
     color:black;
 }
 .tabs_container th.active_tab{
-    border-top-right-radius: 10px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
     background-color: rgb(14, 113, 84);
     background-image: -webkit-linear-gradient(top,rgb(0, 105, 74), rgb(14, 113, 84));
     background-image: -moz-linear-gradient(top,rgb(0, 105, 74), rgb(14, 113, 84));
@@ -415,4 +419,10 @@ td a{
 
 .hidden{
     display:none;
+}
+
+.bottom-right{
+    position:fixed; 
+    bottom:0; 
+    right:0;
 }

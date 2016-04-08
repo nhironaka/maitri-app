@@ -24,6 +24,8 @@ require 'cgi'
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "selectors"))
 
+@temp_user
+
 module WithinHelpers
   def with_scope(locator)
     locator ? within(*selector_for(locator)) { yield } : yield
@@ -43,6 +45,22 @@ end
 
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
+end
+
+When(/^I fill in user with "([^"]*)"$/) do |arg1|
+  @temp_user = User.create(:usernam => arg1)
+end
+
+When(/^I fill in password with "([^"]*)"$/) do |arg1|
+  @temp_user.update_attribute(:password => arg1)
+end
+
+Then(/^I should (not\s+)?see "([^"]*)" before "([^"]*)"$/) do |no, arg1, arg2|
+  if no 
+    expect(page).not_to have_content(/#{arg1}.*#{arg2}.*/)
+  else
+    expect(page).to have_content(/#{arg1}.*#{arg2}.*/)
+  end
 end
 
 When /^(?:|I )go to (.+)$/ do |page_name|

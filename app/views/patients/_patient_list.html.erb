@@ -18,15 +18,17 @@
   <div class="scrolling_table" id="patients_table_" onscroll="synch_scroll()">
     <table id="patients_table">
       <tbody>
-        <% @patients.each do |patient| %>
-          <tr>
-              <td style="border-color:white"><%= patient.name %></td>
-              <td><%= patient.gender %></td>
-              <td><%= patient.start_date.strftime("%Y-%b-%d") %></td>
-              <td><%= patient.end_date.strftime("%Y-%b-%d") %></td> 
-              <td></td><td></td><td></td><td></td>
-          </tr>
-      <% end %>
+        <% if not @patients.nil? %>
+          <% @patients.each do |patient| %>
+            <tr>
+                <td style="border-color:white"><%= patient.name %></td>
+                <td><%= patient.gender %></td>
+                <td><%= patient.start_date.strftime("%Y-%b-%d") %></td>
+                <td><%= patient.end_date.strftime("%Y-%b-%d") %></td> 
+                <td></td><td></td><td></td><td></td>
+            </tr>
+          <% end %>
+        <% end %>
      </tbody>
     </table>
   </div> 

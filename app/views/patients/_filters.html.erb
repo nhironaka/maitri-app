@@ -38,7 +38,18 @@
         </fieldset>
       </form>
     </div>
-    
-    <button class="option-button" style="position:fixed; bottom:0; right:0" onclick="hide_columns()">OK</button>
+    <h4>Filter</h4>
+    <div class="input_filters">
+      
+      <%= form_tag patients_path, :method => "get", :id => "date_filter" do %>
+        <p>
+          Start date <br>
+          <%= date_field_tag :start_date, params[:start_date] %><br>
+          End date <br>
+          <%= date_field_tag :end_date, params[:end_date] %><br>
+          <%= submit_tag "OK", :onclick=>"get_checkboxes()", :class=>"option-button bottom-right", remote:true %>
+        </p>
+      <% end %>
+    </div>
   </div>
   
