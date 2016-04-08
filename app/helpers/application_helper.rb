@@ -12,4 +12,8 @@ module ApplicationHelper
   def is_sign_in_path
     !(request.original_url =~ /\/users\/sign_in/).nil?
   end
+  
+  def is_login_path
+    !(request.original_url =~  /\/users\/password\/new/).nil?
+  end
 end
