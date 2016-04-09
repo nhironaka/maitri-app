@@ -30,6 +30,18 @@ function select_all(field_type){
     });
 }
 
+function deselect(field_type){
+    var selected = true;
+    $('input[value=' + field_type + ']').each(function(){
+        console.log($(this).attr('name') + " " + $(this).prop('checked'));
+        if (!$(this).prop('checked')){
+            selected = false;
+            return false;
+        }
+    });
+    $('#' + field_type + "_fields_form").prop('checked', selected);
+}
+
 function reset(){
     for (var val = 1; val <= 12; val++){
         $('#patients_table td:nth-child('+val+'), #table_header th:nth-child(' + val + ')').removeClass("hidden");

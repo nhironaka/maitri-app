@@ -7,10 +7,10 @@
         </label><br/>
         <fieldset style="display: inline-block;" id="demographic_fields">
           <legend>Demographics Fields</legend>
-          <label><input type="checkbox" name="1" checked="true"/> Name</label></br>
-          <label><input type="checkbox" name="2" checked="true"/> Gender</label></br>
-          <label><input type="checkbox" name="3" checked="true"/> Start Date</label></br>
-          <label><input type="checkbox" name="4" checked="true"/> End Date</label></br>
+          <label><input type="checkbox" name="1" value="demographic" checked="true" onclick="deselect('demographic')"/> Name</label></br>
+          <label><input type="checkbox" name="2" value="demographic" checked="true" onclick="deselect('demographic')"/> Gender</label></br>
+          <label><input type="checkbox" name="3" value="demographic" checked="true" onclick="deselect('demographic')"/> Start Date</label></br>
+          <label><input type="checkbox" name="4" value="demographic" checked="true" onclick="deselect('demographic')"/> End Date</label></br>
         </fieldset>
       </form>
       <form>
@@ -19,10 +19,10 @@
         </label></br>
         <fieldset style="display: inline-block;" id="medical_fields">
           <legend>Medical Fields</legend>
-          <label><input type="checkbox" name="5" checked="true"/> Diagnosis</label></br>
-          <label><input type="checkbox" name="6" checked="true"/> Vaccination</label></br>
-          <label><input type="checkbox" name="7" checked="true"/> Allergies</label></br>
-          <label><input type="checkbox" name="8" checked="true"/> Weight</label></br>
+          <label><input type="checkbox" name="5" value="medical" checked="true" onclick="deselect('medical')"/> Diagnosis</label></br>
+          <label><input type="checkbox" name="6" value="medical" checked="true" onclick="deselect('medical')"/> Vaccination</label></br>
+          <label><input type="checkbox" name="7" value="medical" checked="true" onclick="deselect('medical')"/> Allergies</label></br>
+          <label><input type="checkbox" name="8" value="medical" checked="true" onclick="deselect('medical')"/> Weight</label></br>
         </fieldset>
       </form>
       <form style="display: inline;">
@@ -31,10 +31,10 @@
           </label></br>
         <fieldset style="display: inline-block;" id="social_fields">
             <legend>Social Fields</legend>
-            <label><input type="checkbox" name="9" checked="true"/> Housing</label></br>
-            <label><input type="checkbox" name="10" checked="true"/> Income</label></br>
-            <label><input type="checkbox" name="11" checked="true"/> DOB</label></br>
-            <label><input type="checkbox" name="12" checked="true"/> Race</label></br>
+            <label><input type="checkbox" name="9" value="social" checked="true" onclick="deselect('social')"/> Housing</label></br>
+            <label><input type="checkbox" name="10" value="social" checked="true" onclick="deselect('social')"/> Income</label></br>
+            <label><input type="checkbox" name="11" value="social" checked="true" onclick="deselect('social')"/> DOB</label></br>
+            <label><input type="checkbox" name="12" value="social" checked="true" onclick="deselect('social')"/> Race</label></br>
         </fieldset>
       </form>
     </div>
