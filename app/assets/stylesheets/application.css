@@ -46,10 +46,10 @@ fieldset {
     width:135px;
 }
 
-div button, td a{
+.panel_container button, td a {
     top:0;
-    background:none!important;
     border:none; 
+    background:none!important;
     padding:0!important;
     font: inherit;
     text-align:center;
@@ -58,6 +58,7 @@ div button, td a{
     vertical-align:top;
     color:white;
     text-decoration: none;
+    outline:none;
 }
 
 /** App header **/
@@ -144,16 +145,14 @@ div button, td a{
 /** Table Formatting **/
 .table_container{
     position:relative;
-    top:10px;
-    height:550px;
+    margin-top:20px;
+    max-height:550px;
     width:90%;
     margin-left: auto;
     margin-right: auto;
     overflow-x: auto;
     overflow-y: hidden;
-    border: 1px solid rgb(0, 105, 73);   
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
+    border: 1px solid #ddd;
     z-index: 7; 
 }
 
@@ -171,7 +170,7 @@ div button, td a{
     background-color:rgb(255,255,254);
     top:0;
     left:0;
-    border-bottom: 1px solid rgb(0, 105, 73); 
+    border-bottom: 1px solid #ddd; 
     border-left: 1px solid white; 
     overflow-x: hidden;
 }
@@ -208,7 +207,7 @@ div button, td a{
 #table_header th,
 #patients_table td{
     
-    border-left:solid rgb(0, 105, 73) 1px;
+    border-left:1px solid #ddd;
 }
 
 #table_header th{
@@ -226,7 +225,7 @@ div button, td a{
 }
 
 #patients_table tbody tr:hover {
-  background: rgb(125,178,161);
+  background: #eee;
   transition: all 0.1s ease-in-out;     
 } 
 
@@ -314,7 +313,7 @@ div button, td a{
 }
 
 .field_filters, .input_filters{
-    margin-left: 15px;
+    margin-left: 25px;
     position: relative;
     width:100%;
     height:auto;
@@ -322,7 +321,7 @@ div button, td a{
 
 .field_filters form{
     display: inline; 
-    padding-left:5px;
+    margin-left:5px;
     float:left;
 }
 .filters h4{

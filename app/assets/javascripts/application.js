@@ -38,6 +38,7 @@ function deselect(field_type){
         }
     });
     $('#' + field_type + "_fields_form").prop('checked', selected);
+    sessionStorage(field_type+'_checkbox', selected);
 }
 
 function reset(){
@@ -75,5 +76,8 @@ function hide_columns(){
             $('#patients_table td:nth-child('+i+'), #table_header th:nth-child(' + i + ')').addClass("hidden");
         }
     }
+    $('#demographic_fields_form').prop("checked", sessionStorage.getItem('demographic') == false ? false : true);
+    $('#social_fields_form').prop("checked", sessionStorage.getItem('social') == false ? false : true);
+    $('#medical_fields_form').prop("checked", sessionStorage.getItem('medical') == false ? false : true);
 }
 
