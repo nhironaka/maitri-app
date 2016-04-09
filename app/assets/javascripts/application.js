@@ -21,7 +21,6 @@ function synch_scroll(){
 
 function popupfilter(){
     $("#popup").toggleClass("open");
-    console.log($("#popup").height());
 }
 
 function select_all(field_type){
@@ -33,7 +32,6 @@ function select_all(field_type){
 function deselect(field_type){
     var selected = true;
     $('input[value=' + field_type + ']').each(function(){
-        console.log($(this).attr('name') + " " + $(this).prop('checked'));
         if (!$(this).prop('checked')){
             selected = false;
             return false;
@@ -79,12 +77,3 @@ function hide_columns(){
     }
 }
 
-/**function panel_resize(){
-    console.log($("#index_panels").width());
-    if ($("#index_panels").width() < 810){
-      $("#panel_import").removeClass('last');
-    } else {
-        
-      $("#panel_import").addClass('last');
-    }
-}**/

@@ -11,7 +11,7 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-  <% if user_signed_in? %>
+  <% if user_signed_in?%>
     <div class="side_bar-nav">
       <a href="/"><img src="/assets/Maitrilogo.png" style="margin-left:20px"/></a>
       <ul class="nav">
@@ -21,7 +21,7 @@
         <li style="border:none"><%= link_to destroy_user_session_path, :method => :delete do %><i class="fa fa-sign-out"></i> Log Out<%end%></li>
       </ul>
     </div>
-  <% elsif !is_sign_in_path %>
+  <% elsif !is_sign_in_path? and ! is_user_auth? %>
     <% controller.redirect_to ("/users/sign_in") %>
   <% end %>
   <%= yield %>

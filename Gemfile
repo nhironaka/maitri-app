@@ -7,6 +7,7 @@ group :development, :test do
   gem 'sqlite3' # use SQLite only in development and testing
   gem 'byebug'
   gem 'jasmine-rails' # if you plan to use JavaScript/CoffeeScript
+  gem 'foreman'
 end 
 group :production do
   # make sure the following gems are in your production group:
