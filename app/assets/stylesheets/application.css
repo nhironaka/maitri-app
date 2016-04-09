@@ -46,7 +46,7 @@ fieldset {
     width:135px;
 }
 
-button, td a{
+div button, td a{
     top:0;
     background:none!important;
     border:none; 
@@ -432,48 +432,48 @@ li a{
     width:33.33%;
     min-width:269px;
     height:100%;
-    /**margin-bottom: 15px;**/
+    margin:0px;
 }
 .panel_container.index{
     min-width:200px;
 }
 .panel{
-    
     box-sizing:border-box;
     box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-    
     border-bottom: 1px solid transparent;
     border-radius: 3px;
-    
+    min-width: 233px;
 }
 .panel, .panel_container button{
     position: relative;
     bottom:0;
-    min-width: 233px;
     text-align: left;
     padding:0px 10px;
     height:100%;
-    margin-right:25px;
     cursor:pointer;
+    margin:0;
 }
 .panel_container button{
-    min-width: 233px;
-    width:33.33%;
+    
+    width:100%;
 }
 .shade_1{
     background-color: #006949;
     border-color: #006949;
+    margin-left:0px;
+    margin-right:16.67px;
 }
 .shade_2{
     background-color: #80B5A5;
     border-color: #80B5A5;
+    margin: 0 8.33px;
 }
 .shade_3{
     background-color: #005569;
     border-color: #005569;
-}
-.panel.last{
+    margin-left:16.67px;
     margin-right: 0;
+    right:0;
 }
 .panels.two_panels{
     min-width:538px;
