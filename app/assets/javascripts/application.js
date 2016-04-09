@@ -15,28 +15,13 @@
 //= require turbolinks
 //= require_tree .
 
-//$.cookie.JSON = true;
-
 function synch_scroll(){
     $('#table_header_').scrollLeft($("#patients_table_").scrollLeft());
 }
 
 function popupfilter(){
-    if ($('#popup').hasClass('shifted')){
-        $('#popup').removeClass('shifted');
-        $('#popup').animate({
-            left: "-230px"
-        }, 500);
-        $('body').animate({
-            left: "0px"
-        })
-    } else {
-        $('#popup').addClass('shifted');
-        $('#popup, body').animate({
-            left: "+=230px"
-        }, 500);
-    }
-    
+    $("#popup").toggleClass("open");
+    console.log($("#popup").height());
 }
 
 function select_all(field_type){
@@ -59,18 +44,35 @@ function get_checkboxes(){
             sessionStorage.setItem($(this).attr('name'), this.checked);
         }
     });
-    
+}
+
+
+function persist(){
+    for (var val = 1; val <= 12; val++){
+        sessionStorage.getItem(val);
+    }
 }
 
 function hide_columns(){
+    $('#popup').removeClass("open");
     for (var i=0; i <= 12; i++){
         val = sessionStorage.getItem(i);
-        if (val == null || val == "true"){
+        if (val == "true" || val == null || $('input:checkbox[name=' + i + ']').checked){
+            $('input:checkbox[name=' + i + ']').prop("checked", true);
             $('#patients_table td:nth-child('+i+'), #table_header th:nth-child(' + i + ')').removeClass("hidden");
-        } else {
+        } else{
             $('input:checkbox[name=' + i + ']').prop("checked", false);
             $('#patients_table td:nth-child('+i+'), #table_header th:nth-child(' + i + ')').addClass("hidden");
         }
-        
     }
 }
+
+/**function panel_resize(){
+    console.log($("#index_panels").width());
+    if ($("#index_panels").width() < 810){
+      $("#panel_import").removeClass('last');
+    } else {
+        
+      $("#panel_import").addClass('last');
+    }
+}**/
