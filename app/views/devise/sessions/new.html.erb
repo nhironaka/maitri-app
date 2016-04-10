@@ -4,21 +4,19 @@
     <h1>Welcome</h1>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
-        <p><%= f.label :login %><br />
-        <%= f.text_field :login %></p>
+        <%= f.label :login %><br />
+        <%= f.text_field :login %>
       </div>
-    
       <div class="field">
         <%= f.label :password %><br />
         <%= f.password_field :password, autocomplete: "off" %>
       </div>
-    
       <div class="actions">
         <%= f.submit "Log In", :class=>"option-button" %>
       </div>
       <div class="flash">
-        <p><%= notice %></p>
-        <p><%= alert %></p>
+        <%= notice %>
+        <%= alert %>
       </div>
       <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
         <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
