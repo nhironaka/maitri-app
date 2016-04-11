@@ -14,6 +14,6 @@ module ApplicationHelper
   end
   
   def is_user_auth?
-    !(request.original_url =~  /\/users\/password\/new/).nil?
+    !(request.original_url =~  /\/users\/password/).nil?
   end
 end
