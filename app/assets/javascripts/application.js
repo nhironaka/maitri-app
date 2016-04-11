@@ -21,11 +21,6 @@ function synch_scroll(){
 
 function popupfilter(){
     $("#popup").toggleClass("open");
-    /**if ($('#popup').hasClass("open")){
-        document.getElementById('popup').style.overflow='auto';
-    } else {
-        document.getElementById('popup').style.overflow='visible';
-    }**/
 }
 
 function select_all(field_type){
@@ -34,11 +29,27 @@ function select_all(field_type){
     });
 }
 
+function deselect(field_type){
+    var all = true;
+    $('input[value=' + field_type + ']').each(function (){
+        if (!this.checked){
+            all = false;
+            return;
+        }
+    });
+    $('#' + field_type + "_fields_form").prop('checked', all);
+    sessionStorage.setItem(field_type, all);
+}
+
 function reset(){
     for (var val = 1; val <= 12; val++){
         $('#patients_table td:nth-child('+val+'), #table_header th:nth-child(' + val + ')').removeClass("hidden");
         sessionStorage.setItem(val, true);
+        $('input[name=' + val + ']').prop('checked', true);
     }
+    $('#demographic_fields_form').prop('checked', true);
+    ('#medical_fields_form').prop('checked', true);
+    ('#social_fields_form').prop('checked', true);
 }
 
 function get_checkboxes(){
@@ -68,6 +79,7 @@ function hide_columns(){
             $('#patients_table td:nth-child('+i+'), #table_header th:nth-child(' + i + ')').addClass("hidden");
         }
     }
+    deselect('demographic'); deselect('social'); deselect('medical');
 }
 
 /**function panel_resize(){
