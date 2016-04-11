@@ -21,7 +21,11 @@ function synch_scroll(){
 
 function popupfilter(){
     $("#popup").toggleClass("open");
-    console.log($("#popup").height());
+    /**if ($('#popup').hasClass("open")){
+        document.getElementById('popup').style.overflow='auto';
+    } else {
+        document.getElementById('popup').style.overflow='visible';
+    }**/
 }
 
 function select_all(field_type){

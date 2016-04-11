@@ -257,7 +257,6 @@ fieldset {
     margin-left:auto;
     margin-right:auto;
     position:relative;
-    overflow:auto;
     max-width:90%;
     background:rgb(248, 248, 248); /* default background for browsers without gradient support */
     /* css3 
@@ -269,30 +268,31 @@ fieldset {
     -moz-border-radius:10px;
     border-radius:10px;
     border:none;
+    overflow:auto;
 }
-.filters:before{
+.sliding.open:before{
 	z-index: 11;
 	content: ' ';
 	position: absolute;
 	width: 0;
 	height: 0;
-	left: 30px;
-	top: -20px;
+	left: 41px;
+	top: -15px;
 	border-style: solid;
 	border-color: #e7e7e7 transparent #e7e7e7 transparent;
-	border-width: 0px 20px 25px;
+	border-width: 0px 9px 15px;
 }
-.filters:after{
+.sliding.open:after{
 	z-index:15;
 	content: ' ';
 	position: absolute;
 	width: 0;
 	height: 0;
-	left: 32px;
-	top: -16px;
+	left: 42px;
+	top: -13px;
 	border-style: solid;
 	border-color: rgb(248, 248, 248) transparent rgb(248, 248, 248) transparent;
-	border-width: 0px 18px 23px;
+	border-width: 0px 8px 13px;
 }
 .sliding {
     height:0px;
@@ -310,13 +310,18 @@ fieldset {
     -o-transition: height, 0.5s linear;
     transition: height, 0.5s linear;
     border: 1px solid #e7e7e7;
+    overflow:visible;
 }
 
+.field_filters{
+    overflow:auto;
+}
 .field_filters, .input_filters{
     margin-left: 25px;
     position: relative;
     width:100%;
     height:auto;
+    
 }
 
 .field_filters form{
@@ -424,6 +429,7 @@ li a{
     padding-top: 10px;
     z-index: 1;
     height:75px;
+    margin-bottom: 15px;
 }
 .panel_container{
     position:relative;
