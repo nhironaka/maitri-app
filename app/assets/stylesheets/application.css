@@ -121,6 +121,7 @@ fieldset {
 .half-width-shifted h1{
     margin-bottom: 10px;
 }
+
 .half-width{
     top:0%;
     padding:40px 80px 40px 80px;
@@ -255,26 +256,19 @@ fieldset {
 }
 
 /** Filters **/
-.filters {
-    z-index:10;
+.filters{
     margin-left:auto;
     margin-right:auto;
     position:relative;
     max-width:90%;
-    background:rgb(248, 248, 248); /* default background for browsers without gradient support */
-    /* css3 
-    background:-webkit-gradient(linear, 0 0, 0 100%, from(rgb(248, 248, 248)), to(#eee));
-    background:-moz-linear-gradient(rgb(248, 248, 248), #eee);
-    background:-o-linear-gradient(rgb(248, 248, 248), #eee);
-    background:linear-gradient(rgb(248, 248, 248), #eee);*/
-    -webkit-border-radius:10px;
-    -moz-border-radius:10px;
+    background:rgb(248, 248, 248);
     border-radius:10px;
     border:none;
     overflow:auto;
 }
 .sliding.open:before{
 	z-index: 11;
+
 	content: ' ';
 	position: absolute;
 	width: 0;
@@ -286,6 +280,7 @@ fieldset {
 	border-width: 0px 9px 15px;
 }
 .sliding.open:after{
+
 	z-index:15;
 	content: ' ';
 	position: absolute;
@@ -296,6 +291,7 @@ fieldset {
 	border-style: solid;
 	border-color: rgb(248, 248, 248) transparent rgb(248, 248, 248) transparent;
 	border-width: 0px 8px 13px;
+
 }
 .sliding {
     height:0px;
@@ -304,6 +300,7 @@ fieldset {
     -ms-transition: height, 0.5s linear;
     -o-transition: height, 0.5s linear;
     transition: height, 0.5s linear;
+    overflow:auto;
 }
 .sliding.open {
     height:300px;
@@ -371,6 +368,7 @@ fieldset {
   background-color:rgb(0, 105, 73);
   border-color:rgb(92,159,138);
   margin:5px 0px;
+
   color: rgb(245,255,245);
   border-width:2px;
   border-radius: 3px;

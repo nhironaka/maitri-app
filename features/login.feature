@@ -1,8 +1,8 @@
-Feature: login as a user
+Feature: allow users to access the app
   
   As a user
-  So that I can login as a user
-  I want to be able to access the homepage
+  So that I can access the app
+  I want to be able to see sensitive information
 
 Background: users in database
   
@@ -12,11 +12,13 @@ Background: users in database
   
   And I am on the Login page
   
-Scenario: login legitimate user
+Scenario: login legitimate user and log out
   When I fill in "user_login" with "existuser"
   And I fill in "user_password" with "existuser1"
   And I press "Log In"
   Then I should be on the home page
+  When I follow "Log Out"
+  Then I should be on the Login page
   
 Scenario: login with email
   When I fill in "user_login" with "existuser1@gmail.com"
@@ -27,11 +29,6 @@ Scenario: login with email
 Scenario: login user that does not exist
   When I fill in "user_login" with "invalid"
   And I fill in "user_password" with "invalid"
-  And I press "Log In"
-  Then I should see "Invalid login or password"
-  
-Scenario: blank username
-  When I fill in "user_password" with "password1"
   And I press "Log In"
   Then I should see "Invalid login or password"
   

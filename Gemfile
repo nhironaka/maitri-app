@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.2'
+ruby '2.3.0'
 
 # making your Gemfile safe for Heroku
 group :development, :test do
@@ -37,8 +37,8 @@ gem 'rake'
 # Authenticate users
 gem 'devise'
 # Solve Heroku Asset Problems. Only turn on when pushing to heroku
-gem 'rails_serve_static_assets'
-gem 'rails_stdout_logging'
+#gem 'rails_serve_static_assets'
+#gem 'rails_stdout_logging'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
