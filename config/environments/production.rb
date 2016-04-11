@@ -69,9 +69,9 @@ Rails.application.configure do
   #config.action_mailer.default_url_options = { :host => 'maitri-compassionate-care-app.herokuapp.com' }
   #Rails.application.routes.default_url_options[:host] = 'maitri-compassionate-care-app.herokuapp.com'
   
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'hidden-savannah-29295.herokuapp.com' }
   Rails.application.routes.default_url_options[:host] = 'hidden-savannah-29295.herokuapp.com'
-  ActionMailer::Base.delivery_method = :sendmail
+  ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.perform_deliveries = true
   ActionMailer::Base.raise_delivery_errors = true
   
@@ -83,7 +83,8 @@ Rails.application.configure do
     :authentication => 'plain',
     :user_name => ENV["GMAIL_USERNAME"],
     :password => ENV["GMAIL_PASSWORD"],
-    :openssl_verify_mode => 'none'
+    :openssl_verify_mode => 'none',
+    :tls => true
   }
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
