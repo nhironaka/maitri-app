@@ -68,3 +68,7 @@ group :test do
   gem 'capybara'
 end
 
+group :development, :test do
+  gem 'foreman'
+end
+
