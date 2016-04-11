@@ -68,6 +68,7 @@ fieldset {
     left:0px;
     margin-top: 0;
     padding:18px 0px;
+    scroll:hidden;
 }
 
 .header span{
