@@ -21,24 +21,13 @@ function synch_scroll(){
 
 function popupfilter(){
     $("#popup").toggleClass("open");
+    console.log($("#popup").height());
 }
 
 function select_all(field_type){
     $(field_type + '_form').change(function () {
         $(field_type + " input:checkbox").prop('checked', $(this).prop("checked"));
     });
-}
-
-function deselect(field_type){
-    var selected = true;
-    $('input[value=' + field_type + ']').each(function(){
-        if (!$(this).prop('checked')){
-            selected = false;
-            return false;
-        }
-    });
-    $('#' + field_type + "_fields_form").prop('checked', selected);
-    sessionStorage(field_type+'_checkbox', selected);
 }
 
 function reset(){
@@ -56,7 +45,6 @@ function get_checkboxes(){
         }
     });
 }
-
 
 function persist(){
     for (var val = 1; val <= 12; val++){
@@ -76,8 +64,14 @@ function hide_columns(){
             $('#patients_table td:nth-child('+i+'), #table_header th:nth-child(' + i + ')').addClass("hidden");
         }
     }
-    $('#demographic_fields_form').prop("checked", sessionStorage.getItem('demographic') == false ? false : true);
-    $('#social_fields_form').prop("checked", sessionStorage.getItem('social') == false ? false : true);
-    $('#medical_fields_form').prop("checked", sessionStorage.getItem('medical') == false ? false : true);
 }
 
+/**function panel_resize(){
+    console.log($("#index_panels").width());
+    if ($("#index_panels").width() < 810){
+      $("#panel_import").removeClass('last');
+    } else {
+        
+      $("#panel_import").addClass('last');
+    }
+}**/
