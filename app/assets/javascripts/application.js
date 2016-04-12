@@ -28,6 +28,10 @@ function popupfilter(){
     $("#popup").toggleClass("open");
 }
 
+function backToOverview(){
+    window.history.back();
+}
+
 function select_all(field_type){
     $(field_type + '_form').change(function () {
         $(field_type + " input:checkbox").prop('checked', $(this).prop("checked"));
