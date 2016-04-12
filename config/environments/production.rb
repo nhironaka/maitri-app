@@ -66,10 +66,10 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.delivery_method = :smtp
   
-  config.action_mailer.default_url_options = { :host => 'smtp.sendgrid.net' }
+  config.action_mailer.default_url_options = { :host => 'https://hidden-savannah-29295.herokuapp.com' }
   #hidden-savannah-29295.herokuapp.com
   #Rails.application.routes.default_url_options[:host] = 'maitri-compassionate-care-app.herokuapp.com'
-  config.action_mailer.delivery_method = :smtp
+  #config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default :charset => "utf-8"
@@ -79,7 +79,7 @@ Rails.application.configure do
   ActionMailer::Base.smtp_settings = {
     :address=>"smtp.sendgrid.net",
     :port=> 587,
-    :domain=> "heroku.com", 
+    :domain=> ENV['SENDGRID_DOMAIN'], 
     :authentication=> "plain",
     :enable_starttls_auto=> true,
     :user_name=> ENV["SENDGRID_USERNAME"],
