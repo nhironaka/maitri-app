@@ -81,7 +81,8 @@ Rails.application.configure do
     :enable_starttls_auto => true,
     :user_name => ENV["GMAIL_USERNAME"],
     :password => ENV["GMAIL_PASSWORD"],
-    :tls => true
+    :tls => true,
+    :openssl_verify_mode => 'none' 
 }
   
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
