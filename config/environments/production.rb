@@ -66,7 +66,7 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.delivery_method = :smtp
   
-  config.action_mailer.default_url_options = { :host => 'hidden-savannah-29295.herokuapp.com', :protocol => 'https'}
+  config.action_mailer.default_url_options = { :host => 'hidden-savannah-29295.herokuapp.com'}
   #hidden-savannah-29295.herokuapp.com
   #Rails.application.routes.default_url_options[:host] = 'maitri-compassionate-care-app.herokuapp.com'
   config.action_mailer.delivery_method = :smtp
