@@ -71,7 +71,7 @@ Rails.application.configure do
   #Rails.application.routes.default_url_options[:host] = 'maitri-compassionate-care-app.herokuapp.com'
   #config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.default_options = {
     :from=> ENV["SENDGRID_USERNAME"]
@@ -79,7 +79,7 @@ Rails.application.configure do
   ActionMailer::Base.smtp_settings = {
     :address=>"smtp.sendgrid.net",
     :port=> 25,
-    :domain=> ENV['SENDGRID_DOMAIN'], 
+    :domain=> 'heroku.com', 
     :authentication=> "plain",
     :enable_starttls_auto=> true,
     :user_name=> ENV["SENDGRID_USERNAME"],
