@@ -90,13 +90,3 @@ function hide_columns(){
     }
     deselect('demographic'); deselect('social'); deselect('medical');
 }
-
-/**function panel_resize(){
-    console.log($("#index_panels").width());
-    if ($("#index_panels").width() < 810){
-      $("#panel_import").removeClass('last');
-    } else {
-        
-      $("#panel_import").addClass('last');
-    }
-}**/
