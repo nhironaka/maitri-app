@@ -9,6 +9,10 @@ module ApplicationHelper
     link_to title, patients_overview_path({:sort => column, :direction => direction}), {:class => css_class}
   end
   
+  def info(patient_name)
+    
+  end
+  
   def is_sign_in_path?
     !(request.original_url =~ /\/users\/sign_in/).nil?
   end
