@@ -15,4 +15,12 @@
 /log/*
 !/log/.keep
 /tmp
+<<<<<<< HEAD
 /.env
+=======
+.env
+Procfile
+
+# Ignore application configuration
+/config/application.yml
+>>>>>>> d686901cac7cc7dba3ae24f5d0e5ca3209eb7fd5

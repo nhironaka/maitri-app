@@ -40,6 +40,8 @@ gem 'devise'
 gem 'rails_serve_static_assets'
 gem 'rails_stdout_logging'
 
+gem 'figaro'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', '~> 0.4.0'
@@ -66,5 +68,9 @@ group :test do
   gem 'metric_fu'        # collect code metrics
   gem 'codeclimate-test-reporter', :require => nil
   gem 'capybara'
+end
+
+group :development, :test do
+  gem 'foreman'
 end
 
