@@ -75,12 +75,13 @@ Rails.application.configure do
 
   config.action_mailer.smtp_settings = {
   address: "smtp.sendgrid.net",
-  port: 25,
+  port: 587,
   domain: "heroku.com", 
   authentication: "plain",
   enable_starttls_auto: true,
   user_name: ENV["SENDGRID_USERNAME"],
-  password: ENV["SENDGRID_PASSWORD"]
+  password: ENV["SENDGRID_PASSWORD"],
+  :openssl_verify_mode => 'none'
   }
   
   #config.action_mailer.default_url_options = { :host => 'hidden-savannah-29295.herokuapp.com' }
