@@ -66,7 +66,7 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.delivery_method = :smtp
   
-  #config.action_mailer.default_url_options = { :host => 'maitri-compassionate-care-app.herokuapp.com' }
+  ##config.action_mailer.default_url_options = { :host => 'maitri-compassionate-care-app.herokuapp.com' }
   #Rails.application.routes.default_url_options[:host] = 'maitri-compassionate-care-app.herokuapp.com'
   #config.action_mailer.delivery_method = :sendmail
   #config.action_mailer.perform_deliveries = true
@@ -77,15 +77,15 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   
-  ActionMailer::Base.smtp_settings = {
-  :address        => 'smtp.sendgrid.net',
-  :port           => '587',
-  :authentication => :plain,
-  :user_name      => ENV['SENDGRID_USERNAME'],
-  :password       => ENV['SENDGRID_PASSWORD'],
-  :domain         => 'heroku.com',
-  :enable_starttls_auto => true
-}
+  config.action_mailer.smtp_settings = {
+  address: "smtp.sendgrid.net",
+  port: 25,
+  domain: "heroku.com", 
+  authentication: "plain",
+  enable_starttls_auto: true,
+  user_name: ENV["SENDGRID_USERNAME"],
+  password: ENV["SENDGRID_PASSWORD"]
+  }
   
   #config.action_mailer.default_url_options = { :host => 'hidden-savannah-29295.herokuapp.com' }
   #Rails.application.routes.default_url_options[:host] = 'hidden-savannah-29295.herokuapp.com'
