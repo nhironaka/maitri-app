@@ -5,6 +5,12 @@ class PatientsController < ApplicationController
         params.require(:patient).permit(:name, :gender, :start_date, :end_date)
     end
     
+    def show
+      id = params[:patient_id] # retrieve movie ID from URI route
+      @patient = Patient.find(id) # look up movie by unique ID
+      # will render app/views/movies/show.<extension> by default
+    end
+    
     def index
       if sort_column and sort_direction
         @patients = Patient.order(sort_column + " " + sort_direction)
