@@ -638,6 +638,12 @@ li a{
     font-family:Arial, Helvetica, sans-serif !important; 
     font-size:12px !important;
 }
+.info_section_container{
+    margin-left:250px; 
+    height:488px; 
+    text-align:justify; 
+    overflow:hidden;
+}
 .info_section{
     margin:0px 0px 0px 10px; 
     padding:10px; 
@@ -646,6 +652,9 @@ li a{
     border-radius:0px 10px 10px 0px; 
     background:#FCFCFC; 
     overflow:auto;
+}
+.info_section b{
+    text-transform:uppercase;
 }
 .section_header{
     display:block; 
@@ -662,4 +671,19 @@ li a{
 }
 .section_header.style2{
     color:#C6BAC0; 
+}
+.report_footer{
+    clear:left; 
+    margin:5px auto; 
+    width:800px; 
+    font-size:14px; 
+    text-align:center;
+}
+.report_notes{
+    display:block; 
+    color:#C6BAC0; 
+    font-family:Monospace, serif; 
+    font-size:11px; 
+    font-style:italic; 
+    text-transform:lowercase;
 }
