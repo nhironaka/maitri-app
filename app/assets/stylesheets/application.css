@@ -570,3 +570,96 @@ li a{
     background-image: -o-linear-gradient(top,rgb(0, 105, 74), rgb(255, 255, 254));
     background-image: -ms-linear-gradient(top,rgb(0, 105, 74), rgb(255, 255, 254));
 }
+
+
+/** Reporting **/
+.report_container{
+    margin:30px auto 0px auto; 
+    padding:15px; 
+    max-width:800px; 
+    height:488px; 
+    border:1px solid #C6BAC0; 
+    border-radius:10px; 
+    color:#555; 
+    font-family:Arial, Helvetica, sans-serif; 
+    font-size:12px; 
+    -webkit-box-shadow:0px 0px 5px 0px #CCC; 
+    -moz-box-shadow:0px 0px 5px 0px #CCC; 
+    box-shadow:0px 0px 5px 0px #CCC;
+}
+.report_tabs_filler{
+    margin:0px 0px 10px 0px; 
+    height:350px; 
+    border-radius:10px 0px 0px 0px; 
+}
+.report_tabs{
+    float:left; 
+    width:250px; 
+    font-family:Georgia, serif;
+}
+.report_anchor{
+    display:block; 
+    margin:2px 0px; 
+    padding:5px; 
+    background:#0B684B; 
+    color:#FFF; 
+    font-style:italic; 
+    text-align:center; 
+    text-decoration:none; 
+    text-transform:uppercase;
+}
+.report_anchor.last{
+    border-radius:0px 0px 0px 10px;
+}
+.patient_record_table{
+    width:520px; color:#555;
+}
+.patient_record_table td.title{
+    padding-right:7px; 
+    width:50px; 
+    border-right:3px solid #999; 
+    color:#C6BAC0; 
+    font-family:Georgia, serif !important; 
+    font-size:12px !important; 
+    text-align:right; 
+    text-transform:uppercase;
+}
+.patient_record_table td.title.two_line{
+    padding-right:7px; 
+    width:102px; 
+    border-right:3px solid #999; 
+    color:#C6BAC0; 
+    font-family:Georgia, serif !important; 
+    font-size:12px !important; 
+    text-align:right; 
+    text-transform:uppercase;
+}
+.patient_record_table td.data{
+    font-family:Arial, Helvetica, sans-serif !important; 
+    font-size:12px !important;
+}
+.info_section{
+    margin:0px 0px 0px 10px; 
+    padding:10px; 
+    width:520px; 
+    height:468px; 
+    border-radius:0px 10px 10px 0px; 
+    background:#FCFCFC; 
+    overflow:auto;
+}
+.section_header{
+    display:block; 
+    margin-bottom:5px; 
+    padding-bottom:3px; 
+    border-bottom:1px solid #999; 
+    font-family:Georgia, serif; 
+    font-size:20px; 
+    font-style:italic; 
+    text-transform:uppercase;
+}
+.section_header.style1{
+    color:#0B684B; 
+}
+.section_header.style2{
+    color:#C6BAC0; 
+}
