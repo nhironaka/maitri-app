@@ -21,7 +21,7 @@
         <% if not @patients.nil? %>
           <% @patients.each do |patient| %>
             <tr>
-                <td style="border-color:transparent"><a href="/patients/show" style="color: #0B684B"><u><%= patient.name %></u></a> </td>
+                <td style="border-color:transparent"><a href="/patients/show/<%=patient.id %>" style="color: #0B684B"><u><%= patient.name %></u></a> </td>
                 <td><%= patient.gender %></td>
                 <td><%= patient.start_date.strftime("%Y-%b-%d") %></td>
                 <td><%= patient.end_date.strftime("%Y-%b-%d") %></td> 
