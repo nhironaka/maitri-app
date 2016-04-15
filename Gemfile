@@ -42,6 +42,8 @@ gem 'rails_stdout_logging'
 
 gem 'figaro'
 
+gem 'rubyXL', '~> 3.3', '>= 3.3.17'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', '~> 0.4.0'
