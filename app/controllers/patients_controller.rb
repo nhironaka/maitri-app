@@ -27,7 +27,6 @@ class PatientsController < ApplicationController
     end
     
     def show
-      puts "SSSSSSSSSSSSSSSSSSSSSSSS"
       @patient = Patient.find(params[:id])
       #redirect_to "/patients/show"
     end
