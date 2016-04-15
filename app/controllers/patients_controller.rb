@@ -6,9 +6,8 @@ class PatientsController < ApplicationController
     end
     
     def show
-      id = params[:patient_id] # retrieve movie ID from URI route
-      @patient = Patient.find(id) # look up movie by unique ID
-      # will render app/views/movies/show.<extension> by default
+      id = params[:patient_id] 
+      @patient = Patient.find(id) 
     end
     
     def index
