@@ -63,4 +63,5 @@ Rails.application.routes.draw do
   resources :patients
   
   get '/patients/show/:patient_id' => 'patients#show', :as => :patients_show
+  get '/patients/reports' => 'patients#index', :as => :patients_reports
 end

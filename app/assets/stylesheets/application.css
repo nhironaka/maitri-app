@@ -571,7 +571,6 @@ li a{
     background-image: -ms-linear-gradient(top,rgb(0, 105, 74), rgb(255, 255, 254));
 }
 
-
 /** Reporting **/
 .report_container{
     margin:30px auto 0px auto; 
@@ -625,14 +624,7 @@ li a{
     text-transform:uppercase;
 }
 .patient_record_table td.title.two_line{
-    padding-right:7px; 
     width:102px; 
-    border-right:3px solid #999; 
-    color:#C6BAC0; 
-    font-family:Georgia, serif !important; 
-    font-size:12px !important; 
-    text-align:right; 
-    text-transform:uppercase;
 }
 .patient_record_table td.data{
     font-family:Arial, Helvetica, sans-serif !important; 
