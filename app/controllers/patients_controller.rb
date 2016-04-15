@@ -17,6 +17,14 @@ class PatientsController < ApplicationController
       if not end_date.nil? and not end_date.empty?
         @patients = @patients.where('end_date < ?', end_date)
       end
+      
+      
+    end
+    
+    def show
+      puts "SSSSSSSSSSSSSSSSSSSSSSSS"
+      @patient = Patient.find(params[:id])
+      #redirect_to "/patients/show"
     end
       
     private
@@ -24,6 +32,8 @@ class PatientsController < ApplicationController
     def sort_column
       params[:sort]
     end
+    
+
     
     def sort_direction
       %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
