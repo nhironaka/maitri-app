@@ -9,81 +9,87 @@
   <lj-raw>
 <lj-cut>
 
-<div style="margin:30px auto 0px auto; padding:15px; max-width:800px; height:488px; border:1px solid #C6BAC0; border-radius:10px; color:#555; font-family:Arial, Helvetica, sans-serif; font-size:12px; -webkit-box-shadow:0px 0px 5px 0px #CCC; box-shadow:0px 0px 5px 0px #CCC;">
+<div class="report_container">
 
-<div style="float:left; width:250px; font-family:Georgia, serif;">
-<div style="margin:0px 0px 10px 0px; height:350px; border-radius:10px 0px 0px 0px; background:#CEFBE6 url(SIDEBAR PIC) no-repeat; background-size:cover;"> </div>
-<a href="#1" style="display:block; margin:2px 0px; padding:5px; background:#0B684B; color:#FFF; font-style:italic; text-align:center; text-decoration:none; text-transform:uppercase;">RESIDENT INFORMATION</a>
-<a href="#2" style="display:block; margin:2px 0px; padding:5px; background:#0B684B; color:#FFF; font-style:italic; text-align:center; text-decoration:none; text-transform:uppercase;">ADDITIONAL CLINICAL DATA</a>
-<a href="#3" style="display:block; margin:2px 0px; padding:5px; background:#0B684B; color:#FFF; font-style:italic; text-align:center; text-decoration:none; text-transform:uppercase;">ADDITIONAL RESIDENT INFORMATION</a>
-<a href="#4" style="display:block; margin:2px 0px; padding:5px; background:#0B684B; color:#FFF; font-style:italic; text-align:center; text-decoration:none; text-transform:uppercase;">MEDICATION ORDERS</a>
-<a href="#5" style="display:block; margin:2px 0px; padding:5px; border-radius:0px 0px 0px 10px; background:#0B684B; color:#FFF; font-style:italic; text-align:center; text-decoration:none; text-transform:uppercase;">MISC. NOTES, ETC.</a>
+<div class="report_tabs">
+  <div class="report_tabs_filler"> </div>
+  <a href="#1" class="report_anchor">RESIDENT INFORMATION</a>
+  <a href="#2" class="report_anchor">ADDITIONAL CLINICAL DATA</a>
+  <a href="#3" class="report_anchor">ADDITIONAL RESIDENT INFORMATION</a>
+  <a href="#4" class="report_anchor">MEDICATION ORDERS</a>
+  <a href="#5"  class="report_anchor last">MISC. NOTES, ETC.</a>
 </div>
 
 
+<<<<<<< HEAD
 <div style="margin-left:250px; height:488px; text-align:justify; overflow:hidden;">
 <a name="1"></a><div style="margin:0px 0px 0px 10px; padding:10px; width:520px; height:468px; border-radius:0px 10px 10px 0px; background:#FCFCFC; overflow:auto;">
 <span style="display:block; margin-bottom:5px; padding-bottom:3px; color:#0B684B; border-bottom:1px solid #999; font-family:Georgia, serif; font-size:20px; font-style:italic; text-transform:uppercase;"><%= @patient.name %></span>
+=======
+<div class="info_section_container">
+<a name="1"></a><div class="info_section">
+<span class="section_header style1">RESIDENT INFORMATION</span>
+>>>>>>> c7cf2464539474b2438d2edb513a4dfee40b18f3
 
 <br/>
 
-<table cellspacing="5px" style="width:520px; color:#555;">
+<table cellspacing="5px" class="patient_record_table">
 <tr>
-<td style="padding-right:7px; width:50px; border-right:3px solid #999; color:#C6BAC0; font-family:Georgia, serif !important; font-size:12px !important; text-align:right; text-transform:uppercase;">NAME</td>
-<td style="font-family:Arial, Helvetica, sans-serif !important; font-size:12px !important;">CHARACTER'S NAME</td>
-<td style="padding-right:7px; width:102px; border-right:3px solid #999; color:#C6BAC0; font-family:Georgia, serif !important; font-size:12px !important; text-align:right; text-transform:uppercase;">OCCUPATION</td>
-<td style="font-family:Arial, Helvetica, sans-serif !important; font-size:12px !important;">JOB</td>
+<td class="title">NAME</td>
+<td class="data"><%= @patient.name%></td>
+<td class="title">OCCUPATION</td>
+<td class="data">JOB</td>
 </tr>
 <tr>
-<td style="padding-right:7px; width:50px; border-right:3px solid #999; color:#C6BAC0; font-family:Georgia, serif !important; font-size:12px !important; text-align:right; text-transform:uppercase;">NICKNAME(S)</td>
-<td style="font-family:Arial, Helvetica, sans-serif !important; font-size:12px !important;">OTHER NAMES/CODENAME</td>
-<td style="padding-right:7px; width:102px; border-right:3px solid #999; color:#C6BAC0; font-family:Georgia, serif !important; font-size:12px !important; text-align:right; text-transform:uppercase;">PARENTS</td>
-<td style="font-family:Arial, Helvetica, sans-serif !important; font-size:12px !important;">MOTHER, FATHER</td>
+<td class="title">NICKNAME(S)</td>
+<td class="data">OTHER NAMES/CODENAME</td>
+<td class="title">PARENTS</td>
+<td class="data">MOTHER, FATHER</td>
 </tr>
 <tr>
-<td style="padding-right:7px; width:50px; border-right:3px solid #999; color:#C6BAC0; font-family:Georgia, serif !important; font-size:12px !important; text-align:right; text-transform:uppercase;">SPECIES</td>
-<td style="font-family:Arial, Helvetica, sans-serif !important; font-size:12px !important;">OR TYPE</td>
-<td style="padding-right:7px; width:102px; border-right:3px solid #999; color:#C6BAC0; font-family:Georgia, serif !important; font-size:12px !important; text-align:right; text-transform:uppercase;">SIBLINGS</td>
-<td style="font-family:Arial, Helvetica, sans-serif !important; font-size:12px !important;">BROTHER, SISTER</td>
+<td class="title">Start Date</td>
+<td class="data"><%= @patient.start_date %></td>
+<td class="title">End Date</td>
+<td class="data"><%= @patient.end_date %></td>
 </tr>
 <tr>
-<td style="padding-right:7px; width:50px; border-right:3px solid #999; color:#C6BAC0; font-family:Georgia, serif !important; font-size:12px !important; text-align:right; text-transform:uppercase;">DOB</td>
-<td style="font-family:Arial, Helvetica, sans-serif !important; font-size:12px !important;">MM/DD/YYYY</td>
-<td style="padding-right:7px; width:102px; border-right:3px solid #999; color:#C6BAC0; font-family:Georgia, serif !important; font-size:12px !important; text-align:right; text-transform:uppercase;">RELATIVES</td>
-<td style="font-family:Arial, Helvetica, sans-serif !important; font-size:12px !important;">AUNTS, UNCLES</td>
+<td class="title">DOB</td>
+<td class="data">MM/DD/YYYY</td>
+<td class="title">RELATIVES</td>
+<td class="data">AUNTS, UNCLES</td>
 </tr>
 <tr>
-<td style="padding-right:7px; width:50px; border-right:3px solid #999; color:#C6BAC0; font-family:Georgia, serif !important; font-size:12px !important; text-align:right; text-transform:uppercase;">AGE</td>
-<td style="font-family:Arial, Helvetica, sans-serif !important; font-size:12px !important;">33</td>
-<td style="padding-right:7px; width:102px; border-right:3px solid #999; color:#C6BAC0; font-family:Georgia, serif !important; font-size:12px !important; text-align:right; text-transform:uppercase;">MARITAL STATUS</td>
-<td style="font-family:Arial, Helvetica, sans-serif !important; font-size:12px !important;">MARRIED? SINGLE?</td>
+<td class="title">AGE</td>
+<td class="data">33</td>
+<td class="title">MARITAL STATUS</td>
+<td class="data">MARRIED? SINGLE?</td>
 </tr>
 <tr>
-<td style="padding-right:7px; width:50px; border-right:3px solid #999; color:#C6BAC0; font-family:Georgia, serif !important; font-size:12px !important; text-align:right; text-transform:uppercase;">RESIDENCE</td>
-<td style="font-family:Arial, Helvetica, sans-serif !important; font-size:12px !important;">PLACE</td>
-<td style="padding-right:7px; width:102px; border-right:3px solid #999; color:#C6BAC0; font-family:Georgia, serif !important; font-size:12px !important; text-align:right; text-transform:uppercase;">SPOUSE</td>
-<td style="font-family:Arial, Helvetica, sans-serif !important; font-size:12px !important;">SIGNIFICANT OTHER</td>
+<td class="title">RESIDENCE</td>
+<td class="data">PLACE</td>
+<td class="title">SPOUSE</td>
+<td class="data">SIGNIFICANT OTHER</td>
 </tr>
 </table>
 
 <br/><br/>
 
-<span style="display:block; margin-bottom:5px; padding-bottom:3px; color:#C6BAC0; border-bottom:1px solid #999; font-family:Georgia, serif; font-size:20px; font-style:italic; text-transform:uppercase;">APPEARANCE</span>
+<span class="section_header style2">APPEARANCE</span>
 
 <br/>
 
-<table cellspacing="5px" style="width:520px; color:#555;">
+<table cellspacing="5px" class="patient_record_table">
 <tr>
-<td style="padding-right:7px; width:83px; border-right:3px solid #999; color:#C6BAC0; font-family:Georgia, serif !important; font-size:12px !important; text-align:right; text-transform:uppercase;">HEIGHT</td>
-<td style="font-family:Arial, Helvetica, sans-serif !important; font-size:12px !important;">#'##"</td>
-<td style="padding-right:7px; width:83px; border-right:3px solid #999; color:#C6BAC0; font-family:Georgia, serif !important; font-size:12px !important; text-align:right; text-transform:uppercase;">HAIR</td>
-<td style="font-family:Arial, Helvetica, sans-serif !important; font-size:12px !important;">COLOR, LENGTH</td>
+<td class="title">HEIGHT</td>
+<td class="data">#'##"</td>
+<td class="title">HAIR</td>
+<td class="data">COLOR, LENGTH</td>
 </tr>
 <tr>
-<td style="padding-right:7px; width:83px; border-right:3px solid #999; color:#C6BAC0; font-family:Georgia, serif !important; font-size:12px !important; text-align:right; text-transform:uppercase;">BUILD</td>
-<td style="font-family:Arial, Helvetica, sans-serif !important; font-size:12px !important;">BUILD TYPE</td>
-<td style="padding-right:7px; width:83px; border-right:3px solid #999; color:#C6BAC0; font-family:Georgia, serif !important; font-size:12px !important; text-align:right; text-transform:uppercase;">EYES</td>
-<td style="font-family:Arial, Helvetica, sans-serif !important; font-size:12px !important;">COLOR</td>
+<td class="title">BUILD</td>
+<td class="data">BUILD TYPE</td>
+<td class="title">EYES</td>
+<td class="data">COLOR</td>
 </tr>
 </table>
 
@@ -92,42 +98,42 @@
 PHYSICAL DESCRIPTION
 </div>
 
-<a name="2"></a><div style="margin:0px 0px 0px 10px; padding:10px; width:520px; height:468px; border-radius:0px 10px 10px 0px; background:#FCFCFC; overflow:auto;">
-<span style="display:block; margin-bottom:5px; padding-bottom:3px; color:#0B684B; border-bottom:1px solid #999; font-family:Georgia, serif; font-size:20px; font-style:italic; text-transform:uppercase;">ADDITIONAL CLINICAL DATA</span>
+<a name="2"></a><div class="info_section">
+<span class="section_header style1">ADDITIONAL CLINICAL DATA</span>
 WRITE YOUR CHARACTER'S PERSONALITY HERE.
 </div>
 
-<a name="3"></a><div style="margin:0px 0px 0px 10px; padding:10px; width:520px; height:468px; border-radius:0px 10px 10px 0px; background:#FCFCFC; overflow:auto;">
-<span style="display:block; margin-bottom:5px; padding-bottom:3px; color:#0B684B; border-bottom:1px solid #999; font-family:Georgia, serif; font-size:20px; font-style:italic;">ADDITIONAL RESIDENT INFORMATION</span>
-<b style="text-transform:uppercase;">NAME OF ABILITY</b><br/>
+<a name="3"></a><div class="info_section">
+<span class="section_header style1">ADDITIONAL RESIDENT INFORMATION</span>
+<b>NAME OF ABILITY</b><br/>
 ABILITY DESCRIPTION.
 
 <br/><br/>
 
-<b style="text-transform:uppercase;">NAME OF SKILL</b><br/>
+<b>NAME OF SKILL</b><br/>
 SKILL DESCRIPTION.
 </div>
 
-<a name="4"></a><div style="margin:0px 0px 0px 10px; padding:10px; width:520px; height:468px; border-radius:0px 10px 10px 0px; background:#FCFCFC; overflow:auto;">
-<span style="display:block; margin-bottom:5px; padding-bottom:3px; color:#0B684B; border-bottom:1px solid #999; font-family:Georgia, serif; font-size:20px; font-style:italic; text-transform:uppercase;">MEDICATION ORDERS</span>
+<a name="4"></a><div class="info_section">
+<span class="section_header style1">MEDICATION ORDERS</span>
 YOUR CHARACTER'S HISTORY.
 </div>
 
-<a name="5"></a><div style="margin:0px 0px 0px 10px; padding:10px; width:520px; height:468px; border-radius:0px 10px 10px 0px; background:#FCFCFC; overflow:auto;">
-<span style="display:block; margin-bottom:5px; padding-bottom:3px; color:#C6BAC0; border-bottom:1px solid #999; font-family:Georgia, serif; font-size:20px; font-style:italic; text-transform:uppercase;">MISC. NOTES</span>
+<a name="5"></a><div class="info_section">
+<span class="section_header style2">MISC. NOTES</span>
 <ul>
-<li><b style="text-transform:uppercase;">RANDOM FACT.</b> SOME DETAILS. Copy/paste as necessary.</li>
+<li><b>RANDOM FACT.</b> SOME DETAILS. Copy/paste as necessary.</li>
 </ul>
 
-<span style="display:block; margin-bottom:10px; padding-bottom:3px; color:#C6BAC0; border-bottom:1px solid #999; font-family:Georgia, serif; font-size:20px; font-style:italic; text-transform:uppercase;">WANTED LINES</span>
-<b style="text-transform:uppercase;">NAME OF LINE</b>
-<span style="display:block; color:#C6BAC0; font-family:Monospace, serif; font-size:11px; font-style:italic; text-transform:lowercase;">OPEN OR CLOSED / KEYWORD, KEYWORD, KEYWORD / PB, PB, PB</span>
+<span class="section_header style2">WANTED LINES</span>
+<b>NAME OF LINE</b>
+<span class="report_notes">OPEN OR CLOSED / KEYWORD, KEYWORD, KEYWORD / PB, PB, PB</span>
 DETAILS OF THE LINE. Copy/paste as necessary.
 
 <br/><br/>
 
-<b style="text-transform:uppercase;">NAME OF LINE</b>
-<span style="display:block; color:#C6BAC0; font-family:Monospace, serif; font-size:11px; font-style:italic; text-transform:lowercase;">OPEN OR CLOSED / KEYWORD, KEYWORD, KEYWORD / PB, PB, PB</span>
+<b>NAME OF LINE</b>
+<span class="report_notes">OPEN OR CLOSED / KEYWORD, KEYWORD, KEYWORD / PB, PB, PB</span>
 DETAILS OF THE LINE. Copy/paste as necessary.
 </div>
 
@@ -135,7 +141,7 @@ DETAILS OF THE LINE. Copy/paste as necessary.
 
 </div>
 
-<div style="clear:left; margin:5px auto; width:800px; font-size:14px; text-align:center;">
+<div class="report_footer">
 <!-- ▼▼▼ LEAVE THIS ALONE ▼▼▼ -->
 <a href="http://iheartunicorns.insanejournal.com" style="color:#C6BAC0; font-family:Georgia, serif; font-style:italic; text-decoration:none; text-transform:lowercase;" title="biosheet by...">IHEARTUNICORNS</a>
 <!-- ▲▲▲ LEAVE THIS ALONE ▲▲▲ -->

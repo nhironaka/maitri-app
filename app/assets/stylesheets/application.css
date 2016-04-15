@@ -20,8 +20,8 @@ html{
 
 body{
     position: absolute;
-    margin:0px;
-    padding:0px;
+    margin:0;
+    padding:0;
     top:0;
     left:0;
     width:100%;
@@ -65,10 +65,10 @@ fieldset {
 .header{
     position:relative;
     top:0;
-    left:0px;
+    left:0;
     margin-top: 0;
-    padding:18px 0px;
-    scroll:hidden;
+    padding:18px 0;
+    overflow:hidden;
 }
 
 .header span{
@@ -80,7 +80,7 @@ fieldset {
 /** App Content **/
 
 .content{
-    left:0px;
+    left:0;
     height:100%;
     min-width: 807px;
     padding-left:250px;
@@ -143,7 +143,7 @@ fieldset {
     position:relative;
     margin-left: auto;
     margin-right: auto;
-    bottom:0px;
+    bottom:0;
     color:rgb(245,255,245);
 }
 
@@ -195,7 +195,7 @@ fieldset {
 }
 
 #table_header, #patients_table{
-    top:0px;
+    top:0;
     table-layout: fixed;
     font-size: 18px;
     border-collapse: collapse;
@@ -242,15 +242,20 @@ fieldset {
 }
 .scrolling_table::-webkit-scrollbar-track{
     -webkit-box-shadow: inset 0 0 6px rgb(0, 105, 73);
+    -moz-box-shadow:inset 0 0 6px rgb(0, 105, 73);
+    box-shadow:inset 0 0 6px rgb(0, 105, 73);
     -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
     border-radius: 10px;
 }
 .scrolling_table::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
     background: rgb(249, 253, 254);
     -webkit-box-shadow: inset 0 0 1px rgb(0, 105, 73);
+    -moz-box-shadow: inset 0 0 1px rgb(0, 105, 73);
+    box-shadow:inset 0 0 1px rgb(0, 105, 73);
     -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
 }
 .scrolling_table::-webkit-scrollbar-thumb:window-inactive {
 	background: white;
@@ -278,7 +283,7 @@ fieldset {
 	top: -15px;
 	border-style: solid;
 	border-color: #e7e7e7 transparent #e7e7e7 transparent;
-	border-width: 0px 9px 15px;
+	border-width: 0 9px 15px;
 }
 .sliding.open:after{
 
@@ -291,11 +296,11 @@ fieldset {
 	top: -13px;
 	border-style: solid;
 	border-color: rgb(248, 248, 248) transparent rgb(248, 248, 248) transparent;
-	border-width: 0px 8px 13px;
+	border-width: 0 8px 13px;
 
 }
 .sliding {
-    height:0px;
+    height:0;
     -webkit-transition:height, 0.5s linear;
     -moz-transition: height, 0.5s linear;
     -ms-transition: height, 0.5s linear;
@@ -322,11 +327,8 @@ fieldset {
     position: relative;
     width:100%;
     height:auto;
-    
 }
-
 .field_filters form{
-    display: inline; 
     margin-left:5px;
     float:left;
 }
@@ -368,7 +370,7 @@ fieldset {
   text-align: center;
   background-color:rgb(0, 105, 73);
   border-color:rgb(92,159,138);
-  margin:5px 0px;
+  margin:5px 0;
 
   color: rgb(245,255,245);
   border-width:2px;
@@ -389,7 +391,7 @@ fieldset {
     font-size:20px;
     line-height: 25px;
     z-index: 150;
-    padding: 15px 0px;
+    padding: 15px 0;
     float:left;
 }
 
@@ -401,7 +403,7 @@ li{
 li{
     position:relative;
     display:block;
-    text-align: -webkit-match-parent;
+    text-align: inherit;
 }
 
 li a{
@@ -409,7 +411,7 @@ li a{
 }
 
 .nav{
-    padding-left:0px;
+    padding-left:0;
     margin-bottom:0;
     list-style:none;
     margin-top:0;
@@ -438,7 +440,7 @@ li a{
     width:33.33%;
     min-width:269px;
     height:100%;
-    margin:0px;
+    margin:0;
 }
 .panel_container.index{
     min-width:200px;
@@ -454,7 +456,7 @@ li a{
     position: relative;
     bottom:0;
     text-align: left;
-    padding:0px 10px;
+    padding:0 10px;
     height:100%;
     cursor:pointer;
     margin:0;
@@ -466,7 +468,7 @@ li a{
 .shade_1{
     background-color: #006949;
     border-color: #006949;
-    margin-left:0px;
+    margin-left:0;
     margin-right:16.67px;
 }
 .shade_2{
@@ -529,7 +531,7 @@ li a{
 /** Layouts for specific pages **/
 .sign_{
     position:relative;
-    right:0px;
+    right:0;
     display:inline-block; 
     float:right;
     width:250px;
@@ -543,7 +545,7 @@ li a{
     color:#DDDDDD;
     font-size: 10px;
     right:0;
-    bottom:0px;
+    bottom:0;
     position: fixed;
 }
 
@@ -569,4 +571,113 @@ li a{
     background-image: -moz-linear-gradient(top,rgb(0, 105, 74), rgb(255, 255, 254));
     background-image: -o-linear-gradient(top,rgb(0, 105, 74), rgb(255, 255, 254));
     background-image: -ms-linear-gradient(top,rgb(0, 105, 74), rgb(255, 255, 254));
+}
+
+/** Reporting **/
+.report_container{
+    margin:30px auto 0 auto; 
+    padding:15px; 
+    max-width:800px; 
+    height:488px; 
+    border:1px solid #C6BAC0; 
+    border-radius:10px; 
+    color:#555; 
+    font-family:Arial, Helvetica, sans-serif; 
+    font-size:12px; 
+    -webkit-box-shadow:0 0 5px 0 #CCC; 
+    -moz-box-shadow:0 0 5px 0 #CCC; 
+    box-shadow:0 0 5px 0 #CCC;
+}
+.report_tabs_filler{
+    margin:0 0 10px 0; 
+    height:350px; 
+    border-radius:10px 0 0 0; 
+}
+.report_tabs{
+    float:left; 
+    width:250px; 
+    font-family:Georgia, serif;
+}
+.report_anchor{
+    display:block; 
+    margin:2px 0; 
+    padding:5px; 
+    background:#0B684B; 
+    color:#FFF; 
+    font-style:italic; 
+    text-align:center; 
+    text-decoration:none; 
+    text-transform:uppercase;
+}
+.report_anchor.last{
+    border-radius:0 0 0 10px;
+}
+.patient_record_table{
+    width:520px; color:#555;
+}
+.patient_record_table td.title{
+    padding-right:7px; 
+    width:50px; 
+    border-right:3px solid #999; 
+    color:#C6BAC0; 
+    font-family:Georgia, serif !important; 
+    font-size:12px !important; 
+    text-align:right; 
+    text-transform:uppercase;
+}
+.two_line{
+    width:102px; 
+}
+.patient_record_table td.data{
+    font-family:Arial, Helvetica, sans-serif !important; 
+    font-size:12px !important;
+}
+.info_section_container{
+    margin-left:250px; 
+    height:488px; 
+    text-align:justify; 
+    overflow:hidden;
+}
+.info_section{
+    margin:0 0 0 10px; 
+    padding:10px; 
+    width:520px; 
+    height:468px; 
+    border-radius:0 10px 10px 0; 
+    background:#FCFCFC; 
+    overflow:auto;
+}
+.info_section b{
+    text-transform:uppercase;
+}
+.section_header{
+    display:block; 
+    margin-bottom:5px; 
+    padding-bottom:3px; 
+    border-bottom:1px solid #999; 
+    font-family:Georgia, serif; 
+    font-size:20px; 
+    font-style:italic; 
+    text-transform:uppercase;
+}
+.section_header.style1{
+    color:#0B684B; 
+}
+.section_header.style2{
+    color:#C6BAC0; 
+}
+.report_footer{
+    clear:left; 
+    margin:5px auto; 
+    width:800px; 
+    font-size:14px; 
+    text-align:center;
+}
+.report_notes{
+    display:block; 
+    color:#C6BAC0; 
+    font-family:Monospace, serif; 
+    font-size:11px; 
+    font-style:italic; 
+    text-transform:lowercase;
 }
