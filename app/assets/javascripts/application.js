@@ -95,7 +95,7 @@ function persist(){
 function hide_columns(){
     $('#popup').removeClass("open");
     for (var i=0; i <= 12; i++){
-        val = sessionStorage.getItem(i);
+        var val = sessionStorage.getItem(i);
         if (val === true || val === null || $('input:checkbox[name=' + i + ']').checked){
             $('input:checkbox[name=' + i + ']').prop("checked", true);
             $('#patients_table td:nth-child('+i+'), #table_header th:nth-child(' + i + ')').removeClass("hidden");
