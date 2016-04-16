@@ -19,4 +19,6 @@ Then /I should see all the patients/ do
   # Make sure that all the patients in the app are visible in the table
   patients = Patient.all
   page.should have_css("table#patients tbody tr", :count => patients.length)
+  
+  
 end

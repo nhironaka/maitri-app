@@ -23,19 +23,28 @@ Background: patients are already in the database
     | existuser               | existuser1  | existuser1@gmail.com | existuser1            |
   And I am logged in
   And I am on the patient overview page
-  And I press "name" of a patient
 
-Scenario: click patient name
-  When I click "Toni T"
-  Then I should see "Toni T"
+Scenario: follow patient name
+  When I follow "/patients/1"
   Then I should see "RESIDENT INFORMATION"
   Then I should see "ADDITIONAL CLINICAL DATA"
   Then I should see "ADDITIONAL RESIDENT INFORMATION"
   Then I should see "MEDICATION ORDERS"
   Then I should see "MISC. NOTES"
+  Then I follow "RESIDENT INFORMATION"
   
-Scenario: click "RESIDENT INFORMATION"
-  When I click RESIDENT INFORMATION
-  Then I should see "Toni T"
-  Then I should see "START DATE"
-  Then I should see "AGE"
+Scenario: follow RESIDENT INFORMATION
+  When I follow "/patients/1"
+  Then I follow "RESIDENT INFORMATION"
+  Then I should see "RESIDENT"
+  Then I should see "INFORMATION"
+  Then I should see "ADDITIONAL"
+  Then I should see "CLINICAL"
+  Then I should see "DATA"
+  Then I should see "ORDERS"
+  Then I should see "MISC."
+  Then I should see "NOTES,"
+  Then I should see "OCCUPATION"
+  Then I should see "FATHER"
+  Then I should see "Start Date"
+  
