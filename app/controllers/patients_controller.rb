@@ -30,7 +30,6 @@ class PatientsController < ApplicationController
     
     def import_excel
       Patient.delete_all
-<<<<<<< HEAD
       file = params[:file]
       patients_sheets = Roo::Spreadsheet.open(file)
       
@@ -42,16 +41,6 @@ class PatientsController < ApplicationController
       end #starts on the second row
       
       redirect_to patients_overview_path
-=======
-      file = params[:file].path
-      patients_sheets = RubyXL::Parser.parse(file)
-      patients_sheets.each  do |patients_sheet| #starts on the second row
-        patients_sheet.each do |row|
-          name = row[1] + " " + row[3]
-          Patient.create(name: name)
-        end
-      end
->>>>>>> 8f9d6ca1e4d304365f3a2939e4b003df55701862
     end
       
     private
