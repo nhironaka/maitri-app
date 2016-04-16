@@ -1,7 +1,7 @@
 Feature: show a patient profile
  
   As a user
-  So that I can view the profile of a patient
+  So that I can view the profile of a patient to see more background information on them
   I want to be able to see more patient information
 
 Background: patients are already in the database
@@ -31,20 +31,15 @@ Scenario: follow patient name
   Then I should see "ADDITIONAL RESIDENT INFORMATION"
   Then I should see "MEDICATION ORDERS"
   Then I should see "MISC. NOTES"
-  Then I follow "RESIDENT INFORMATION"
   
 Scenario: follow RESIDENT INFORMATION
   When I follow "/patients/1"
   Then I follow "RESIDENT INFORMATION"
-  Then I should see "RESIDENT"
-  Then I should see "INFORMATION"
-  Then I should see "ADDITIONAL"
-  Then I should see "CLINICAL"
-  Then I should see "DATA"
-  Then I should see "ORDERS"
-  Then I should see "MISC."
-  Then I should see "NOTES,"
-  Then I should see "OCCUPATION"
-  Then I should see "FATHER"
-  Then I should see "Start Date"
+  Then I should see "Start Date 1991-01-12 00:00:00 UTC"
+  Then I should see "End Date 1992-01-31 00:00:00 UTC"
+  Then I should see "RESIDENT INFORMATION"
+  Then I should see "ADDITIONAL CLINICAL DATA"
+  Then I should see "ADDITIONAL RESIDENT INFORMATION"
+  Then I should see "MEDICATION ORDERS"
+  Then I should see "MISC. NOTES"
   
