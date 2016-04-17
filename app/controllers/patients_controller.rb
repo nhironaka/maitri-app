@@ -27,10 +27,29 @@ class PatientsController < ApplicationController
     end
     
     def show
+      import = params[:import]
+      id = params[:patient_id]
+      if import
+        render "import_view"
+        return
+      end
       @patient = Patient.find(params[:id])
       #redirect_to "/patients/show"
     end
-      
+    
+    def import_excel
+      Patient.delete_all
+      file = params[:file]
+      patients_sheets = Roo::Spreadsheet.open(file)
+      patients_sheets.each_with_pagename do |name, sheet|
+        sheet.drop(1).each do |row|
+          name = row[1] + " " + row[3]
+          Patient.create(name: name, start_date: Date.today, end_date: Date.today)
+        end
+      end
+      redirect_to patients_overview_path
+    end  
+    
     private
   
     def sort_column
