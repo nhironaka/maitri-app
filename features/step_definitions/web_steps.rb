@@ -286,3 +286,8 @@ Then (/^(?:|I )should (not\s+)?see "([^"]*)" before "([^"]*)"$/) do |no, arg1, a
     expect(page).to have_content(/#{arg1}.*#{arg2}.*/)
   end
 end
+
+Then /^I should get a download with the filename "([^\"]*)"$/ do |filename|
+  page.driver.response.headers['Content-Disposition'].should include("filename=\"#{filename}\"")
+end
+
