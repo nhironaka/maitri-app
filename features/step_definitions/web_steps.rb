@@ -286,3 +286,13 @@ Then (/^(?:|I )should (not\s+)?see "([^"]*)" before "([^"]*)"$/) do |no, arg1, a
     expect(page).to have_content(/#{arg1}.*#{arg2}.*/)
   end
 end
+
+When /^I upload an Excel file$/ do
+  attach_file(:xlsx_file, File.join(RAILS_ROOT, 'features', 'test_files', 'patients.xlsx'))
+  click_button "Send file"
+end
+
+When /^I upload a non-Excel file$/ do
+  attach_file(:xlsx_file, File.join(RAILS_ROOT, 'features', 'test_files', 'facesheet.pdf'))
+  click_button "Send file"
+end

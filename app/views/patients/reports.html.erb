@@ -1,12 +1,23 @@
-<button input="button" class="option-button">Formulas</button>
-<div class="table">
-    <h1>Preview</h1>
-    <button type="button" class="option-button">Refresh</button>
-    <%= render 'patient_list', { :patients => @patients } -%>
+<div class="content">
+  <h1>Reports</h1>
+  <div class="panels" id="index_panels">
+    <div class="panel_container index" id="panel_filter">
+      <button onclick="popupfilter()" type="button" id="report_button"><div class="panel shade_1">
+        <img class="icon icons8-Combo-Chart" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACZklEQVRoQ+1YgTEEQRDsjwARIAMyIAJEgAgQASJABIgAESACRIAMiIDqMvs1v3/7s/u/d26v9qq+rup/6nZ6uqdn7kcYyDUaCA6UBmQLwLUU/xDAkyOiNCDvANYk+Q8A66UC+QKwJMl/KlBFSWsXwJ0CcVCitJYBUFa8nwC49E2qlB55BMBGf5b7lNmWAOQYwAWAb+kJ9klxQDYAvEjWewDuQ3Ovz4ywHygpgrkCQGaCV9tA3ABjUqzoeIBFbBRs6CMAb9IXjZLqao4EB5gBRFvtJoBXC3ibjJANSkNfnMZnAG5nJGZabZfNTklor6fjUBqrar0IATKttgsgrCaXOkqD17kw4M7mNCaAEKCQ1f4Y0hrllBbdhSB4JwNMOmSXTYBYBH54+VbbGRAyQBBMhC7DRM0GlTjNEEFQgiseAw6IX/jx9zkYOVXyeZDkZlplg0xoAk5uE1utxLYGRDPg8mpc5izblN/pcJQhCzCx1bYJhC82dBb3gsOzthOHXSS+cVhWRnakWs6R3ClNUkhN1IpfGAirvi8ANAMcaAQUkoKVWOrvyUD0bsS9SFefleeQuxEAqcksEp8MRO9G7mBWn8mnLHym7yeiSgbiv9xzuKVaKXP8dyCUFqvPwUZZpbCgi2xWsG1GEp8fDK9AAqUxC5NjRWk62zzYm9ghal1+5vMqEKOZzArG7lCxcamMxNpqBRJgwCzMvIwEX3BipZA7bnBAeqv9WOZ8n17Yz2MPzh0XPXByH5z7eRWIp0HfHk27rIxMVnDqf63OK1gZqYz8VaD37tb7BGN7abBAYleU3sXNu2v1DsgvcwMrQn62lE8AAAAASUVORK5CYII=" width="50" height="50">
+        <div class="panel_content">Create a Report</div></div></button>
+    </div>
+    <div class="panel_container index" id="panel_reset"><button onclick="reset()" type="button" id="generate_button" ><div class="panel shade_2">
+      <img class="icon icons8-Download-From-Ftp" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACkElEQVRoQ+2agVEUMRSGfypQKkAqUCsAK0AqUCtQK1AqADqQDqAC6QCowLEC6QDnu8lj3uWyt9nd7JG7SWYYdveS433530s277GnHWl7O8KhBlKbkk2RWhU5l/RR0psBBj5Kupb0XRLXL9pwrQtJXydYcS/pQ0GYu2DL+/A76x6Qf5JeS2IgRuU2xtxKehvGlYJ5CgZY/Hbd74fJW9hM57hjLgj9PMyQcXFfjDEFuGZybGLje9z5JLg03rRoU0FKwTxIehdsQuUjSachBn9J+iTpTNJPSceSfgc1uL/iugTIFCVSY79JYvHBwM+R4YcO4IcbfF8jCCvnn2CwGW4qoc6XAIAyQONmDzWCYKcZbu6E2/HslSRgVpb8WkEwnGWX/YnVkID3MDwn0G9spa0VBFVsf8NoczFgeM5i4FuVMeINNBfzyvA58cFCABhLdbUxYjDsU+wbKGDudJl6i6jZtbwy/jXK3vEA/LsNMRLvMV3xQb/qYyS1YbLP8KbOD663FTGS/dawLTHSC7TNIEvnlE2AxAej3tnN7LB0/NgEyJTzzjqmBpKp+Eq3pkjPzDXXaq7lEh1jJyM1rrnW2Nlsq1Zbtcb6zpCZK/g3WrCPncwW7ENcttRrvOVqUzWSLkU4b5NVp1lJYYjqKzFCeoWc6tBCz1Kmb03BJwViEGRGfEkhF8RSqqSDFuVCFKHG4FP0OV/mCzP0X1e9ikFiCLKGvgbJidJqJX22WJL7+R8GgCEFedA3MnyemsUuGA/SB8HXW4VqnSkoQVYeuxetdJ09BUONkkbNj5gwd4qVyJzDdLfSICk3Mzex0gBqFoWYQxGbrq4i6SwQc4LEynA/G8TcIB6G6+Lu5KNljhiZFLRjB/8HLBLRr+l61/gAAAAASUVORK5CYII=" width="50" height="50">
+      <div class="panel_content">Generate</div></div></button>
+    </div>
+    <div class="panel_container index"><button type="button" id="import_button"><div class="panel shade_3">
+      <img class="icon icons8-Upload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABkklEQVRoQ+2Z4W0CMQyF7Q3aSWg3oJOXDTgmKRsYuXLQEZLYEBshne8XiMS57z3byR0IwRcRffASiHiOXAojgwvEr6zxEwkTBrKC+BKQBQDCYEJAGhDF+DAYd5AK4gQAO6Eon0NgXEEaEHsA+BOQTwA4CJg7jBtIC4KLm4hIuhbKmBAYF5AeBAOsQeQ7t2N3mGmQEUQLJArGA+QIANxiuZj39V5RO1LaV51miPg9s6d5gHDh8nUH0XOkAcM7f9lvnuKZBtFW7TmizXv09wSxKpaOWJWScdtIrZIWBnGWXvvUUouISvtWl0HErvBDRx4AOfXapwGE23c5WA5hpkFGATQZNRBtvrYXlfkmRxKkcWi0OFCPsbiajliVtaipxbLESEc0FVcn3OsTonVO1khPKUtuaiq/KkbWiOZE1khDIUt6ZmptMbX+37LMvCV5i9SyOjcalyCerTMdWSmQqZWp5VEQ77qze7BljWSNeORR1shARUuRBZlwE9ZyH+HPIx6gCVJ3LQ9VPWJM/63gcRMeMUYgF/tn1EJSBMYcAAAAAElFTkSuQmCC" width="50" height="50">
+      <div class="panel_content">Filler</div></div></button>
+    </div>
+  </div>
+  <div class="report_container">
+    <%= render :partial=>"/patients/filters.html.erb" %>  
+  </div>
 </div>
-<select>
-  <option value="PDF">PDF</option>
-  <option value="excel">Excel</option>
-  <option value="xml">XML</option>
-</select>
-<button type="button" class="option-button">Generate</button>
+
+

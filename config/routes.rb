@@ -60,7 +60,7 @@ Rails.application.routes.draw do
   #   end
   root "patients#index"
   get "patients/overview", :to => "patients#index", as: :patients_overview
-  resources :patients
+  get "patients/reports", :to => "patients#reports", as: :patient_reporting
+ resources :patients
   
- 
 end

@@ -124,7 +124,7 @@ fieldset {
 }
 
 .half-width{
-    top:0%;
+    top:0;
     padding:40px 80px 40px 80px;
     border:1px solid rgb(0,105,73);
     border-radius:5px;
@@ -395,7 +395,7 @@ fieldset {
     float:left;
 }
 
-.side_bar-nav ul
+.side_bar-nav ul,
 li{
     border-bottom: 1px solid #e7e7e7;
 }
@@ -514,7 +514,7 @@ li a{
 .top_link{
     position: fixed;
     top:25%;
-    right:0%;
+    right:0;
     padding:5px;
     font-size:18px;
     text-align: right;
@@ -522,8 +522,8 @@ li a{
 
 .bottom_link{
     position:absolute;
-    bottom:0%;
-    right:0%;
+    bottom:0;
+    right:0;
     padding:5px;
     font-size:18px;
 }
@@ -532,7 +532,6 @@ li a{
 .sign_{
     position:relative;
     right:0;
-    display:inline-block; 
     float:right;
     width:250px;
 }
@@ -567,6 +566,7 @@ li a{
     height:100%;
     top:0;
     background-color: rgb(0, 105, 74);
+    background-image: linear-gradient(top,rgb(0, 105, 74), rgb(255, 255, 254));
     background-image: -webkit-linear-gradient(top,rgb(0, 105, 74), rgb(255, 255, 254));
     background-image: -moz-linear-gradient(top,rgb(0, 105, 74), rgb(255, 255, 254));
     background-image: -o-linear-gradient(top,rgb(0, 105, 74), rgb(255, 255, 254));
@@ -620,8 +620,8 @@ li a{
     width:50px; 
     border-right:3px solid #999; 
     color:#C6BAC0; 
-    font-family:Georgia, serif !important; 
-    font-size:12px !important; 
+    font-family:Georgia, serif; 
+    font-size:12px; 
     text-align:right; 
     text-transform:uppercase;
 }
@@ -629,8 +629,8 @@ li a{
     width:102px; 
 }
 .patient_record_table td.data{
-    font-family:Arial, Helvetica, sans-serif !important; 
-    font-size:12px !important;
+    font-family:Arial, Helvetica, sans-serif; 
+    font-size:12px;
 }
 .info_section_container{
     margin-left:250px; 
