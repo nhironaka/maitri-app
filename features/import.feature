@@ -1,6 +1,6 @@
 Feature: import patient data from excel into database
  As a user
- So that I can easily import data from excel into the database
+ So that I can easily import data from excel into the database in order to keep up to date patients in the system and remove the old ones
  I want to see all the patient data from the excel sheet in the patients overview page
 
 Background: patients are already in the database
@@ -15,13 +15,18 @@ Background: patients are already in the database
   And I am logged in
   And I am on the patient overview page
   And I press "import_button"
-  Then I should see "Select file"
+  Then I should see "Please select an excel file"
 
 Scenario: import new patients through excel
-    When I upload an Excel file 
-    And I press "Import"
+    When I attach the file "/path/to/Violet test report- Resident Information.xlsx" to "file"
+    And I press "import_button"
     Then I should not see "Toni T"
     And I should see "Violet"
+
+Scenario: import a non-xlsx file type
+    When I attach the file "/path/to/File.pdf" to "file"
+    And I press "import_button" 
+    Then I should see "File type must be an Excel"
 
 Scenario: import a non-xlsx file type
     When I upload a non-Excel file
