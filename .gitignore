@@ -15,12 +15,8 @@
 /log/*
 !/log/.keep
 /tmp
-<<<<<<< HEAD
 /.env
-=======
-.env
-Procfile
+/roo_RackMultipart20160422-8153-1f6cgo2.xlsx20160422-8153-60i2qy
 
 # Ignore application configuration
 /config/application.yml
->>>>>>> d686901cac7cc7dba3ae24f5d0e5ca3209eb7fd5
