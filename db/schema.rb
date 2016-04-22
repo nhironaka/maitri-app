@@ -126,6 +126,10 @@ ActiveRecord::Schema.define(version: 20160422020745) do
     t.string "fifty four"
     t.string "fifty five"
     t.string "fifty six"
+    t.string "fifty seven"
+    t.string "fifty eight"
+    t.string "fifty nine"
+    t.string "sixty"
   end
 
   create_table "users", force: :cascade do |t|

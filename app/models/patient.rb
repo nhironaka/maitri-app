@@ -19,7 +19,7 @@ class Patient < ActiveRecord::Base
     def self.all_headers
       @headers = ['Only Active Residents', 'First Name',	'Middle Initial',	'Last Name',	'Nickname',	'	Suffix',	'	Marital Status',	
                   'Birthday',	'Gender',	'Race',	'Language',	'Religion',	'Social Security Number',	'Medicare',	
-                  'Medicaid',	'Residency',	'Start',	'Residency End',	'Apartment Number',	'Phone',	'Task Rating',	
+                  'Medicaid',	'Residency Start',	'Residency End',	'Apartment Number',	'Phone',	'Task Rating',	
                   'Hospital Preference',	'Funeral Home Pref',	'Pharmacy Preference',	'Pharmacy Phone',	'Do Not Resuscitate',	'Health Care',	'Power of Attorney',	
                   'HCPOA Activated?',	'Living Will',	'Advanced Directives',	'Allergies',	'Last Pneumonia',	'Shot',	'Last Flu Shot',	
                   'Last TB Test',	'Insurance 1 Label',	'Insurance 1 Value',	'Insurance 2 Label', 'Insurance 2 Value',	'Insurance 3 Label',	'Insurance 3 Value',	

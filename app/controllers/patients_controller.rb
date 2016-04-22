@@ -2,13 +2,12 @@ class PatientsController < ApplicationController
     helper_method :sort_column, :sort_direction
     
     def patient_params
-        params.require(:patient).permit(:two, :three, :four, :end_date)
+        params.require(:patient).permit(:two, :three, :sixteen, :seventeen)
     end
     
     def show
       id = params[:patient_id] 
       @patient = Patient.find(id) 
-      #render(:partial => 'show', :object => @patient) if request.xhr?
     end
     
     def index
@@ -18,10 +17,10 @@ class PatientsController < ApplicationController
         @patients = Patient.all
       end
       if not start_date.nil? and not start_date.empty?
-        @patients = @patients.where('start_date > ?', start_date)
+        @patients = @patients.where('sixteen > ?', start_date)
       end
       if not end_date.nil? and not end_date.empty?
-        @patients = @patients.where('end_date < ?', end_date)
+        @patients = @patients.where('seventeen < ?', end_date)
       end
     end
     

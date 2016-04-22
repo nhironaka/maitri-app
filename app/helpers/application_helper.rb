@@ -20,14 +20,13 @@ module ApplicationHelper
   private
   def all_headers
     @headers = ['Only Active Residents', 'First Name',	'Middle Initial',	'Last Name',	'Nickname',	'	Suffix',	'	Marital Status',	
-                'Birthday',	'Gender',	'Race',	'Language',	'Religion',	'Social Security Number',	'Medicare',	
-                'Medicaid',	'Residency',	'Start',	'Residency End',	'Apartment Number',	'Phone',	'Task Rating',	
-                'Hospital Preference',	'Funeral Home Pref',	'Pharmacy Preference',	'Pharmacy Phone',	'Do Not Resuscitate',	'Health Care',	'Power of Attorney',	
-                'HCPOA Activated?',	'Living Will',	'Advanced Directives',	'Allergies',	'Last Pneumonia',	'Shot',	'Last Flu Shot',	
-                'Last TB Test',	'Insurance 1 Label',	'Insurance 1 Value',	'Insurance 2 Label', 'Insurance 2 Value',	'Insurance 3 Label',	'Insurance 3 Value',	
-                'Preferred Pronouns',	'Admission Viral Load Date',	'Admission Viral Load',	'Admission CD4 Count Date',	'Admission CD4 Count',	'Admission Karnofsky Score',	
-                'Status (ie respite/EOL/hospice)',	'Substance Use Hx',	'Criminal Hx',	'Psychiatric Dx',	'Address of permanent residence',	'Resident cell phone number',	'Resident home phone number at permanent residence',	
-                'AHP Contract Start Date',	'AHP Contract End Date',	'ADAP',	'Notes']
+                'Birthday',	'Gender',	'Race',	'Language',	'Religion',	'SSN',	'Medicare',	
+                'Medicaid',	'Residency Start',	'Residency End',	'Apartment Number',	'Phone',	'Task Rating', 'Hospital Preference',
+                'Funeral Home Pref',	'Pharmacy Preference',	'Pharmacy Phone',	'Do Not Resuscitate',	'Health Care Power of Attorney', 'HCPOA Activated?',	'Living Will',	
+                'Advanced Directives',	'Allergies',	'Last Pneumonia Shot',	'Last Flu Shot', 'Last TB Test',	'Insurance 1 Label',	'Insurance 1 Value',	
+                'Insurance 2 Label', 'Insurance 2 Value',	'Insurance 3 Label',	'Insurance 3 Value', 'Preferred Pronouns',	'Admission Viral Load Date',	'Admission Viral Load',	
+                'Admission CD4 Count Date',	'Admission CD4 Count',	'Admission Karnofsky Score', 'Status (ie respite/EOL/hospice)',	'Substance Use Hx',	'Criminal Hx',	'Psychiatric Dx',	
+                'Address of permanent residence',	'Resident cell phone number',	'Resident home phone number at permanent residence', 'AHP Contract Start Date',	'AHP Contract End Date',	'ADAP',	'Notes']
   end
   
   def all_attrbs
