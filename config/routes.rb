@@ -61,6 +61,12 @@ Rails.application.routes.draw do
   root "patients#index"
   get "patients/overview", :to => "patients#index", as: :patients_overview
   get "patients/reports", :to => "patients#reports", as: :patient_reporting
- resources :patients
+  resources :patients
   
+  get '/patients/import/:import' => 'patients#show', :as => :patients_import_view
+  
+  resources :patients do
+    collection { post :import_excel } 
+  end
+
 end

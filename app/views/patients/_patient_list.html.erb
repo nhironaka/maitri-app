@@ -3,14 +3,9 @@
     <table id="table_header">
       <thead>
         <tr>
-          <th id="name_col" style="border-color:transparent"><%= sortable "Name" %></th>
-          <th id="gender_col"><%= sortable "Gender" %></th>
-          <th id="start_date_col" ><%= sortable "start_date" %></th>
-          <th id="end_date_col"><%= sortable "end_date" %></th>
-          <th>Housing</th>
-          <th>Income</th>
-          <th>SSN</th>
-          <th>DOB</th>
+          <% all_headers.each do |attrb| %>
+            <th><%= sortable attrb %></th>
+          <% end %>
         </tr>
       </thead>
     </table>
@@ -21,11 +16,13 @@
         <% if not @patients.nil? %>
           <% @patients.each do |patient| %>
             <tr>
-                <td style="border-color:transparent"><%= link_to patient.name, patient_path(patient), {:style=>'color:#008B00;', :class => "css_class"} %></td>
-                <td><%= patient.gender %></td>
-                <td><%= patient.start_date.strftime("%Y-%b-%d") %></td>
-                <td><%= patient.end_date.strftime("%Y-%b-%d") %></td> 
-                <td></td><td></td><td></td><td></td>
+              <% all_attrbs.each do |val| %>
+                <% if val == 'two' %>
+                  <td><%= link_to patient.two, patient_path(patient), {:style=>'color:#008B00;', :class => "css_class"} %></td>
+                <%else%>
+                  <td><%= patient[val] %></td>
+                  <%end%>
+              <%end%>
             </tr>
           <% end %>
         <% end %>

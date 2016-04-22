@@ -170,7 +170,7 @@ fieldset {
 }
 
 .table_header_container{
-    height:25px;
+    height:86px;
     z-index: 2;
     background-color:rgb(255,255,254);
     top:0;
@@ -178,6 +178,7 @@ fieldset {
     border-bottom: 1px solid #ddd; 
     border-left: 1px solid white; 
     overflow-x: hidden;
+    padding:0;
 }
 
 .table_header_container a{
@@ -207,17 +208,18 @@ fieldset {
     position: relative;
     text-align: center;
     left:-1px;
+    padding:0;
 }
 
 #table_header th,
 #patients_table td{
-    
     border-left:1px solid #ddd;
 }
 
 #table_header th{
-    padding-bottom:4px;
     width:152px;
+    overflow:hidden;
+    padding:0 1px;
 }
 
 #patients_table td{
