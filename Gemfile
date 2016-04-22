@@ -31,9 +31,9 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # Import xlsx into Active Record
-#gem 'rubyXL'
 gem 'test-unit'
 gem 'rake'
+gem 'to_words'
 # Authenticate users
 gem 'devise'
 # Solve Heroku Asset Problems. Only turn on when pushing to heroku

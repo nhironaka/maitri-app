@@ -14,8 +14,8 @@ Background: patients are already in the database
     | existuser                  | existuser1  | existuser1@gmail.com | existuser1                      |
   And I am logged in
   And I am on the patient overview page
-  #And I press "import_button"
-  #Then I should see "Please select an excel file"
+  And I press "import_button"
+  Then I should see "Please select an excel file"
 
 #Scenario: import new patients through excel
  #   When I select "Violet test report- Resident Information.xlsx"

@@ -2,7 +2,7 @@ class PatientsController < ApplicationController
     helper_method :sort_column, :sort_direction
     
     def patient_params
-        params.require(:patient).permit(:name, :gender, :start_date, :end_date)
+        params.require(:patient).permit(:two, :three, :four, :end_date)
     end
     
     def show
@@ -22,8 +22,6 @@ class PatientsController < ApplicationController
       if not end_date.nil? and not end_date.empty?
         @patients = @patients.where('end_date < ?', end_date)
       end
-      
-      
     end
     
     def show
@@ -34,7 +32,6 @@ class PatientsController < ApplicationController
         return
       end
       @patient = Patient.find(params[:id])
-      #redirect_to "/patients/show"
     end
     
     def import_excel
@@ -43,8 +40,15 @@ class PatientsController < ApplicationController
       patients_sheets = Roo::Spreadsheet.open(file)
       patients_sheets.each_with_pagename do |name, sheet|
         sheet.drop(1).each do |row|
-          name = row[1] + " " + row[3]
-          Patient.create(name: name, start_date: Date.today, end_date: Date.today)
+          #name = row[1] + " " + row[3]
+          attrbs = {}
+          i=1;
+          row.each do |val|
+            key = i.to_words.split('-').join(' ')
+            attrbs[key]=val
+            i += 1
+          end
+          Patient.create!(attrbs)#name: name, start_date: Date.today, end_date: Date.today)
         end
       end
       redirect_to patients_overview_path
@@ -55,8 +59,6 @@ class PatientsController < ApplicationController
     def sort_column
       params[:sort]
     end
-    
-
     
     def sort_direction
       %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
