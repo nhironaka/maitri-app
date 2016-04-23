@@ -7,7 +7,7 @@ Feature: filter a list of patients
 Background: patients are already in the database
   
   Given the following patients exist:
-    |  Name             |  Gender |  start_date |  end_date |
+    |  name             |  gender |  start_date |  end_date  |
     |  Toni T           |  M      | 12-01-1991  | 31-01-1992 |
     |  Cal H            |  M      | 11-12-1993  | 14-03-1996 | 
     |  Aari L           |  F      | 10-05-1999  | 02-09-2001 | 
@@ -27,41 +27,39 @@ Background: patients are already in the database
 
 Scenario: filter by checkboxes
   When I uncheck "demographic_fields_form"
-  And I check "Name"
-  And I check "Gender"
+  And I uncheck "First Name"
+  And I uncheck "Gender"
   And I press "OK"
-  Then I should see "Name"
-  And I should see "Gender"
-  And the following should be hidden: "start_date"
-  And the following should be hidden: "end_date"
+  Then the following should be hidden: "First_Name"
+  And the following should be hidden: "Gender"
   
 Scenario: filter everything
   When I uncheck "demographic_fields_form"
   And I press "OK"
-  Then the following should be hidden: "name"
-  And the following should be hidden: "gender"
-  And the following should be hidden: "start_date"
-  And the following should be hidden: "end_date"
+  Then the following should be hidden: "First_Name"
+  And the following should be hidden: "Gender"
+  And the following should be hidden: "Residency_Start"
+  And the following should be hidden: "Residency_End"
 
 Scenario: select all checkboxes you
   When I check "demographic_fields_form"
   And I press "OK"
-  Then I should see "Name"
+  Then I should see "First Name"
   And I should see "Gender"
-  And I should see "Start Date"
-  And I should see "End Date"
+  And I should see "Residency Start"
+  And I should see "Residency End"
   
 Scenario: press reset after filtered page
   When I press "Filter"
-  And I check "Name"
+  And I check "First Name"
   And I check "Gender"
-  And I uncheck "Start Date"
-  And I uncheck "End Date"
+  And I uncheck "Residency Start"
+  And I uncheck "Residency End"
   And I press "OK"
-  Then the following should be hidden: "start_date"
+  Then the following should be hidden: "Residency_Start"
   When I press "Reset"
-  Then I should see "Name"
+  Then I should see "First Name"
   And I should see "Gender"
-  And I should see "Start Date"
-  And I should see "End Date"
+  And I should see "Residency Start"
+  And I should see "Residency End"
   

@@ -43,9 +43,9 @@ a, input {
 }
 
 fieldset {
-    width:135px;
     overflow:scroll;
     height:200px;
+    display: inline-block;
 }
 
 .panel_container button, td a {

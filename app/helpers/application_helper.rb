@@ -1,12 +1,21 @@
 require 'net/http'
 require 'uri'
 module ApplicationHelper
+  @@headers = ['Only_Active_Residents', 'First_Name',	'Middle_Initial',	'Last_Name', 'Nickname', 'Suffix',	'Marital_status',	
+               'Birthday', 'Gender', 'Race', 'Language',	'Religion',	'SSN',	'Medicare',
+               'Medicaid', 'Residency_Start',	'Residency_End', 'Apartment_Number',	'Phone',	'task_Rating', 'hospital_Preference',
+                'funeral_Home_Pref',	'pharmacy_Preference',	'pharmacy_Phone',	'Do_Not_Resuscitate',	'Health_Care_Power_of_Attorney', 'HCPOA_Activated?', 'Living_Will',	
+                'Advanced_directives',	'Allergies',	'Last_Pneumonia_shot',	'Last_flu_shot', 'Last TB Test',	'Insurance_1_Label',	'Insurance_1_Value',	
+                'Insurance_2_Label', 'Insurance_2_Value',	'Insurance_3_Label',	'Insurance_3_Value', 'Preferred_Pronouns',	'Admission_Viral_Load_Date',	'Admission_Viral_Load',	
+                'Admission_CD4_Count_Date',	'Admission_CD4_Count', 'Admission_Karnofsky_Score', 'Status_(ie:Respite/EOL/hospice)',	'Substance_Use_Hx',	'Criminal_Hx', 'Psychiatric_Dx',	
+                'Address_of_Permanent_Residence',	'Resident_Cell_Phone_number',	'Resident_Home_Phone_number_At_Permanent_Residence', 'AHP_Contract_Start_Date',	'AHP_Contract_End_Date', 'ADAP', 'Notes']
+  @@map = Hash[@@headers.zip [*1..56].collect{|val| val.to_words.to_sym}]  
   
   def sortable(column, title = nil)
     title ||= column.titleize
     css_class = column == sort_column ? "current #{sort_direction}" : nil
     direction = column == sort_column && sort_direction == "asc" ? "desc" : "asc"
-    link_to title, patients_overview_path({:sort => all_attrbs.index(column), :direction => direction}), {:class => css_class}
+    link_to title, patients_overview_path({:sort => mapper(column), :direction => direction}), {:class => css_class}
   end
   
   def is_sign_in_path?
@@ -17,24 +26,15 @@ module ApplicationHelper
     !(request.original_url =~  /\/users\/password/).nil?
   end
   
-  private
+  def mapper (attribute)
+    @@map[attribute]
+  end
+  
   def all_headers
-    @headers = ['Only Active Residents', 'First Name',	'Middle Initial',	'Last Name',	'Nickname',	'	Suffix',	'	Marital Status',	
-                'Birthday',	'Gender',	'Race',	'Language',	'Religion',	'SSN',	'Medicare',	
-                'Medicaid',	'Residency Start',	'Residency End',	'Apartment Number',	'Phone',	'Task Rating', 'Hospital Preference',
-                'Funeral Home Pref',	'Pharmacy Preference',	'Pharmacy Phone',	'Do Not Resuscitate',	'Health Care Power of Attorney', 'HCPOA Activated?',	'Living Will',	
-                'Advanced Directives',	'Allergies',	'Last Pneumonia Shot',	'Last Flu Shot', 'Last TB Test',	'Insurance 1 Label',	'Insurance 1 Value',	
-                'Insurance 2 Label', 'Insurance 2 Value',	'Insurance 3 Label',	'Insurance 3 Value', 'Preferred Pronouns',	'Admission Viral Load Date',	'Admission Viral Load',	
-                'Admission CD4 Count Date',	'Admission CD4 Count',	'Admission Karnofsky Score', 'Status (ie respite/EOL/hospice)',	'Substance Use Hx',	'Criminal Hx',	'Psychiatric Dx',	
-                'Address of permanent residence',	'Resident cell phone number',	'Resident home phone number at permanent residence', 'AHP Contract Start Date',	'AHP Contract End Date',	'ADAP',	'Notes']
+     @@headers
   end
   
-  def all_attrbs
-    @attrbs = []
-    for i in 1..56
-      @attrbs.push(i.to_words)
-    end
-    return @attrbs
+  def map
+    @@map
   end
-  
 end

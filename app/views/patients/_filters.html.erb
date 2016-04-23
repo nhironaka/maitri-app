@@ -5,10 +5,10 @@
         <label>
           <input type="checkbox" id="demographic_fields_form" onclick="select_all('#demographic_fields')" checked/> Select all
         </label><br/>
-        <fieldset style="display: inline-block;" id="demographic_fields">
+        <fieldset id="demographic_fields">
           <legend>Demographics Fields</legend>
           <% for i in 1..13 %>
-            <label><input type="checkbox" name="<%=i%>" value="demographic" checked="true" onclick="deselect('demographic')"/> <%=all_headers[i]%></label></br>
+            <label><input type="checkbox" name="<%=i%>" value="demographic" checked="true" onclick="deselect('demographic')"/> <%=map.keys[i].split('_').join(' ')%></label></br>
           <%end%>
         </fieldset>
       </form>
@@ -16,10 +16,10 @@
         <label>
           <input type="checkbox" id="medical_fields_form" onclick="select_all('#medical_fields')" checked="true"/> Select all
         </label></br>
-        <fieldset style="display: inline-block;" id="medical_fields">
+        <fieldset id="medical_fields">
           <legend>Medical Fields</legend>
           <% for i in 14..47 %>
-            <label><input type="checkbox" name="<%=i%>" value="medical" checked="true" onclick="deselect('medical')"/> <%=all_headers[i]%></label></br>
+            <label><input type="checkbox" name="<%=i%>" value="medical" checked="true" onclick="deselect('medical')"/> <%=map.keys[i].split('_').join(' ')%></label></br>
           <%end%>
         </fieldset>
       </form>
@@ -27,10 +27,10 @@
         <label>
           <input type="checkbox" id="social_fields_form" onclick="select_all('#social_fields')" checked="true"/> Select all
           </label></br>
-        <fieldset style="display: inline-block;" id="social_fields">
+        <fieldset id="social_fields">
             <legend>Social Fields</legend>
-            <% for i in 48..60 %>
-            <label><input type="checkbox" name="<%=i%>" value="social" checked="true" onclick="deselect('social')"/> <%=all_headers[i]%></label></br>
+            <% for i in 48..55 %>
+              <label><input type="checkbox" name="<%=i%>" value="social" checked="true" onclick="deselect('social')"/> <%=map.keys[i].split('_').join(' ')%></label></br>
             <%end%>
         </fieldset>
       </form>

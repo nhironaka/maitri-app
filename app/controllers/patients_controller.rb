@@ -1,6 +1,6 @@
 class PatientsController < ApplicationController
     helper_method :sort_column, :sort_direction
-    
+
     def patient_params
         params.require(:patient).permit(:two, :three, :sixteen, :seventeen)
     end
@@ -44,15 +44,14 @@ class PatientsController < ApplicationController
       patients_sheets = Roo::Spreadsheet.open(file)
       patients_sheets.each_with_pagename do |name, sheet|
         sheet.drop(1).each do |row|
-          #name = row[1] + " " + row[3]
           attrbs = {}
           i=1;
           row.each do |val|
-            key = i.to_words.split('-').join(' ')
+            key = i.to_words.split('-').join('_').to_sym
             attrbs[key]=val
             i += 1
           end
-          Patient.create!(attrbs)#name: name, start_date: Date.today, end_date: Date.today)
+          Patient.create!(attrbs)
         end
       end
       redirect_to patients_overview_path

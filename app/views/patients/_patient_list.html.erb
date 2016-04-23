@@ -3,8 +3,8 @@
     <table id="table_header">
       <thead>
         <tr>
-          <% all_headers.each do |attrb| %>
-            <th><%= sortable attrb %></th>
+          <% map.keys.each do |attrb| %>
+            <th id='<%=attrb%>_col'><%= sortable attrb %></th>
           <% end %>
         </tr>
       </thead>
@@ -16,8 +16,8 @@
         <% if not @patients.nil? %>
           <% @patients.each do |patient| %>
             <tr>
-              <% all_attrbs.each do |val| %>
-                <% if val == 'two' %>
+              <% map.values.each do |val| %>
+                <% if val == :two %>
                   <td><%= link_to patient.two, patient_path(patient), {:style=>'color:#008B00;', :class => "css_class"} %></td>
                 <%else%>
                   <td><%= patient[val] %></td>
