@@ -6,10 +6,9 @@ class PatientsController < ApplicationController
     end
     
     def index
+       @patients = Patient.all
       if sort_column and sort_direction
-        @patients = Patient.order(sort_column + " " + sort_direction)
-      else
-        @patients = Patient.all
+        @patients = @patients.order(sort_column + " " + sort_direction)
       end
       if not start_date.nil? and not start_date.empty?
         @patients = @patients.where('sixteen > ?', start_date)
