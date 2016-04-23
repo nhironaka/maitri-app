@@ -34,7 +34,7 @@ module ApplicationHelper
      @@headers
   end
   
-  def map
+  def attr_map
     @@map
   end
 end

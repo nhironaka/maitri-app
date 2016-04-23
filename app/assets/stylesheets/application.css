@@ -181,12 +181,10 @@ fieldset {
     overflow-x: hidden;
     padding:0;
 }
-
 .table_header_container a{
    color: black;
    text-decoration:none;
 }
-
 .scrolling_table{
     z-index:5; 
     height:550px;
@@ -216,24 +214,20 @@ fieldset {
 #patients_table td{
     border-left:1px solid #ddd;
 }
-
 #table_header th{
     width:152px;
     overflow:hidden;
     padding:0 1px;
 }
-
 #patients_table td{
     padding-left:5px;
     width:148px;
     overflow:hidden;
     white-space:nowrap;
 }
-
 #patients_table tr:nth-child(even) {
     background: rgb(244, 245, 247);
 }
-
 #patients_table tbody tr:hover {
   background: #eee;
   transition: all 0.1s ease-in-out;     
@@ -348,7 +342,7 @@ fieldset {
 .bottom-right{
     position:relative; 
     bottom:0; 
-    right:0;
+    text-align:right;
 }
 
 /** Button appearance **/
@@ -362,6 +356,7 @@ fieldset {
     text-decoration: none;
 }
 
+.div_button,
 .option-button {
   position:relative;
   height:24px;
@@ -373,14 +368,25 @@ fieldset {
   text-align: center;
   background-color:rgb(0, 105, 73);
   border-color:rgb(92,159,138);
-  margin:5px 0;
-
   color: rgb(245,255,245);
+  margin:5px 5px;
   border-width:2px;
   border-radius: 3px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
-
+.option-button{
+    bottom:0; 
+    text-align:right;
+    right:0;
+}
+.div_button{
+	border-style:solid;
+	text-decoration:none;
+	padding:2px 10px;
+	height:14px;
+	clear:right;
+	right:0;
+}
 /** Navigation **/
 .side_bar-nav{
     position: relative;
@@ -683,4 +689,18 @@ li a{
     font-size:11px; 
     font-style:italic; 
     text-transform:lowercase;
+.selectors{
+    position:relative;
+    width:100%;
+    clear:left;
+    margin:5px 15px;
+}
+#filter_container{
+    clear: left;
+    display: inline-block;
+    width: 100%;
+}
+
+#filter_container select{
+     float:left; margin-right:5px;
 }

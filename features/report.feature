@@ -9,7 +9,7 @@ Background: patients are already in the database
   And I am on the patient overview page
   
 Scenario: Create a demographics report
-  When I press "/patients/reports"
+  When I follow "<i class='fa fa-file-text-o'></i> Reports"
   Then I should see "Reports"
   When I press "Generate Demographics Report"
   Then I should see "Download"

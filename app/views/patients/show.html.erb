@@ -27,7 +27,7 @@
 <table cellspacing="5px" class="patient_record_table">
 <tr>
 <td class="title">NAME</td>
-<td class="data"><%= @patient.name%></td>
+<td class="data"><%= @patient[mapper("First_Name")]%> <%= @patient[mapper("Last_Name")]%></td>
 <td class="title">OCCUPATION</td>
 <td class="data">JOB</td>
 </tr>
@@ -39,13 +39,13 @@
 </tr>
 <tr>
 <td class="title">Start Date</td>
-<td class="data"><%= @patient.start_date %></td>
+<td class="data"><%= @patient[mapper("Residency_Start")] %></td>
 <td class="title">End Date</td>
-<td class="data"><%= @patient.end_date %></td>
+<td class="data"><%= @patient[mapper("Residency_End")] %></td>
 </tr>
 <tr>
 <td class="title">DOB</td>
-<td class="data">MM/DD/YYYY</td>
+<td class="data"><%=@patient[mapper("Birthday")]%></td>
 <td class="title">RELATIVES</td>
 <td class="data">AUNTS, UNCLES</td>
 </tr>
@@ -68,7 +68,7 @@
 
 <a name="2"></a><div class="info_section">
 <span class="section_header style1">ADDITIONAL CLINICAL DATA</span>
-WRITE YOUR CHARACTER'S PERSONALITY HERE.
+<%=@patient[mapper("Notes:")]%>
 </div>
 
 

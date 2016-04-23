@@ -8,7 +8,7 @@
         <fieldset id="demographic_fields">
           <legend>Demographics Fields</legend>
           <% for i in 1..13 %>
-            <label><input type="checkbox" name="<%=i%>" value="demographic" checked="true" onclick="deselect('demographic')"/> <%=map.keys[i].split('_').join(' ')%></label></br>
+            <label><input type="checkbox" name="<%=i%>" value="demographic" checked="true" onclick="deselect('demographic')"/> <%=attr_map.keys[i].split('_').join(' ')%></label></br>
           <%end%>
         </fieldset>
       </form>
@@ -19,7 +19,7 @@
         <fieldset id="medical_fields">
           <legend>Medical Fields</legend>
           <% for i in 14..47 %>
-            <label><input type="checkbox" name="<%=i%>" value="medical" checked="true" onclick="deselect('medical')"/> <%=map.keys[i].split('_').join(' ')%></label></br>
+            <label><input type="checkbox" name="<%=i%>" value="medical" checked="true" onclick="deselect('medical')"/> <%=attr_map.keys[i].split('_').join(' ')%></label></br>
           <%end%>
         </fieldset>
       </form>
@@ -30,7 +30,7 @@
         <fieldset id="social_fields">
             <legend>Social Fields</legend>
             <% for i in 48..55 %>
-              <label><input type="checkbox" name="<%=i%>" value="social" checked="true" onclick="deselect('social')"/> <%=map.keys[i].split('_').join(' ')%></label></br>
+              <label><input type="checkbox" name="<%=i%>" value="social" checked="true" onclick="deselect('social')"/> <%=attr_map.keys[i].split('_').join(' ')%></label></br>
             <%end%>
         </fieldset>
       </form>

@@ -2,6 +2,6 @@
     <h4> Please select an Excel sheet</h4>
         <%= form_tag import_excel_patients_path, multipart: true do %>
             <%= file_field_tag :file %>
-            <%= submit_tag "Import" %>
+            <%= submit_tag "Import", :class=>"option-button"%>
         <% end %>
  </div>

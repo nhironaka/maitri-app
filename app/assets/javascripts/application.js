@@ -106,3 +106,36 @@ function hide_columns(){
     }
     deselect('demographic'); deselect('social'); deselect('medical');
 }
+
+function add_filter(){
+    
+    var len = $( ".selectors" ).length+1;
+    console.log(len)
+    if (len > 5){
+        return;
+    }
+    len = len.toString();
+    var new_filter_div = document.createElement('div');
+    new_filter_div.setAttribute('class', 'selectors');
+    var clone = $( "#1th_filter" ).first().clone();
+    clone.attr('id', len+"th_filter");
+    clone.attr('name', len+"th_filter");
+    clone.appendTo(new_filter_div);
+    
+    var new_filter_bounds = document.createElement('span');
+    new_filter_bounds.innerHTML=['<select name="'+len+'th_condition" id="'+len+'th_condition"><option value="less_than">&lt;</option>',
+                                 '<option value="greater_than">&gt;</option><option value="equal">==</option></select>',
+                                 '<input type="text" name="value'+len+'" id="value'+len+'">'].join('');
+    new_filter_div.appendChild(new_filter_bounds);
+    document.getElementById( "filter_container" ).appendChild(new_filter_div);
+}
+
+function show_columns(){
+    var len = $( ".selectors" ).length.toString();
+    for (var i=1; i <= len; i++){
+        var column_head = document.createElement('th');
+        var column_val = document.createTextNode($('#'+i+'th_filter option:selected').text());
+        column_head.appendChild(column_val);
+        document.getElementById('reporting_header').appendChild(column_head);
+    }
+}

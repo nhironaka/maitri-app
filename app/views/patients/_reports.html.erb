@@ -1,0 +1,46 @@
+<%= form_tag patient_reporting_path, :method => "get", :id => "reporting" do %>
+  <div id="filter_container">
+      <div class="selectors">
+          <%= select_tag "1th_filter", options_for_select(all_headers.drop(1).map{|a| [a.split("_").join(" "), a]}, 1) %>
+          <%= select_tag "1th_condition", options_for_select([['<', 'less_than'], ['>', 'greater_than'], ['==', 'equal']], 1) %>
+          <%= text_field_tag :value1, params[:value1] %>
+      </div>
+  </div>
+  <div onclick="add_filter()" class="div_button">+</div>
+  <div class="table_container">
+    <div class="table_header_container" id="table_header_">
+      <table id="table_header">
+        <thead>
+          <tr id="reporting_header">
+            <th><%= sortable "Only_Active_Residents" %></th>
+            <% for i in 1..5 %>
+              <% if !params["#{i}th_filter".to_sym].nil?%>
+                <th><%= sortable params["#{i}th_filter".to_sym] %></th>
+              <% end %>
+            <%end%>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="scrolling_table" id="patients_table_" onscroll="synch_scroll()">
+      <table id="patients_table">
+        <tbody id="reporting_body">
+          <% if not @patients.nil? %>
+          <% @patients.each do |patient| %>
+            <tr>
+              <td><%=patient.one %></td>
+              <% for i in 1..5 %>
+              <% if !params["#{i}th_filter".to_sym].nil?%>
+                <td><%= patient[mapper(params["#{i}th_filter".to_sym])] %></td>
+              <% end %>
+            <%end%>
+                
+            </tr>
+          <% end %>
+        <% end %>
+       </tbody>
+      </table>
+    </div> 
+  </div>
+  <%= submit_tag "OK", :class=>"option-button right", remote:true %>
+<% end %>
