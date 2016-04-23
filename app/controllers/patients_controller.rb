@@ -5,11 +5,6 @@ class PatientsController < ApplicationController
         params.require(:patient).permit(:two, :three, :sixteen, :seventeen)
     end
     
-    def show
-      id = params[:patient_id] 
-      @patient = Patient.find(id) 
-    end
-    
     def index
       if sort_column and sort_direction
         @patients = Patient.order(sort_column + " " + sort_direction)
@@ -26,7 +21,6 @@ class PatientsController < ApplicationController
     
     def show
       import = params[:import]
-      id = params[:patient_id]
       if import
         render "import_view"
         return
@@ -59,7 +53,7 @@ class PatientsController < ApplicationController
       Patient.delete_all
       file = params[:file]
       patients_sheets = Roo::Spreadsheet.open(file)
-      patients_sheets.each_with_pagename do |name, sheet|
+      patients_sheets.each_with_pagename do |_name, sheet|
         sheet.drop(1).each do |row|
           attrbs = {}
           i=1;
