@@ -5,6 +5,7 @@ Given(/^the following users exist:$/) do |table|
 end
 
 Given /I am logged in/ do
+  User.create(:username=>"existuser", :password=>"existuser1", :email=>"existuser1@gmail.com", :password_confirmation=>"existuser1")
   user = "existuser"
   password = "existuser1"
   visit '/users/sign_in'

@@ -5,13 +5,19 @@ Feature: filter a list of patients
   I want to be able to create a demographics report
 
 Background: patients are already in the database
-  Given I am logged in
-  And I am on the patient overview page
+  Given the following patients exist:
+    |  name             |  gender |  start_date |  end_date |
+    |  Toni T           |  M      | 12-01-1991  | 31-01-1992 |
+    |  Cal H            |  M      | 11-12-1993  | 14-03-1996 | 
+  And I am logged in
+  And I am on the reporting page
+  Then I should see "Reports"
   
 Scenario: Create a demographics report
-  When I follow "<i class='fa fa-file-text-o'></i> Reports"
-  Then I should see "Reports"
-  When I press "Generate Demographics Report"
-  Then I should see "Download"
-  When I press "Download"
-  Then I should get a download with the filename "Demographics_Report.pdf"
+  When I select "First Name" from "1th_filter"
+  And I select "==" from "1th_condition"
+  And I fill in "value1" with "T"
+  And I press "OK"
+  Then I should see "Toni"
+  And I should not see "Cal"
+  

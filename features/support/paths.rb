@@ -25,6 +25,8 @@ module NavigationHelpers
       '/users/password/new'
     when /^the import page$/
       '/patients/import/true'
+    when /^the reporting page$/
+      '/patients/reports'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
