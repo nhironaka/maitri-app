@@ -3,7 +3,7 @@
 Given /the following patients exist/ do |patients_table|
   patients_table.hashes.each do |patient|
     name = patient[:name].split()
-    Patient.create({two: name[0], :three =>name[1], nine: patient[:gender], sixteen: patient[:start_date], seventeen: patient[:end_date]})
+    Patient.create({two: name[0], :three=>name[1], nine: patient[:gender], sixteen: patient[:start_date], seventeen: patient[:end_date]})
   end
 end
 

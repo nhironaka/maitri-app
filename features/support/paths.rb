@@ -23,7 +23,8 @@ module NavigationHelpers
       '/users/sign_up'
     when /^the reset password page$/
       '/users/password/new'
-
+    when /^the import page$/
+      '/patients/import/true'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

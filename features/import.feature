@@ -6,7 +6,7 @@ Feature: import patient data from excel into database
 Background: patients are already in the database
   
   Given the following patients exist:
-    |  Name             |  Gender |  start_date |  end_date |
+    |  name             |  gender |  start_date |  end_date |
     |  Toni T           |  M      | 12-01-1991  | 31-01-1992 |
     |  Cal H            |  M      | 11-12-1993  | 14-03-1996 | 
    And the following users exist:
@@ -14,8 +14,9 @@ Background: patients are already in the database
     | existuser                  | existuser1  | existuser1@gmail.com | existuser1                      |
   And I am logged in
   And I am on the patient overview page
-  And I press "import_button"
-  Then I should see "Please select an excel file"
+  And I follow "Import"
+  Then I should be on the import page
+  And I should see "Please select an Excel sheet"
 
 Scenario: import new patients through excel
     When I attach the file "/path/to/Violet test report- Resident Information.xlsx" to "file"

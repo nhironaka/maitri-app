@@ -7,7 +7,7 @@ Feature: show a list of patients sorted by various columns
 Background: patients are already in the database
   
   Given the following patients exist:
-    |  Name             |  Gender |  start_date |  end_date |
+    |  name             |  gender |  start_date |  end_date |
     |  Toni T           |  M      | 12-01-1991  | 31-01-1992 |
     |  Cal H            |  M      | 11-12-1993  | 14-03-1996 | 
     |  Aari L           |  F      | 10-05-1999  | 02-09-2001 | 
@@ -25,7 +25,7 @@ Background: patients are already in the database
   And I am on the patient overview page
 
 Scenario: sort by patient name 
-  When I follow "Name"
+  When I follow "First Name"
   Then I definitely should see "Aari L" before "Steven Li"
   And  I definitely should see "Beyonce Knowles" before "Cal H"
   And  I definitely should see "Cal H" before "Erika White"
@@ -34,7 +34,7 @@ Scenario: sort by patient name
   
 
 Scenario: sort by start date
-  When I follow "Start Date"
+  When I follow "Residency Start"
   Then I definitely should see "Erika White" before "Toni T"
   And I definitely should see "Steven Li" before "Cal H"
   And I definitely should see "Aari L" before "Cal H"
@@ -44,7 +44,7 @@ Scenario: sort by Gender
   Then I definitely should see "M" before "F"
   
 Scenario: sort by patient name
-  When I follow "Name"
+  When I follow "First Name"
   Then I definitely should not see "Steven Li" before "Erika White"
   And  I definitely should not see "Toni L" before "Cal H"
   And  I definitely should not see "Cal H" before "Aari L"
