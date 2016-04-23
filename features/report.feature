@@ -13,10 +13,26 @@ Background: patients are already in the database
   And I am on the reporting page
   Then I should see "Reports"
   
-Scenario: Create a demographics report
+Scenario: Select patients whose name starts with a letter
   When I select "First Name" from "1th_filter"
   And I select "==" from "1th_condition"
   And I fill in "value1" with "T"
+  And I press "OK"
+  Then I should see "Toni"
+  And I should not see "Cal"
+  
+Scenario: Select patients whose name is in a range
+  When I select "First Name" from "1th_filter"
+  And I select "<" from "1th_condition"
+  And I fill in "value1" with "M"
+  And I press "OK"
+  Then I should not see "Toni"
+  And I should see "Cal"
+
+Scenario: Select patients whose name is in a range
+  When I select "First Name" from "1th_filter"
+  And I select ">" from "1th_condition"
+  And I fill in "value1" with "M"
   And I press "OK"
   Then I should see "Toni"
   And I should not see "Cal"
