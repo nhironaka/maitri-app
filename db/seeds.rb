@@ -6,26 +6,26 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-patients = [{:name=>"Toni T", :gender=>"M", :start_date=>"12-01-1991", :end_date=>"31-01-1992"},
-            {:name=>"Cal H", :gender=>"M", :start_date=>"11-12-1993", :end_date=>"14-03-1996"}, 
-            {:name=>"Aari L", :gender=>"F", :start_date=>"10-05-1999", :end_date=>"02-09-2001"}, 
-            {:name=>"Steven Li", :gender=>"M", :start_date=>"09-12-1993", :end_date=>"10-04-1996"},
-            {:name=>"Erika White", :gender=>"B", :start_date=>"07-04-2000", :end_date=>"12-11-2002"},
-            {:name=>"James Bong", :gender=>"M", :start_date=>"12-01-2004", :end_date=>"01-11-2008"},
-            {:name=>"Oscar Ramierez", :gender=>"T", :start_date=>"09-12-2015", :end_date=>"01-03-2016"}, 
-            {:name=>"Skinny Cow", :gender=>"F", :start_date=>"03-03-2001", :end_date=>"12-09-2001"}, 
-            {:name=>"Michael Fox", :gender=>"M", :start_date=>"02-12-1993", :end_date=>"10-11-1996"},
-            {:name=>"Erika White", :gender=>"B", :start_date=>"01-04-2000", :end_date=>"07-11-2002"},
-            {:name=>"Toni T", :gender=>"M", :start_date=>"12-01-1991", :end_date=>"31-01-1992"},
-            {:name=>"Cal H", :gender=>"M", :start_date=>"11-12-1993", :end_date=>"14-03-1996"}, 
-            {:name=>"Aari L", :gender=>"F", :start_date=>"10-05-1999", :end_date=>"02-09-2001"}, 
-            {:name=>"Steven Li", :gender=>"M", :start_date=>"09-12-1993", :end_date=>"10-04-1996"},
-            {:name=>"Erika White", :gender=>"B", :start_date=>"07-04-2000", :end_date=>"12-11-2002"},
-            {:name=>"James Bong", :gender=>"M", :start_date=>"12-01-2004", :end_date=>"01-11-2008"},
-            {:name=>"Oscar Ramierez", :gender=>"T", :start_date=>"09-12-2015", :end_date=>"01-03-2016"}, 
-            {:name=>"Skinny Cow", :gender=>"F", :start_date=>"03-03-2001", :end_date=>"12-09-2001"}, 
-            {:name=>"Michael Fox", :gender=>"M", :start_date=>"02-12-1993", :end_date=>"10-11-1996"},
-            {:name=>"Erika White", :gender=>"B", :start_date=>"01-04-2000", :end_date=>"07-11-2002"}
+patients = [{:two=>"Toni T", :nine=>"M", :sixteen=>"12-01-1991", :seventeen=>"31-01-1992"},
+            {:two=>"Cal H", :nine=>"M", :sixteen=>"11-12-1993", :seventeen=>"14-03-1996"}, 
+            {:two=>"Aari L", :nine=>"F", :sixteen=>"10-05-1999", :seventeen=>"02-09-2001"}, 
+            {:two=>"Steven Li", :nine=>"M", :sixteen=>"09-12-1993", :seventeen=>"10-04-1996"},
+            {:two=>"Erika White", :nine=>"B", :sixteen=>"07-04-2000", :seventeen=>"12-11-2002"},
+            {:two=>"James Bong", :nine=>"M", :sixteen=>"12-01-2004", :seventeen=>"01-11-2008"},
+            {:two=>"Oscar Ramierez", :nine=>"T", :sixteen=>"09-12-2015", :seventeen=>"01-03-2016"}, 
+            {:two=>"Skinny Cow", :nine=>"F", :sixteen=>"03-03-2001", :seventeen=>"12-09-2001"}, 
+            {:two=>"Michael Fox", :nine=>"M", :sixteen=>"02-12-1993", :seventeen=>"10-11-1996"},
+            {:two=>"Erika White", :nine=>"B", :sixteen=>"01-04-2000", :seventeen=>"07-11-2002"},
+            {:two=>"Toni T", :nine=>"M", :sixteen=>"12-01-1991", :seventeen=>"31-01-1992"},
+            {:two=>"Cal H", :nine=>"M", :sixteen=>"11-12-1993", :seventeen=>"14-03-1996"}, 
+            {:two=>"Aari L", :nine=>"F", :sixteen=>"10-05-1999", :seventeen=>"02-09-2001"}, 
+            {:two=>"Steven Li", :nine=>"M", :sixteen=>"09-12-1993", :seventeen=>"10-04-1996"},
+            {:two=>"Erika White", :nine=>"B", :sixteen=>"07-04-2000", :seventeen=>"12-11-2002"},
+            {:two=>"James Bong", :nine=>"M", :sixteen=>"12-01-2004", :seventeen=>"01-11-2008"},
+            {:two=>"Oscar Ramierez", :nine=>"T", :sixteen=>"09-12-2015", :seventeen=>"01-03-2016"}, 
+            {:two=>"Skinny Cow", :nine=>"F", :sixteen=>"03-03-2001", :seventeen=>"12-09-2001"}, 
+            {:two=>"Michael Fox", :nine=>"M", :sixteen=>"02-12-1993", :seventeen=>"10-11-1996"},
+            {:two=>"Erika White", :nine=>"B", :sixteen=>"01-04-2000", :seventeen=>"07-11-2002"}
   	 ]
 
 patients.each do |patient|

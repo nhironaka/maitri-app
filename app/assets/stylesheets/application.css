@@ -43,7 +43,7 @@ a, input {
 }
 
 fieldset {
-    overflow:scroll;
+    overflow-y:scroll;
     height:200px;
     display: inline-block;
 }
@@ -269,7 +269,7 @@ fieldset {
     background:rgb(248, 248, 248);
     border-radius:10px;
     border:none;
-    overflow:auto;
+    overflow-y:auto;
 }
 .sliding.open:before{
 	z-index: 11;
@@ -303,7 +303,7 @@ fieldset {
     -ms-transition: height, 0.5s linear;
     -o-transition: height, 0.5s linear;
     transition: height, 0.5s linear;
-    overflow:auto;
+    overflow-y:auto;
 }
 .sliding.open {
     height:390px;
@@ -317,7 +317,7 @@ fieldset {
 }
 
 .field_filters{
-    overflow:auto;
+    overflow-y:auto;
 }
 .field_filters, .input_filters{
     margin-left: 25px;

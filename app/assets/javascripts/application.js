@@ -110,7 +110,6 @@ function hide_columns(){
 function add_filter(){
     
     var len = $( ".selectors" ).length+1;
-    console.log(len)
     if (len > 5){
         return;
     }
@@ -131,11 +130,17 @@ function add_filter(){
 }
 
 function show_columns(){
+    console.log("showing columns")
     var len = $( ".selectors" ).length.toString();
     for (var i=1; i <= len; i++){
         var column_head = document.createElement('th');
         var column_val = document.createTextNode($('#'+i+'th_filter option:selected').text());
-        column_head.appendChild(column_val);
-        document.getElementById('reporting_header').appendChild(column_head);
+        console.log($('#reporting_header:contains("'+column_val+'")').length);
+        if ($('#reporting_header:contains("'+column_val+'")').length < 0) {
+            column_head.appendChild(column_val);
+            document.getElementById('reporting_header').appendChild(column_head);
+        }
+
+        
     }
 }

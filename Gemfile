@@ -43,6 +43,7 @@ gem 'devise'
 gem 'figaro'
 
 gem 'roo', '~> 2.3', '>= 2.3.2'
+gem 'rubyXL'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

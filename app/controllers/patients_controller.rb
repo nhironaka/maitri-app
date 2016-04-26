@@ -29,6 +29,10 @@ class PatientsController < ApplicationController
     
     def reports
       @patients = Patient.all
+      report = RubyXL::Workbook.new
+      worksheet = report.add_worksheet('Sheet1')
+      filters = Hash.new()
+      records = 0;
       for i in 1..5
         filter =params["#{i}th_filter".to_sym]
         cond = params["#{i}th_condition".to_sym]
@@ -42,10 +46,15 @@ class PatientsController < ApplicationController
           else 
             @patients = @patients.where("#{k} LIKE ?", "#{val}%")
           end
+          len = @patients.length
+          filters[filter] = [val, (records - len).abs]
+          records = len
         else
-          return @patients
+          break
         end
       end
+      worksheet.add_cell(0, 0, 'A1')
+      report.write("./report.xlsx")
     end
       
     def import_excel
@@ -57,7 +66,7 @@ class PatientsController < ApplicationController
           attrbs = {}
           i=1;
           row.each do |val|
-            key = i.to_words.split('-').join('_').to_sym
+            key = i.to_words.split(/[-|\s]/).join('_').to_sym
             attrbs[key]=val
             i += 1
           end
