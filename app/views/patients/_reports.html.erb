@@ -14,7 +14,7 @@
           <tr id="reporting_header">
             <th><%= sortable "Only_Active_Residents" %></th>
             <% for i in 1..5 %>
-              <% if !params["#{i}th_filter".to_sym].nil?%>
+              <% if !params["#{i}th_filter".to_sym].nil? && singular_param(i) %>
                 <th><%= sortable params["#{i}th_filter".to_sym] %></th>
               <% end %>
             <%end%>
@@ -30,7 +30,7 @@
             <tr>
               <td><%=patient.one %></td>
               <% for i in 1..5 %>
-              <% if !params["#{i}th_filter".to_sym].nil?%>
+              <% if !params["#{i}th_filter".to_sym].nil? && singular_param(i) %>
                 <td><%= patient[mapper(params["#{i}th_filter".to_sym])] %></td>
               <% end %>
             <%end%>

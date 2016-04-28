@@ -1,6 +1,27 @@
 class PatientsController < ApplicationController
     helper_method :sort_column, :sort_direction
     include ApplicationHelper
+    private
+  
+    def sort_column
+      params[:sort]
+    end
+    
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+    end
+    
+    def start_date
+      params[:start_date]
+    end
+    
+    def end_date
+      params[:end_date]
+    end
+    
+    @@filters = Hash.new()
+    
+    public
     def patient_params
         params.require(:patient).permit(:two, :three, :sixteen, :seventeen)
     end
@@ -20,18 +41,12 @@ class PatientsController < ApplicationController
     
     def show
       import = params[:import]
-      if import
-        render "import_view"
-        return
-      end
-      @patient = Patient.find(params[:id])
+      id=params[:id]
+      @patient = Patient.find(id)
     end
     
     def reports
       @patients = Patient.all
-      report = RubyXL::Workbook.new
-      worksheet = report.add_worksheet('Sheet1')
-      filters = Hash.new()
       records = 0;
       for i in 1..5
         filter =params["#{i}th_filter".to_sym]
@@ -47,16 +62,29 @@ class PatientsController < ApplicationController
             @patients = @patients.where("#{k} LIKE ?", "#{val}%")
           end
           len = @patients.length
-          filters[filter] = [val, (records - len).abs]
+          @@filters[filter] = [val, (records - len).abs]
           records = len
         else
           break
         end
       end
-      worksheet.add_cell(0, 0, 'A1')
-      report.write("./report.xlsx")
     end
-      
+    
+    def download
+      if !@@filters.nil? and !@@filters.empty?
+        report = RubyXL::Workbook.new
+        worksheet = report.add_worksheet('Sheet1')
+        i=0
+        @@filters.keys.each { |key|
+          worksheet.add_cell(1, i, key.split("_").join(" "))
+          i = i + 1
+        }
+        send_data report.stream.string, :disposition=>"attachment", :filename=>"report.xlsx"
+        return
+      end
+      redirect_to patient_reporting_path()
+    end
+    
     def import_excel
       Patient.delete_all
       file = params[:file]
@@ -76,21 +104,6 @@ class PatientsController < ApplicationController
       redirect_to patients_overview_path(params)
     end  
     
-    private
-  
-    def sort_column
-      params[:sort]
-    end
     
-    def sort_direction
-      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-    end
-    
-    def start_date
-      params[:start_date]
-    end
-    
-    def end_date
-      params[:end_date]
-    end
+      
 end
