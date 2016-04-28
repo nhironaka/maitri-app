@@ -64,9 +64,13 @@ Rails.application.routes.draw do
   resources :patients
   
   get '/patients/import/:import' => 'patients#show', :as => :patients_import_view
-  
   resources :patients do
-    collection { post :import_excel } 
+    collection do
+      post :import_excel 
+      post :download, :as => :download_report
+    end
   end
+  
+  
 
 end

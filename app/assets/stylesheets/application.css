@@ -48,6 +48,7 @@ fieldset {
     display: inline-block;
 }
 
+#download_button,
 .panel_container button, td a {
     top:0;
     border:none; 
@@ -437,7 +438,7 @@ li a{
     background-color: white;
     border-top:1px solid rgba(0, 0, 0, .05);
     border-radius:4px;
-    overflow: auto;
+    overflow: hidden;
     padding-top: 10px;
     z-index: 1;
     height:75px;
@@ -700,8 +701,10 @@ li a{
     clear: left;
     display: inline-block;
     width: 100%;
+    overflow-x: hidden;
 }
 
 #filter_container select{
-     float:left; margin-right:5px;
+    float:left; margin-right:5px;
+    max-width: 200px;
 }
