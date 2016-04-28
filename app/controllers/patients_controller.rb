@@ -41,6 +41,10 @@ class PatientsController < ApplicationController
     
     def show
       import = params[:import]
+      if import
+        render "import_view"
+        return
+      end
       id=params[:id]
       @patient = Patient.find(id)
     end
