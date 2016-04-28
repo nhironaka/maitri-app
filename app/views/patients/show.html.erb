@@ -27,15 +27,15 @@
 <table cellspacing="5px" class="patient_record_table">
 <tr>
 <td class="title">NAME</td>
-<td class="data"><%= @patient[mapper("First_Name")]%> <%= @patient[mapper("Last_Name")]%></td>
-<td class="title">OCCUPATION</td>
-<td class="data">JOB</td>
+<td class="data"><%= @patient[mapper("Suffix")]%> <%= @patient[mapper("First_Name")]%> <%= @patient[mapper("Last_Name")]%></td>
+<td class="title">GENDER</td>
+<td class="data"><%= @patient[mapper("Gender")]%></td>
 </tr>
 <tr>
 <td class="title">NICKNAME(S)</td>
-<td class="data">OTHER NAMES/CODENAME</td>
-<td class="title">PARENTS</td>
-<td class="data">MOTHER, FATHER</td>
+<td class="data"><%= @patient[mapper("Nickname")] %></td>
+<td class="title">RACE</td>
+<td class="data"><%= @patient[mapper("Race")] %></td>
 </tr>
 <tr>
 <td class="title">Start Date</td>
@@ -46,20 +46,20 @@
 <tr>
 <td class="title">DOB</td>
 <td class="data"><%=@patient[mapper("Birthday")]%></td>
-<td class="title">RELATIVES</td>
-<td class="data">AUNTS, UNCLES</td>
+<td class="title">LANGUAGE</td>
+<td class="data"><%=@patient[mapper("Religion")]%></td>
 </tr>
 <tr>
-<td class="title">AGE</td>
-<td class="data">33</td>
+<td class="title">PHONE</td>
+<td class="data"><%=@patient[mapper("Phone")]%></td>
 <td class="title">MARITAL STATUS</td>
-<td class="data">MARRIED? SINGLE?</td>
+<td class="data"><%=@patient[mapper("Marital_status")]%></td>
 </tr>
 <tr>
 <td class="title">RESIDENCE</td>
-<td class="data">PLACE</td>
-<td class="title">SPOUSE</td>
-<td class="data">SIGNIFICANT OTHER</td>
+<td class="data"><%= @patient[mapper("Apartment_Number")] %></td>
+<td class="title">MEDICARE</td>
+<td class="data"><%= @patient[mapper("Medicare")] %></td>
 </tr>
 </table>
 
@@ -69,6 +69,45 @@
 <a name="2"></a><div class="info_section">
 <span class="section_header style1">ADDITIONAL CLINICAL DATA</span>
 <%=@patient[mapper("Notes:")]%>
+
+<table cellspacing="5px" class="patient_record_table">
+<tr>
+<td class="title">NAME</td>
+<td class="data"><%= @patient[mapper("Suffix")]%> <%= @patient[mapper("First_Name")]%> <%= @patient[mapper("Last_Name")]%></td>
+<td class="title">STATUS</td>
+<td class="data"><%= @patient[mapper("Status_(ie:Respite/EOL/hospice)")]%></td>
+</tr>
+<tr>
+<td class="title">ALLERGIES</td>
+<td class="data"><%= @patient[mapper("Allergies")] %></td>
+<td class="title">LAST PNEUMONIA SHOT</td>
+<td class="data"><%= @patient[mapper("Last_Pneumonia_shot")] %></td>
+</tr>
+<tr>
+<td class="title">LAST FLU SHOT</td>
+<td class="data"><%= @patient[mapper("Last_flu_shot")] %></td>
+<td class="title">LAST TB TEST</td>
+<td class="data"><%= @patient[mapper("Last TB Test")] %></td>
+</tr>
+<tr>
+<td class="title">TASK RATING</td>
+<td class="data"><%=@patient[mapper("task_Rating")]%></td>
+<td class="title">PHARMACY PREFERENCE</td>
+<td class="data"><%=@patient[mapper("pharmacy_Preference")]%></td>
+</tr>
+<tr>
+<td class="title">INSURANCE</td>
+<td class="data"><%=@patient[mapper("Insurance_1_Label")]%></td>
+<td class="title">SUBSTANCE USE</td>
+<td class="data"><%=@patient[mapper("Substance_Use_Hx")]%></td>
+</tr>
+<tr>
+<td class="title">HOSPITAL PREFERENCE</td>
+<td class="data"><%= @patient[mapper("hospital_Preference")] %></td>
+<td class="title">FUNERAL HOME PREFERENCE</td>
+<td class="data"><%= @patient[mapper("funeral_Home_Pref")] %></td>
+</tr>
+</table>
 </div>
 
 
