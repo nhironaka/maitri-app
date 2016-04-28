@@ -19,8 +19,8 @@ Background: patients are already in the database
   And I should see "Please select an Excel sheet"
 
 Scenario: import new patients through excel
-    When I attach the file "/path/to/Violet test report- Resident Information.xlsx" to "file"
-    And I press "import_button"
+    When I attach the file "features/support/Violet-test-report-Resident-Information.xlsx" to "file"
+    And I press "Import"
     Then I should not see "Toni T"
     And I should see "Violet"
 
@@ -29,7 +29,7 @@ Scenario: import a non-xlsx file type
     And I press "import_button" 
     Then I should see "File type must be an Excel"
 
-Scenario: import a non-xlsx file type
+Scenario: import a nonexistent file type
     When I upload a non-Excel file
     And I press "Import" 
     Then I should see "File type must be an Excel"

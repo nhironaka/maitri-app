@@ -116,8 +116,8 @@ When /^(?:|I )choose "([^"]*)"$/ do |field|
   choose(field)
 end
 
-When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
-  attach_file(field, File.expand_path(path))
+When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |file, field|
+  attach_file(field, File.join(Rails.root, file))
 end
 
 When /^(?:|I )click on "([^"]*)"$/ do |img|
