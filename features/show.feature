@@ -6,28 +6,28 @@ Feature: show a patient profile
 
 Background: patients are already in the database
   
-  Given the following users exist:
+  Given the following patients exist:
+    |  name             |  gender |  start_date |  end_date |
+    |  Prince           |  M      | 01-04-2000  | 07-11-2002 |
+    |  Fifth            |  F      | 2005-03-04  | 2007-12-12 |
+  And the following users exist:
     | username                | password    | email                | password_confirmation |
     | existuser               | existuser1  | existuser1@gmail.com | existuser1            |
   And I am logged in
   And I am on the patient overview page
 
 Scenario: follow patient name
-  When I follow "Violet"
+  When I follow "Prince"
   Then I should see "RESIDENT INFORMATION"
   Then I should see "ADDITIONAL CLINICAL DATA"
-  Then I should see "ADDITIONAL RESIDENT INFORMATION"
-  Then I should see "MEDICATION ORDERS"
-  Then I should see "MISC. NOTES"
+
+
   
 Scenario: follow RESIDENT INFORMATION
-  When I follow "Tyler"
+  When I follow "Fifth"
   Then I follow "RESIDENT INFORMATION"
-  Then I should see "Start Date 1991-01-12 00:00:00 UTC"
-  Then I should see "End Date 1992-01-31 00:00:00 UTC"
+  Then I should see "Start Date 2005-03-04"
+  Then I should see "End Date 2007-12-12"
   Then I should see "RESIDENT INFORMATION"
   Then I should see "ADDITIONAL CLINICAL DATA"
-  Then I should see "ADDITIONAL RESIDENT INFORMATION"
-  Then I should see "MEDICATION ORDERS"
-  Then I should see "MISC. NOTES"
   
