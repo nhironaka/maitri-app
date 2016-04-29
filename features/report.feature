@@ -37,3 +37,19 @@ Scenario: Select patients whose name is in a range
   Then I should see "Toni"
   And I should not see "Cal"
   
+Scenario: Check comparison works for dates
+  When I select "Residency Start" from "1th_filter"
+  And I select "==" from "1th_condition"
+  And I fill in "value1" with "12-01-1991"
+  And I press "OK"
+  Then I should see "12-01-1991"
+  And I should not see "11-12-1993"
+  
+Scenario: Download the Report if successful filters used
+  When I select "First Name" from "1th_filter"
+  And I select ">" from "1th_condition"
+  And I fill in "value1" with "M"
+  And I press "OK"
+  And I press "Create a Report"
+  Then I should get a download with the filename "report.xlsx"
+  
