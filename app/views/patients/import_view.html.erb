@@ -1,7 +1,10 @@
- <div id="import_view">
+<% flash.each do |key, value| %>
+    <%= content_tag :div, value, class: "flash #{key}" %>
+<% end %>
+<div id="import_view">
     <h4> Please select an Excel sheet</h4>
         <%= form_tag import_excel_patients_path, multipart: true do %>
             <%= file_field_tag :file %>
             <%= submit_tag "Import", :class=>"option-button"%>
         <% end %>
- </div>
+</div>

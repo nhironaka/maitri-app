@@ -106,6 +106,12 @@ class PatientsController < ApplicationController
     def import_excel
       Patient.delete_all
       file = params[:file]
+      accepted_format = [".xlsx", "xls"]
+      if file == nil or not accepted_format.include? File.extname(file.original_filename)
+        flash[:notice] = "File type must be an Excel"
+        redirect_to patients_import_view_path(:import => true)
+        return
+      end
       patients_sheets = Roo::Spreadsheet.open(file)
       patients_sheets.each_with_pagename do |_name, sheet|
         sheet.drop(1).each do |row|
