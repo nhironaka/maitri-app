@@ -25,12 +25,11 @@ Scenario: import new patients through excel
     And I should see "Violet"
 
 Scenario: import a non-xlsx file type
-    When I attach the file "/path/to/File.pdf" to "file"
-    And I press "import_button" 
+    When I attach the file "features/support/Violet-test-report-Resident-Information.pdf" to "file"
+    And I press "Import" 
     Then I should see "File type must be an Excel"
 
 Scenario: import a nonexistent file type
-    When I upload a non-Excel file
     And I press "Import" 
     Then I should see "File type must be an Excel"
 

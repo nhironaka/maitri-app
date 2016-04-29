@@ -73,6 +73,7 @@ class PatientsController < ApplicationController
             @@filters[filter] = @@filters[filter] + ["#{@@inequality[cond]}#{val}", (records - len).abs]
           else
             @@filters[filter] = ["#{@@inequality[cond]}#{val}", (records - len).abs]
+
           end
           records = len
         else
@@ -89,14 +90,13 @@ class PatientsController < ApplicationController
         
         @@filters.keys.each { |key|
           worksheet.add_cell(row, 0, key.split("_").join(" "))
-          j = row - 1
           column = 1
-          @@filters[key].each { |filter, count|
-            worksheet.add_cell(j, column, filter)
-            worksheet.add_cell(row, column, count)
+          @@filters[key].each{ |item|
+            worksheet.add_cell(row-1, column, item[0])
+            worksheet.add_cell(row, column, item[1])
             column = column + 1
           }
-          row = row + 2
+          row = row + 3
         }
         send_data report.stream.string.bytes.to_a.pack("C*"), :disposition=>"attachment", :filename=>"report.xlsx"
         return
@@ -107,6 +107,12 @@ class PatientsController < ApplicationController
     def import_excel
       Patient.delete_all
       file = params[:file]
+      accepted_format = [".xlsx", "xls"]
+      if file == nil or not accepted_format.include? File.extname(file.original_filename)
+        flash[:notice] = "File type must be an Excel"
+        redirect_to patients_import_view_path(:import => true)
+        return
+      end
       patients_sheets = Roo::Spreadsheet.open(file)
       patients_sheets.each_with_pagename do |_name, sheet|
         sheet.drop(1).each do |row|
