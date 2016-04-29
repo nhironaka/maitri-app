@@ -87,7 +87,6 @@ class PatientsController < ApplicationController
         send_data report.stream.string, :disposition=>"attachment", :filename=>"report.xlsx"
         return
       end
-      flash[:notice] = "Please fill out a filter"
       redirect_to patient_reporting_path()
     end
     
