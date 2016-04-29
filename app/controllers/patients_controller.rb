@@ -23,7 +23,7 @@ class PatientsController < ApplicationController
     
     
     public
-    @@inequality = {"less_than"=>"<", "greater_than"=>">", "equal"=>"="}
+    @@inequality = {"less_than"=>"< ", "greater_than"=>"> ", "equal"=>""}
     
     def patient_params
         params.require(:patient).permit(:two, :three, :sixteen, :seventeen)
@@ -70,9 +70,9 @@ class PatientsController < ApplicationController
           end
           len = @patients.length
           if @@filters.key?(filter)
-            @@filters[filter] = @@filters[filter] + ["#{@@inequality[cond]} #{val}", (records - len).abs]
+            @@filters[filter] = @@filters[filter] + ["#{@@inequality[cond]}#{val}", (records - len).abs]
           else
-            @@filters[filter] = ["#{@@inequality[cond]} #{val}", (records - len).abs]
+            @@filters[filter] = ["#{@@inequality[cond]}#{val}", (records - len).abs]
           end
           records = len
         else
