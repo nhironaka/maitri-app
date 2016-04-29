@@ -74,3 +74,5 @@ group :test do
   gem 'codeclimate-test-reporter', :require => nil
   gem 'capybara'
 end
+
+gem 'test-unit'
