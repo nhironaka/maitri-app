@@ -7,6 +7,7 @@ group :development, :test do
   gem 'sqlite3' # use SQLite only in development and testing
   gem 'byebug'
   gem 'jasmine-rails' # if you plan to use JavaScript/CoffeeScript
+  gem 'foreman'
 end 
 group :production do
   # make sure the following gems are in your production group:
@@ -31,16 +32,17 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # Import xlsx into Active Record
-gem 'test-unit'
+#gem 'test-unit'
 gem 'rake'
 gem 'to_words'
 # Authenticate users
 gem 'devise'
 # Solve Heroku Asset Problems. Only turn on when pushing to heroku
-#gem 'rails_serve_static_assets'
-#gem 'rails_stdout_logging'
+gem 'rails_serve_static_assets'
+gem 'rails_stdout_logging'
 
-gem 'figaro'
+
+#gem 'figaro'
 
 gem 'roo', '~> 2.3', '>= 2.3.2'
 gem 'rubyXL'
@@ -72,8 +74,3 @@ group :test do
   gem 'codeclimate-test-reporter', :require => nil
   gem 'capybara'
 end
-
-group :development, :test do
-  gem 'foreman'
-end
-
