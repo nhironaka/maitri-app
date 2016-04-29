@@ -21,7 +21,10 @@ class PatientsController < ApplicationController
     
     @@filters = Hash.new()
     
+    
     public
+    @@inequality = {"less_than"=>"<", "greater_than"=>">", "equal"=>"="}
+    
     def patient_params
         params.require(:patient).permit(:two, :three, :sixteen, :seventeen)
     end
@@ -66,7 +69,11 @@ class PatientsController < ApplicationController
             @patients = @patients.where("#{k} LIKE ?", "#{val}%")
           end
           len = @patients.length
-          @@filters[filter] = [val, (records - len).abs]
+          if @@filters.key?(filter)
+            @@filters[filter] = @@filters[filter] + ["#{@@inequality[cond]} #{val}", (records - len).abs]
+          else
+            @@filters[filter] = ["#{@@inequality[cond]} #{val}", (records - len).abs]
+          end
           records = len
         else
           break
@@ -78,13 +85,20 @@ class PatientsController < ApplicationController
       if !@@filters.nil? and !@@filters.empty?
         report = RubyXL::Workbook.new
         worksheet = report.add_worksheet('Sheet1')
-        i=0
+        row=1
+        
         @@filters.keys.each { |key|
-          worksheet.add_cell(1, i, key.split("_").join(" "))
-          worksheet.add_cell(2, i, @@filters[key])
-          i = i + 1
+          worksheet.add_cell(row, 0, key.split("_").join(" "))
+          j = row - 1
+          column = 1
+          @@filters[key].each { |filter, count|
+            worksheet.add_cell(j, column, filter)
+            worksheet.add_cell(row, column, count)
+            column = column + 1
+          }
+          row = row + 2
         }
-        send_data report.stream.string, :disposition=>"attachment", :filename=>"report.xlsx"
+        send_data report.stream.string.bytes.to_a.pack("C*"), :disposition=>"attachment", :filename=>"report.xlsx"
         return
       end
       redirect_to patient_reporting_path()
@@ -108,7 +122,5 @@ class PatientsController < ApplicationController
       end
       redirect_to patients_overview_path(params)
     end  
-    
-    
       
 end
