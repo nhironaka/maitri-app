@@ -89,11 +89,10 @@ class PatientsController < ApplicationController
         
         @@filters.keys.each { |key|
           worksheet.add_cell(row, 0, key.split("_").join(" "))
-          j = row - 1
           column = 1
           @@filters[key].each { |filter, count|
-            worksheet.add_cell(j, column, filter)
-            worksheet.add_cell(row, column, count)
+            worksheet.add_cell(row, column, filter)
+            worksheet.add_cell(row, column + 1, count)
             column = column + 1
           }
           row = row + 2
