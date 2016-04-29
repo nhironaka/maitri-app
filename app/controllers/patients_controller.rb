@@ -81,11 +81,13 @@ class PatientsController < ApplicationController
         i=0
         @@filters.keys.each { |key|
           worksheet.add_cell(1, i, key.split("_").join(" "))
+          worksheet.add_cell(2, i, @@filters[key])
           i = i + 1
         }
         send_data report.stream.string, :disposition=>"attachment", :filename=>"report.xlsx"
         return
       end
+      flash[:notice] = "Please fill out a filter"
       redirect_to patient_reporting_path()
     end
     

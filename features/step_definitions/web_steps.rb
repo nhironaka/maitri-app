@@ -296,7 +296,9 @@ When /^I upload a non-Excel file$/ do
   attach_file(:xlsx_file, File.join(RAILS_ROOT, 'features', 'test_files', 'facesheet.pdf'))
   click_button "Send file"
 end
+
 Then /^I should get a download with the filename "([^\"]*)"$/ do |filename|
   page.driver.response.headers['Content-Disposition'].should include("filename=\"#{filename}\"")
 end
+
 

@@ -21,8 +21,6 @@ Scenario: follow patient name
   Then I should see "RESIDENT INFORMATION"
   Then I should see "ADDITIONAL CLINICAL DATA"
 
-
-  
 Scenario: follow RESIDENT INFORMATION
   When I follow "Fifth"
   Then I follow "RESIDENT INFORMATION"
