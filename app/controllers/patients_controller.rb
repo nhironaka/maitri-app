@@ -90,12 +90,9 @@ class PatientsController < ApplicationController
         @@filters.keys.each { |key|
           worksheet.add_cell(row, 0, key.split("_").join(" "))
           column = 1
-          @@filters[key].each { |filter, count|
-            worksheet.add_cell(row, column, filter)
-            worksheet.add_cell(row, column + 1, count)
-            column = column + 1
-          }
-          row = row + 2
+          worksheet.add_cell(row-1, column, @@filters[key][0])
+          worksheet.add_cell(row, column, @@filters[key][1])
+          row = row + 3
         }
         send_data report.stream.string.bytes.to_a.pack("C*"), :disposition=>"attachment", :filename=>"report.xlsx"
         return
