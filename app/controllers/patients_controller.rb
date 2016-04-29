@@ -70,9 +70,9 @@ class PatientsController < ApplicationController
           end
           len = @patients.length
           if @@filters.key?(filter)
-            @@filters[filter] = @@filters[filter] + ["#{@@inequality[cond]} #{val}", (records - len).abs]
+            @@filters[filter] = @@filters[filter].concat([["#{@@inequality[cond]} #{val}", (records - len).abs]])
           else
-            @@filters[filter] = ["#{@@inequality[cond]} #{val}", (records - len).abs]
+            @@filters[filter] = [["#{@@inequality[cond]} #{val}", (records - len).abs]]
           end
           records = len
         else
@@ -90,8 +90,11 @@ class PatientsController < ApplicationController
         @@filters.keys.each { |key|
           worksheet.add_cell(row, 0, key.split("_").join(" "))
           column = 1
-          worksheet.add_cell(row-1, column, @@filters[key][0])
-          worksheet.add_cell(row, column, @@filters[key][1])
+          @@filters[key].each{ |item|
+            worksheet.add_cell(row-1, column, item[0])
+            worksheet.add_cell(row, column, item[1])
+            column = column + 1
+          }
           row = row + 3
         }
         send_data report.stream.string.bytes.to_a.pack("C*"), :disposition=>"attachment", :filename=>"report.xlsx"
