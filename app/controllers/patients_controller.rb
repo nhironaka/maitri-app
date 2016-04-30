@@ -70,9 +70,9 @@ class PatientsController < ApplicationController
           end
           len = @patients.length
           if @@filters.key?(filter)
-            @@filters[filter] = @@filters[filter] + ["#{@@inequality[cond]}#{val}", (records - len).abs]
+            @@filters[filter] = @@filters[filter].concat(["#{@@inequality[cond]}#{val}", (records - len).abs])
           else
-            @@filters[filter] = ["#{@@inequality[cond]}#{val}", (records - len).abs]
+            @@filters[filter] = [["#{@@inequality[cond]}#{val}", (records - len).abs]]
 
           end
           records = len
